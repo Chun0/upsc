@@ -4,27 +4,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { RokkyMascot } from "../three/Mascot";
+import Icon, { type IconName } from "../ui/Icon";
 
-const NAV = [
-  { href: "/", ico: "🚀", label: "Dashboard" },
-  { href: "/exams", ico: "🏛️", label: "Exams" },
-  { href: "/study", ico: "📚", label: "Study" },
-  { href: "/practice", ico: "✍️", label: "Practice" },
-  { href: "/mocks", ico: "🎯", label: "Mocks" },
-  { href: "/descriptive", ico: "🖋️", label: "Descriptive" },
-  { href: "/revision", ico: "🧠", label: "Revision" },
-  { href: "/reports", ico: "📊", label: "Reports" },
-  { href: "/analytics", ico: "📈", label: "Analytics" },
-  { href: "/settings", ico: "⚙️", label: "Settings" },
+type NavItem = { href: string; icon: IconName; label: string };
+
+const NAV_PRIMARY: NavItem[] = [
+  { href: "/", icon: "dashboard", label: "Dashboard" },
+  { href: "/exams", icon: "exams", label: "Exams" },
+  { href: "/study", icon: "study", label: "Study" },
+  { href: "/practice", icon: "practice", label: "Practice" },
+  { href: "/mocks", icon: "mocks", label: "Mocks" },
+  { href: "/descriptive", icon: "descriptive", label: "Descriptive" },
+];
+
+const NAV_REVIEW: NavItem[] = [
+  { href: "/revision", icon: "revision", label: "Revision" },
+  { href: "/reports", icon: "reports", label: "Reports" },
+  { href: "/analytics", icon: "analytics", label: "Analytics" },
+  { href: "/settings", icon: "settings", label: "Settings" },
 ];
 
 const QUIPS = [
-  "5 questions a day keeps negative marking away!",
-  "Rokky tip: eliminate 2 options, then guess.",
-  "Mocks before toppers were toppers!",
+  "5 questions a day keeps negative marking away.",
+  "Eliminate two options, then guess — Rokky's rule.",
+  "Mocks before toppers were toppers.",
   "Weak topics today, strong rank tomorrow.",
-  "Padhai + pattern = rank. Simple maths.",
+  "Pattern + practice = rank. Simple maths.",
 ];
+
+function isActive(pathname: string, href: string) {
+  return href === "/" ? pathname === "/" : pathname.startsWith(href);
+}
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -41,29 +51,45 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       .catch(() => undefined);
   }, [pathname]);
 
+  const today = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+
   return (
     <div className="shell">
       <aside className="sidebar">
         <div className="brand">
-          <div className="brand-logo">🚀</div>
+          <div className="brand-logo">
+            <RokkyMascot size={34} />
+          </div>
           <div>
-            <div className="brand-name grad-text">UDAAN</div>
-            <div className="brand-sub">exam copilot</div>
+            <div className="brand-name">UDAAN</div>
+            <div className="brand-sub">उड़ान · exam copilot</div>
           </div>
         </div>
-        {NAV.map((n) => {
-          const active = n.href === "/" ? pathname === "/" : pathname.startsWith(n.href);
-          return (
-            <Link key={n.href} href={n.href} className={`nav-item${active ? " active" : ""}`}>
-              <span className="nav-ico">{n.ico}</span>
-              {n.label}
-              {n.href === "/revision" && due > 0 ? <span className="nav-badge">{due}</span> : null}
-            </Link>
-          );
-        })}
+
+        <div className="nav-group-label">Prepare</div>
+        {NAV_PRIMARY.map((n) => (
+          <Link key={n.href} href={n.href} className={`nav-item${isActive(pathname, n.href) ? " active" : ""}`}>
+            <span className="nav-ico">
+              <Icon name={n.icon} size={18} />
+            </span>
+            {n.label}
+          </Link>
+        ))}
+
+        <div className="nav-group-label">Review &amp; tune</div>
+        {NAV_REVIEW.map((n) => (
+          <Link key={n.href} href={n.href} className={`nav-item${isActive(pathname, n.href) ? " active" : ""}`}>
+            <span className="nav-ico">
+              <Icon name={n.icon} size={18} />
+            </span>
+            {n.label}
+            {n.href === "/revision" && due > 0 ? <span className="nav-badge">{due}</span> : null}
+          </Link>
+        ))}
+
         <div className="sidebar-foot">
           <div className="mascot-mini">
-            <RokkyMascot size={36} />
+            <RokkyMascot size={34} />
             <div className="bubble">{QUIPS[quip]}</div>
           </div>
         </div>
@@ -71,18 +97,16 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
       <main className="main">
         <div className="topbar">
-          <div className="grow">
-            <h1 className="grad-text">
-              {(() => {
-                const item = NAV.find((n) => (n.href === "/" ? pathname === "/" : pathname.startsWith(n.href)));
-                return item ? item.label : "UDAAN";
-              })()}
-            </h1>
-            <div className="sub">Your mission control for {new Date().getFullYear()} government exams</div>
-          </div>
+          <div className="eyebrow">UDAAN · Government exam copilot</div>
+          <div className="ticker">{today}</div>
           <div className="topbar-right">
+            {due > 0 ? (
+              <Link href="/revision" className="chip">
+                <Icon name="revision" size={14} /> {due} cards due
+              </Link>
+            ) : null}
             <Link href="/settings" className="chip" title="Profile & settings">
-              ⚙️ <span className="small">Settings</span>
+              <Icon name="settings" size={14} /> Settings
             </Link>
           </div>
         </div>
@@ -90,17 +114,22 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       </main>
 
       <nav className="mobile-nav">
-        {NAV.slice(0, 6).map((n) => {
-          const active = n.href === "/" ? pathname === "/" : pathname.startsWith(n.href);
+        {NAV_PRIMARY.slice(0, 5).map((n) => {
+          const active = isActive(pathname, n.href);
           return (
             <Link key={n.href} href={n.href} className={`nav-item${active ? " active" : ""}`}>
-              <span className="nav-ico">{n.ico}</span>
+              <span className="nav-ico">
+                <Icon name={n.icon} size={20} />
+              </span>
               {n.label.split(" ")[0]}
             </Link>
           );
         })}
         <Link href="/more" className={`nav-item${pathname.startsWith("/more") ? " active" : ""}`}>
-          <span className="nav-ico">⋯</span>More
+          <span className="nav-ico">
+            <Icon name="more" size={20} />
+          </span>
+          More
         </Link>
       </nav>
     </div>

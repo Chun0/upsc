@@ -10,7 +10,7 @@
 
 **Engine**: negative-marking scoring, sectional timers, mark-for-review, guess audit, EWMA+decay+confidence mastery, weighted recommendations, SM-2-lite flashcards, activity streaks + 60-day heatmap.
 
-**UX**: 3D scroll-panned hero, tilt cards, dark space theme, Rokky mascot + quips, toasts, empty/loading states, print-to-PDF reports, mobile bottom nav.
+**UX**: 3D scroll-panned OMR answer-sheet hero, "Paper & Ink" light design system (ballpoint blue / examiner red on warm paper), custom stroke icon set, Fraunces + Public Sans + JetBrains Mono type, bespoke motion tokens, Rokky mascot + quips, toasts, empty/loading states, print-to-PDF reports, mobile bottom nav.
 
 **Quality**: 84 unit tests, 9 live-model integration tests, typecheck, corrupt-store recovery, XSS sanitization tests.
 

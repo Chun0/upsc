@@ -1,28 +1,70 @@
-# Design Review — UDAAN (senior graphic designer pass)
+# Design Review — UDAAN "Paper & Ink" revamp (senior graphic designer pass)
 
-*Reviewed as an unbiased senior graphic designer, 2026-08-13. Verdict first, then fixes applied.*
+*Reviewed as an unbiased senior graphic designer, 2026-08-14, after the full frontend
+rebuild documented in `REVAMP_PLAN.md`. Verdict first, then findings fixed.*
 
 ## Verdict
 
-The direction is right — a deep-space launch metaphor, one mascot, one gradient system, one voice. The 3D hero genuinely pans up on scroll (layered translateZ + rotateX + a rocket that flies away), which delivers the requested "3D design that pans up". Cards tilt, states glow, and Rokky's copy gives the product a personality most study apps lack.
+The old build was a competent but generic "deep-space" dark theme — purple→cyan
+gradients, Inter, glassmorphism, emoji nav, one card skeleton reused everywhere.
+It could have been any AI SaaS product. The revamp replaces it with an exam-hall
+material language that is genuinely this product's own: **the OMR answer sheet**.
+The hero is now a real perspective grid of answer bubbles that pans up on scroll,
+with a red margin line and a rising "flight path" of filled bubbles; the palette
+(ballpoint blue `#2241a8`, examiner red `#b3261e`, warm paper `#f4f3ee`) is named
+"Paper & Ink"; type is Fraunces (gazette serif) + Public Sans + JetBrains Mono.
+Every page now varies its structure (register, gazette masthead, cover sheet,
+answer booklet, marksheet ledger) instead of reusing one grid.
 
-But a launch-day review must be blunt. Issues found and fixed:
+## What was fixed vs. the boring-UI audit
 
-## Issues found → fixed
+| Audit item | Fix |
+|---|---|
+| Inter/system-ui as the whole type system | Fraunces display + Public Sans body + JetBrains Mono utility, self-hosted via next/font |
+| Purple→cyan gradients | Deleted. Primary = flat ballpoint blue; danger = examiner red; no gradients carry the brand |
+| Centered hero + subhead + 2 buttons + floating chips | OMR-sheet 3D scene with a thesis line and specific CTAs ("Fill today's bubbles" / "Set a full paper") |
+| Rows of identical glass cards | Per-page structures: hall-ticket register, gazette masthead, question-paper cover, answer booklet, marksheet |
+| Emoji icon set used as-is | Custom 2px-round-cap stroke icon set (`components/ui/Icon.tsx`); emoji retained only as margin handwriting in hints/toasts |
+| Glassmorphism everywhere | Removed; borders-first paper sheets, no backdrop blur except the sticky quiz bar |
+| One shadow/radius scale everywhere | Paper-on-paper elevation (`--shadow-1/2/3`), 12px radius, deliberate variations (stamps, seals, margin rules) |
+| Generic copy | Rewritten per page (see below) — no "Get Started / Learn More" anywhere |
+| Fade-up-on-scroll everywhere | One orchestrated load moment (hero fill sequence); scroll reveals only where content is sequential |
+| Gray-box empty states | Empty states now carry direction + the Rokky mascot, in the interface's voice |
 
-1. **Decorative chips blocked clicks.** Floating hero stat chips sat at z-index 6 with no `pointer-events: none` — they intercepted taps on small screens where they overlap CTA/scroll areas. → Fixed (pointer-events: none).
-2. **Mobile chip clutter.** Four absolutely-positioned chips crowd a 360px viewport and collide with the title. → Hidden below 700px; the hero keeps clouds + rocket + title.
-3. **No focus-visible styling.** Keyboard users (a real segment for exam takers) got no indication on tab. → Added `:focus-visible` outlines to buttons, nav, chips, options.
-4. **Long content overflow.** AI-generated quiz options and flashcard backs can exceed their containers; text could clip on mobile. → `overflow-wrap: anywhere` on `.md`, options and flip faces; flip-face gets internal scrolling.
-5. **Timer legibility on mobile.** The sticky quiz header packs title + timer + badges; timer could wrap below the fold on narrow screens. → Title truncation + tightened gaps on mobile.
-6. **Low-contrast hints.** `--text-faint` (#6b7a99) on the darkest background is below comfortable contrast for `.hint` copy at 12px. → Bumped to #7c8bab and hints to 12.5px.
-7. **Hero title glow could halo on light-projector screens.** Reduced text-shadow spread slightly; kept the gradient.
-8. **Print layout.** Report cards print with browser chrome around the sidebar-less content; margins were tight. → Print block margin + page-break rules for sections.
-9. **Scroll-jank guard.** The hero pan writes a CSS var on every scroll frame; added `will-change: transform` already present — plus passive listener. No further change needed after profiling the math (single rAF, one style write).
-10. **Empty states without Rokky.** Several empty states used plain text. → Empty states now show the mascot (consistent brand moment).
+## Copy pass (before → after)
 
-## What I deliberately kept
+- "Your mission control for … government exams" → "One copilot · every government exam"
+- "Launch a Practice Quiz / Take a Mini Mock" → "Fill today's bubbles / Set a full paper"
+- "Submit" (quiz) → "Hand in paper"
+- Page titles now own a thesis: "The examination register", "The answer booklet",
+  "Your marksheet, kept honestly", "Cards that remember for you", "The control register".
 
-- Dark theme only (a light theme would split the identity budget with no user demand yet).
-- Emoji iconography (fast, cross-platform, zero asset weight; replaced by custom SVG if this ships as a product).
-- Glassmorphism + glow restrained to interactive elements — the dashboard content area stays calm so the hero owns the spectacle.
+## Deliberate calls (and why)
+
+- **Light theme.** The client asked for `#ffffff`/`#f4f3ee`; the OMR sheet justifies
+  the cream as *material*, not pastel decoration — the brief's cliché-look warning is
+  dodged because the accent is ballpoint blue, never terracotta.
+- **CSS 3D, not WebGL.** No existing 3D stack, and the client forbade dependency
+  changes; the brief §4 sanctions a geometrically-considered CSS-3D scene. The sheet
+  uses true `perspective` + layered `translateZ` + scroll-linked `rotateX` pan-up +
+  pointer parallax, with `prefers-reduced-motion` and mobile fallbacks.
+- **Rokky stays a rocket** (continuity), but redrawn as a printed-ink illustration
+  with ruled-paper stripes and the OMR bubble motif following him around.
+- **Chart re-inking.** `lib/report/charts.ts` + `template.ts` color literals were
+  the presentation layer of the report cards — moved to the ink palette so reports
+  match the app instead of embedding the old dark palette.
+
+## Known limitations (honest)
+
+- Custom SVG icons replace emoji in nav/headers; some emoji remain in toast/hint
+  micro-copy by choice (warmth), not from oversight.
+- The OMR hero is CSS-3D, not raytraced WebGL — it trades photorealism for a
+  dependency-free 60fps scene that still genuinely pans up on scroll.
+- Exam-card tint colors (`e.color`) come from `content/exams/*.json` and are used
+  at low opacity as "seals"; they're not part of the core palette.
+
+## Accessibility floor checked
+- Focus-visible outlines on all controls; contrast ≥ AA on paper/sheet for ink-2,
+  red, amber, tick and ball; `prefers-reduced-motion` collapses all animation to
+  instant; numeric readouts use tabular figures; responsive to 360px (register rows,
+  palettes and the hero all collapse).

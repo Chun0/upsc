@@ -146,16 +146,24 @@ export default function SettingsPage() {
 
   return (
     <div>
+      <div className="page-head">
+        <div className="eyebrow">Settings</div>
+        <h1>The control register</h1>
+        <p className="dim" style={{ maxWidth: 660 }}>
+          Profile, model routing, key rotation and data — everything stored locally in your gitignored
+          <code style={{ fontFamily: "var(--font-mono)", fontSize: 12 }}> ./data</code> folder. Nothing leaves this machine.
+        </p>
+      </div>
       <div className="tab-row">
-        <button className={`tab${tab === "profile" ? " on" : ""}`} onClick={() => setTab("profile")}>👤 Profile</button>
-        <button className={`tab${tab === "models" ? " on" : ""}`} onClick={() => setTab("models")}>🧠 Models & Keys</button>
-        <button className={`tab${tab === "orchestration" ? " on" : ""}`} onClick={() => setTab("orchestration")}>🔀 Orchestration</button>
-        <button className={`tab${tab === "data" ? " on" : ""}`} onClick={() => setTab("data")}>💾 Data</button>
+        <button className={`tab${tab === "profile" ? " on" : ""}`} onClick={() => setTab("profile")}>Profile</button>
+        <button className={`tab${tab === "models" ? " on" : ""}`} onClick={() => setTab("models")}>Models &amp; Keys</button>
+        <button className={`tab${tab === "orchestration" ? " on" : ""}`} onClick={() => setTab("orchestration")}>Orchestration</button>
+        <button className={`tab${tab === "data" ? " on" : ""}`} onClick={() => setTab("data")}>Data</button>
       </div>
 
       {tab === "profile" ? (
         <div className="card" style={{ maxWidth: 640 }}>
-          <h3>Profile</h3>
+          <h3 style={{ fontFamily: "var(--font-display)" }}>Profile</h3>
           <div className="field">
             <label className="fld">Name</label>
             <input value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} />
@@ -183,7 +191,7 @@ export default function SettingsPage() {
       {tab === "models" ? (
         <div className="grid cols-2">
           <div className="card">
-            <h3>Model routing</h3>
+            <h3 style={{ fontFamily: "var(--font-display)" }}>Model routing</h3>
             <div className="field">
               <label className="fld">🧠 Master model (hard tasks: scoring, reports, plans, digests, validation)</label>
               <select value={settings.masterModel} onChange={(e) => setSettings({ ...settings, masterModel: e.target.value })}>
@@ -239,7 +247,7 @@ export default function SettingsPage() {
 
           <div className="card">
             <div className="card-title-row">
-              <h3>🔑 API keys ({keys.length})</h3>
+              <h3 style={{ fontFamily: "var(--font-display)" }}>API keys ({keys.length})</h3>
               <button className="btn small right" onClick={fetchModels} disabled={fetchingModels}>
                 {fetchingModels ? <span className="spinner" /> : "🔄"} {fetchingModels ? "Fetching…" : "Refresh model list"}
               </button>
@@ -277,7 +285,7 @@ export default function SettingsPage() {
       {tab === "orchestration" ? (
         <div className="grid cols-2">
           <div className="card">
-            <h3>Key rotation & rate limits</h3>
+            <h3 style={{ fontFamily: "var(--font-display)" }}>Key rotation & rate limits</h3>
             <div className="field">
               <label className="fld">Rotation strategy</label>
               <div className="row">
@@ -311,7 +319,7 @@ export default function SettingsPage() {
             <button className="btn primary mt8" onClick={saveAll} disabled={saving}>{saving ? <span className="spinner" /> : null} Save orchestration</button>
           </div>
           <div className="card">
-            <h3>Live lanes</h3>
+            <h3 style={{ fontFamily: "var(--font-display)" }}>Live lanes</h3>
             {status ? (
               <>
                 <div className="row">
@@ -336,7 +344,7 @@ export default function SettingsPage() {
 
       {tab === "data" ? (
         <div className="card" style={{ maxWidth: 640 }}>
-          <h3>💾 Data</h3>
+          <h3 style={{ fontFamily: "var(--font-display)" }}>Data</h3>
           <p className="small dim">All data (profile, keys, quizzes, attempts, reports, mastery map) lives in a single JSON file in the gitignored <code>./data</code> folder. It never leaves your machine and is never pushed to GitHub.</p>
           <div className="row mt16">
             <button className="btn" onClick={exportData}>📦 Export backup (JSON)</button>
@@ -346,7 +354,7 @@ export default function SettingsPage() {
           </div>
           <div className="hint mt8">Backup excludes raw API keys (masked) — re-add keys in Settings after a restore.</div>
           <div className="divider" />
-          <h3>About</h3>
+          <h3 style={{ fontFamily: "var(--font-display)" }}>About</h3>
           <p className="small dim">
             UDAAN v1.0 — single-user, local-first exam copilot. Master model {settings.masterModel} handles hard tasks; slave {settings.slaveModel} handles light ones through a rate-limit-aware queue with key rotation. Reports are predesigned markdown cards that the LLM only fills. Built with Next.js, marked.js, @google/genai.
           </p>

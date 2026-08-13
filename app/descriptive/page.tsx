@@ -4,7 +4,6 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { listExams, getExam } from "@/lib/content/exams";
 import { useToast } from "@/components/ui/Toast";
-import Modal from "@/components/ui/Modal";
 import type { ExamDef } from "@/lib/types";
 
 interface PaperQ {
@@ -42,7 +41,7 @@ function DescriptiveSetup() {
       if (!res.ok) throw new Error((await res.json()).error || "paper generation failed");
       const data = await res.json();
       setPaper(data.questions || []);
-      toast(`Paper set: ${data.questions?.length || 0} questions for ${exam.name} 🖋️`, "success");
+      toast(`Paper set: ${data.questions?.length || 0} questions for ${exam.name}`, "success");
     } catch (e) {
       toast(String((e as Error).message || e), "error");
     } finally {
@@ -69,7 +68,7 @@ function DescriptiveSetup() {
         out.push(await res.json());
       }
       setResults(out);
-      toast("All answers scored — board-examiner standard! 📋", "success");
+      toast("All answers scored — board-examiner standard!", "success");
     } catch (e) {
       toast(String((e as Error).message || e), "error");
     } finally {
@@ -82,21 +81,30 @@ function DescriptiveSetup() {
 
   return (
     <div>
+      <div className="page-head">
+        <div className="eyebrow">Descriptive</div>
+        <h1>The answer booklet</h1>
+        <p className="dim" style={{ maxWidth: 660 }}>
+          Mains-style questions with word limits, scored against a board-examiner rubric — content, structure,
+          examples and language, marked in red like the real thing.
+        </p>
+      </div>
+
       <div className="card">
         <div className="row">
-          <div className="exam-ico" style={{ background: `${exam.color}22`, border: `1px solid ${exam.color}55` }}>{exam.icon}</div>
+          <div className="exam-ico" style={{ background: `${exam.color}14`, border: `1px solid ${exam.color}55` }}>{exam.icon}</div>
           <div className="grow">
-            <h2 style={{ margin: 0 }}>🖋️ Descriptive practice — {exam.name}</h2>
-            <div className="dim small">Mains-style questions, rubric scoring, model answers. Select your exam's descriptive stage in Settings for full authenticity.</div>
+            <h2 style={{ margin: 0 }}>{exam.name}</h2>
+            <div className="dim small">Mains-style questions, rubric scoring, model answers.</div>
           </div>
           <div className="row">
-            <select style={{ width: 120 }} value={count} onChange={(e) => setCount(Number(e.target.value))}>
+            <select style={{ width: 130 }} value={count} onChange={(e) => setCount(Number(e.target.value))}>
               {[2, 3, 4, 6, 8].map((n) => (
                 <option key={n} value={n}>{n} questions</option>
               ))}
             </select>
             <button className="btn primary" onClick={generatePaper} disabled={busy}>
-              {busy ? <span className="spinner" /> : "📝"} {busy ? "Setting paper…" : "Generate paper"}
+              {busy ? <span className="spinner" /> : "✎"} {busy ? "Setting paper…" : "Generate paper"}
             </button>
           </div>
         </div>
@@ -107,7 +115,7 @@ function DescriptiveSetup() {
           {paper.map((q, i) => {
             const words = (answers[i] || "").trim().split(/\s+/).filter(Boolean).length;
             return (
-              <div key={i} className="card mb16">
+              <div key={i} className="card mb16" style={{ borderLeft: "3px solid var(--ball)" }}>
                 <div className="row">
                   <span className="badge info">Q{i + 1}</span>
                   <span className="badge neutral">{q.marks} marks</span>
@@ -122,12 +130,12 @@ function DescriptiveSetup() {
                       <div className={`badge ${Number(results[i].marksAwarded) / Number(results[i].maxMarks) >= 0.7 ? "success" : Number(results[i].marksAwarded) / Number(results[i].maxMarks) >= 0.4 ? "warn" : "danger"}`}>
                         {results[i].marksAwarded}/{results[i].maxMarks} — {results[i].band}
                       </div>
-                      <div className="card pad-sm mt8">
-                        <strong className="small">Feedback:</strong>
+                      <div className="card pad-sm mt8" style={{ borderLeft: "3px solid var(--red)" }}>
+                        <strong className="small" style={{ color: "var(--red)" }}>Examiner&apos;s remarks:</strong>
                         <div className="small dim">{results[i].feedback}</div>
                       </div>
                       <details className="mt8">
-                        <summary className="small" style={{ cursor: "pointer", fontWeight: 700, color: "var(--primary-2)" }}>View model answer</summary>
+                        <summary className="small" style={{ cursor: "pointer", fontWeight: 700, color: "var(--ball)" }}>View model answer</summary>
                         <div className="card pad-sm mt8 small dim" style={{ whiteSpace: "pre-wrap" }}>{results[i].modelAnswer}</div>
                       </details>
                     </div>
@@ -144,7 +152,7 @@ function DescriptiveSetup() {
             );
           })}
           {results ? (
-            <div className="card" style={{ background: "linear-gradient(135deg, rgba(109,92,255,0.14), rgba(34,211,238,0.06))" }}>
+            <div className="card" style={{ borderTop: "3px solid var(--ink)" }}>
               <div className="row">
                 <h2 style={{ margin: 0 }}>
                   Total: {totalAwarded}/{totalMax} ({totalMax ? Math.round((totalAwarded / totalMax) * 100) : 0}%)
@@ -156,16 +164,16 @@ function DescriptiveSetup() {
               </div>
               <div className="row mt16">
                 <button className="btn" onClick={() => { setResults(null); setAnswers({}); }}>
-                  ✍️ Rewrite answers
+                  Rewrite answers
                 </button>
                 <button className="btn primary" onClick={generatePaper}>
-                  📝 New paper
+                  New paper
                 </button>
               </div>
             </div>
           ) : (
             <button className="btn accent big grow" onClick={scoreAll} disabled={scoring}>
-              {scoring ? <span className="spinner" /> : "🧑‍⚖️"} {scoring ? "Rokky is grading (master model)…" : "Submit for AI scoring"}
+              {scoring ? <span className="spinner" /> : "✎"} {scoring ? "Rokky is grading (master model)…" : "Submit for AI scoring"}
             </button>
           )}
         </div>
@@ -173,7 +181,7 @@ function DescriptiveSetup() {
         <div className="card mt16">
           <div className="empty">
             <span className="ico">🖋️</span>
-            Generate a mains-style paper for {exam.name} — questions mirror the real descriptive stage's style, marks and word limits.
+            Generate a mains-style paper for {exam.name} — questions mirror the real descriptive stage&apos;s style, marks and word limits.
           </div>
         </div>
       )}

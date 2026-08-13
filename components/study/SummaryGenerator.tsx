@@ -86,7 +86,7 @@ export default function SummaryGenerator({ exams }: { exams: ExamDef[] }) {
 
   return (
     <div className="card">
-      <h3>✨ Rokky writes your notes</h3>
+      <h3 style={{ fontFamily: "var(--font-display)" }}>Rokky writes your notes</h3>
       <div className="field mt8">
         <label className="fld">Exam</label>
         <select value={examId} onChange={(e) => { setExamId(e.target.value); setSubject(""); setTopic(""); }}>
@@ -130,7 +130,7 @@ export default function SummaryGenerator({ exams }: { exams: ExamDef[] }) {
         </div>
       </div>
       <button className="btn primary grow" onClick={generate} disabled={genning || !topic}>
-        {genning ? <span className="spinner" /> : "✨"} {genning ? "Rokky is writing…" : "Generate study notes"}
+        {genning ? <span className="spinner" /> : "✎"} {genning ? "Rokky is writing…" : "Write my notes"}
       </button>
       <div className="hint mt8">Slave model drafts the outline, master model writes the full notes — two agents, one queue.</div>
       {genning && stream ? (

@@ -238,7 +238,7 @@ export default function QuizRunner({ quizId }: { quizId: string }) {
           <span className="badge warn">{marked} marked</span>
         </div>
         <button className="btn primary" onClick={() => setConfirmOpen(true)} disabled={submitting}>
-          {submitting ? <span className="spinner" /> : null} {submitting ? "Scoring…" : "Submit"}
+          {submitting ? <span className="spinner" /> : null} {submitting ? "Scoring…" : "Hand in paper"}
         </button>
       </div>
 
@@ -299,7 +299,17 @@ export default function QuizRunner({ quizId }: { quizId: string }) {
               })}
             </div>
             <div className="small muted mt16" style={{ lineHeight: 2 }}>
-              <div>🟩 answered · 🟨 marked · ⬜ unseen</div>
+              <div className="row" style={{ gap: 14 }}>
+                <span className="row" style={{ gap: 6 }}>
+                  <span style={{ width: 9, height: 9, borderRadius: "50%", background: "var(--tick)", display: "inline-block" }} /> answered
+                </span>
+                <span className="row" style={{ gap: 6 }}>
+                  <span style={{ width: 9, height: 9, borderRadius: "50%", background: "var(--amber)", display: "inline-block" }} /> marked
+                </span>
+                <span className="row" style={{ gap: 6 }}>
+                  <span style={{ width: 9, height: 9, borderRadius: "50%", border: "1.4px solid rgba(32,29,22,0.3)", display: "inline-block" }} /> unseen
+                </span>
+              </div>
               <div>
                 Progress: {fmtDuration(elapsed)} elapsed
                 {hasSectionTimers && currentSection ? ` • ${currentSection.name} timer active` : ""}
