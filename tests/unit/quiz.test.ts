@@ -142,6 +142,23 @@ describe("buildOfflineQuiz", () => {
     const q = buildOfflineQuiz(exam, { count: 30 });
     expect(q.questions.length).toBeLessThanOrEqual(exam.samples.length);
   });
+  it("maps mock section names to matching sample subjects (SSC CGL quant section)", () => {
+    const exam = getExam("ssc-cgl")!;
+    const q = buildOfflineQuiz(exam, { count: 4, kind: "mock", sectionName: "Section I — Mathematical Abilities (Module I)", marksPerQ: 3, negFraction: 1 / 3 });
+    expect(q.questions.length).toBeGreaterThan(0);
+    expect(q.questions.every((x) => x.subject === "Quantitative Aptitude")).toBe(true);
+  });
+  it("maps mock section names to matching sample subjects (AFCAT verbal section)", () => {
+    const exam = getExam("afcat")!;
+    const q = buildOfflineQuiz(exam, { count: 3, kind: "mock", sectionName: "Verbal Ability in English", marksPerQ: 3, negFraction: 1 / 3 });
+    expect(q.questions.every((x) => x.subject === "Verbal Ability in English")).toBe(true);
+  });
+  it("gracefully falls back to the full pool for unmappable sections (UPSC GS)", () => {
+    const exam = getExam("upsc-cse")!;
+    const q = buildOfflineQuiz(exam, { count: 3, kind: "mock", sectionName: "General Studies", marksPerQ: 2, negFraction: 1 / 3 });
+    expect(q.questions.length).toBe(3);
+    expect(q.questions.every((x) => exam.samples.some((s) => s.s === x.subject))).toBe(true);
+  });
 });
 
 describe("normalizedSelection", () => {

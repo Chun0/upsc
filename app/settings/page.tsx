@@ -216,6 +216,24 @@ export default function SettingsPage() {
                 <button className={`chip${!settings.enableSearch ? " on" : ""}`} onClick={() => setSettings({ ...settings, enableSearch: false })}>❌ Disabled</button>
               </div>
             </div>
+            <div className="field">
+              <label className="fld">Temperature (creativity)</label>
+              <div className="row">
+                <button className={`chip${settings.temperature === null ? " on" : ""}`} onClick={() => setSettings({ ...settings, temperature: null })}>
+                  Default (per model)
+                </button>
+                <button className={`chip${settings.temperature === 0.4 ? " on" : ""}`} onClick={() => setSettings({ ...settings, temperature: 0.4 })}>
+                  🎯 0.4 precise
+                </button>
+                <button className={`chip${settings.temperature === 0.7 ? " on" : ""}`} onClick={() => setSettings({ ...settings, temperature: 0.7 })}>
+                  ⚖️ 0.7 balanced
+                </button>
+                <button className={`chip${settings.temperature === 1.0 ? " on" : ""}`} onClick={() => setSettings({ ...settings, temperature: 1.0 })}>
+                  🎲 1.0 creative
+                </button>
+              </div>
+              <div className="hint">Lower = fact-precise (quiz generation, scoring). Higher = varied phrasing (summaries, motivation).</div>
+            </div>
             <button className="btn primary" onClick={saveAll} disabled={saving}>{saving ? <span className="spinner" /> : null} Save routing</button>
           </div>
 
@@ -326,6 +344,7 @@ export default function SettingsPage() {
               ☢️ Reset all data
             </button>
           </div>
+          <div className="hint mt8">Backup excludes raw API keys (masked) — re-add keys in Settings after a restore.</div>
           <div className="divider" />
           <h3>About</h3>
           <p className="small dim">

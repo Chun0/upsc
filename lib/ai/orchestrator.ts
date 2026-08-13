@@ -127,11 +127,15 @@ export class Orchestrator {
 
   /** 25s max ping to detect hanging/unavailable models before committing a real task. */
   private async warmUp(model: string) {
+    this.syncPool(); // ensure keys are loaded before probing
     if (!this.pool.usableKeys().length) return;
     try {
       await this.generateWarmCall(model);
       warmModels.add(model);
-    } catch {
+    } catch (err) {
+      // transient rate/quota errors must NOT blacklist the model — only skip warming
+      const msg = String((err as Error)?.message || "");
+      if (/429|quota|billing|rate.?limit/i.test(msg)) return;
       markModelDead(model, 0);
     }
   }
@@ -202,8 +206,11 @@ export class Orchestrator {
       config.responseMimeType = "application/json";
       config.responseSchema = opts.schema;
     }
-    if (opts.temperature != null && opts.temperature !== undefined) {
-      config.temperature = opts.temperature;
+    const temperature = opts.temperature != null && opts.temperature !== undefined
+      ? opts.temperature
+      : (settings?.temperature != null && settings?.temperature !== undefined ? settings.temperature : null);
+    if (temperature != null && temperature !== undefined) {
+      config.temperature = temperature;
     }
     if (opts.maxOutputTokens) config.maxOutputTokens = opts.maxOutputTokens;
 

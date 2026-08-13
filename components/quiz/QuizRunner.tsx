@@ -156,21 +156,42 @@ export default function QuizRunner({ quizId }: { quizId: string }) {
     }
   };
 
-  // ----- auto-submit on timeout -----
+  // ----- auto-submit on timeout / section lock -----
   useEffect(() => {
     if (!attempt || submitting) return;
     if (totalSec && remaining <= 0) {
       toast("Time's up! Submitting automatically ⏰", "warn");
       submit();
+      return;
     }
-    if (hasSectionTimers && sectionRemaining <= 0 && currentSection) {
-      toast(`${currentSection.name} time over — moving on ⏰`, "warn");
-      const next = quiz!.questions.findIndex((q) => !currentSection.questionIds.includes(q.id) && idx < quiz!.questions.indexOf(q));
+    if (hasSectionTimers && sectionRemaining <= 0 && currentSection && quiz) {
+      const next = quiz.questions.findIndex((q) => !currentSection.questionIds.includes(q.id) && idx < quiz.questions.indexOf(q));
       const target = next >= 0 ? next : idx + 1;
-      if (target < quiz!.questions.length) setIdx(target);
+      if (target < quiz.questions.length) {
+        toast(`${currentSection.name} time over — moving on ⏰`, "warn");
+        setIdx(target);
+      }
+      // last section expired: stay, timer shows 00:00, user submits manually (no toast spam)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remaining, sectionRemaining, submitting]);
+
+  // mark questions as visited the moment they're shown (palette state)
+  useEffect(() => {
+    if (!attempt || !question || submitting) return;
+    const prev = attempt.answers[question.id];
+    if (!prev?.firstSeenAt) {
+      const nowMs = Date.now();
+      persist({
+        ...attempt,
+        answers: {
+          ...attempt.answers,
+          [question.id]: { selected: prev?.selected ?? [], markedForReview: prev?.markedForReview, firstSeenAt: nowMs, lastChangedAt: prev?.lastChangedAt, timeSpentMs: prev?.timeSpentMs ?? 0 },
+        },
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question?.id]);
 
   if (loading) {
     return (

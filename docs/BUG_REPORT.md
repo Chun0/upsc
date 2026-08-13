@@ -35,6 +35,19 @@
 - Diff review: all committed files reviewed for accidental junk — none; `.env.example` contains no real values.
 - Report templates escape labels; DOMPurify allowlist keeps SVG, forbids scripts/iframes/forms.
 
+## Round-2 verification (2026-08-14) — new findings & fixes
+
+| # | Severity | Symptom | Root cause | Fix |
+|---|---|---|---|---|
+| 13 | 🟠 High | First master-lane call in a fresh process could still hang 90s (warm-up silently skipped) | `warmUp` checked `pool.usableKeys()` before the pool had ever been synced — empty pool → probe skipped | `syncPool()` at the top of `warmUp` |
+| 14 | 🟡 Medium | Transient 429/quota during the warm-up probe permanently blacklisted an otherwise healthy model | `warmUp` marked any probe failure as dead (cooldown 0 = permanent) | Rate/quota-class errors skip warming only; only structural failures blacklist |
+| 15 | 🟡 Medium | "Section time over" toast spammed every second when the LAST section expired (no section left to advance to) | Toast fired before the target-exists check | Toast moved inside the `target < questions.length` branch |
+| 16 | 🟢 Low | Palette showed "unseen" for questions the user had merely viewed (no answer interaction) | `firstSeenAt` set only on answer changes | Visited-marker effect fires when a question is shown |
+| 17 | 🟡 Medium | Settings "temperature" existed in the model but was never wired | Orchestrator read only per-call overrides, never `settings.temperature` | Orchestrator falls back to `settings.temperature`; UI control added (Default/0.4/0.7/1.0) |
+| 18 | 🟢 Low | Offline mini-mock sections pulled a generic sample mix (quant section could show English samples) | Section→subject matching used naive substring logic | Keyword hint table maps section names to syllabus subjects; falls back to full pool only when unmappable (3 regression tests) |
+| 19 | 🟢 Low | Push script's scope check created a junk issue on the repo | Issue-create as a write-scope probe | Removed — the push itself is the scope test |
+| 20 | 🟢 Low | Dashboard 500 during verification | `next build` ran while `next dev` held `.next` (dev/prod cache collision — tooling, not app code) | Cleared `.next`, restarted dev, all 12 pages 200; procedure documented (never build while dev runs) |
+
 ## Known limitations (honest)
 
 1. `gemini-flash-latest` hangs on this (new-user) API key; `gemini-2.5-flash` is 404. The orchestrator self-heals via fallback chains — for best speed set Master model to `gemini-3-flash-preview` (or `gemma-4-31b-it`) in Settings → Models & Keys.

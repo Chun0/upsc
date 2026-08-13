@@ -168,6 +168,27 @@ export function miniMockPlan(
   return { sections: out, totalMarks, totalDurationMin };
 }
 
+/** Loose keyword map from section names to syllabus subjects (for offline mocks). */
+const SECTION_SUBJECT_HINTS: [string, string[]][] = [
+  ["quantitative", ["Quantitative Aptitude", "Mathematics", "Elementary Mathematics", "Data Analysis"]],
+  ["mathematical", ["Quantitative Aptitude", "Mathematics"]],
+  ["mathematics", ["Mathematics", "Elementary Mathematics"]],
+  ["reasoning", ["General Intelligence & Reasoning", "Reasoning Ability", "Reasoning & Military Aptitude"]],
+  ["intelligence", ["General Intelligence & Reasoning", "Reasoning Ability"]],
+  ["english", ["English", "English Language", "Verbal Ability in English", "English (GAT)"]],
+  ["comprehension", ["English", "English Language"]],
+  ["verbal", ["Verbal Ability in English", "English"]],
+  ["awareness", ["General Awareness", "General Awareness & Current Affairs", "General / Banking Awareness", "General / Economy / Banking Awareness"]],
+  ["knowledge", ["General Knowledge", "General Knowledge & Science"]],
+  ["general", ["General Awareness", "General Studies", "General Knowledge"]],
+  ["numerical", ["Numerical Ability", "Quantitative Aptitude"]],
+  ["science", ["General Science", "General Knowledge & Science", "Science & Technology"]],
+  ["aptitude", ["CSAT Aptitude", "Quantitative Aptitude"]],
+  ["csat", ["CSAT Aptitude"]],
+  ["teaching", ["Paper 1 — Teaching & Research Aptitude"]],
+  ["child", ["Child Development & Pedagogy"]],
+];
+
 /** Offline quiz builder from sample questions (no API needed). */
 export function buildOfflineQuiz(
   exam: ExamDef,
@@ -176,7 +197,14 @@ export function buildOfflineQuiz(
   let pool = [...exam.samples];
   if (opts.subject) pool = pool.filter((s) => s.s === opts.subject);
   if (opts.topics?.length) pool = pool.filter((s) => opts.topics!.some((t) => s.t.toLowerCase().includes(t.toLowerCase()) || t.toLowerCase().includes(s.t.toLowerCase())));
-  if (opts.kind === "mock" && opts.sectionName) pool = pool.filter((s) => s.s.toLowerCase().includes(opts.sectionName!.split("—")[0].trim().toLowerCase()) || opts.sectionName!.toLowerCase().includes(s.s.toLowerCase()));
+  // mock section -> subject hints (so a "Quantitative Aptitude" section gets quant samples)
+  if (opts.kind === "mock" && opts.sectionName) {
+    const section = opts.sectionName.toLowerCase();
+    const hinted = SECTION_SUBJECT_HINTS.filter(([key]) => section.includes(key)).flatMap(([, subs]) => subs);
+    const candidates = pool.filter((s) => hinted.some((h) => h.toLowerCase() === s.s.toLowerCase()));
+    if (candidates.length) pool = candidates;
+    else pool = pool.filter((s) => section.includes(s.s.toLowerCase()) || s.s.toLowerCase().includes(section.replace(/—.*$/, "").trim()));
+  }
   if (!pool.length) pool = [...exam.samples];
   const count = clamp(opts.count || 10, 1, pool.length);
   const chosen = seededShuffle(pool, Date.now() % 100000).slice(0, count);

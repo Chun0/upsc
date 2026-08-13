@@ -13,18 +13,15 @@ REPO="Chun0/upsc"
 TOKEN="$GITHUB_TOKEN"
 AUTH="Authorization: Bearer $TOKEN"
 
-# verify write scope early
-SCOPE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.github.com/repos/$REPO/issues" \
-  -H "$AUTH" -H "Content-Type: application/json" -d '{"title":"scope-check"}' || true)
-if [ "$SCOPE" = "403" ] || [ "$SCOPE" = "401" ]; then
-  echo "✗ Token cannot write to $REPO (HTTP $SCOPE)."
-  echo "  Fix: create a fine-grained PAT with Contents: Read and write +"
-  echo "  Pull requests: Read and write, scoped to this repo, then retry."
+# verify write scope WITHOUT leaving junk on the repo (git push itself is the test)
+git checkout main
+if ! git push "https://x-access-token:${TOKEN}@github.com/${REPO}.git" main 2> /tmp/udaan-push-err.txt; then
+  echo "✗ Push to $REPO failed. Token likely lacks write scope."
+  tail -3 /tmp/udaan-push-err.txt
+  echo "  Fix: fine-grained PAT with Contents: Read and write + Pull requests: Read and write on $REPO."
   exit 1
 fi
 
-git checkout main
-git push "https://x-access-token:${TOKEN}@github.com/${REPO}.git" main
 git checkout feature/complete-app
 git push "https://x-access-token:${TOKEN}@github.com/${REPO}.git" feature/complete-app
 
