@@ -1,0 +1,71 @@
+{
+  "id": "ugc-net",
+  "name": "UGC NET",
+  "fullName": "National Eligibility Test",
+  "org": "National Testing Agency (NTA)",
+  "icon": "🎓",
+  "color": "#c084fc",
+  "tagline": "Assistant Professor & JRF — no negative marking, attempt everything.",
+  "overview": "Single 3-hour CBT: Paper 1 (Teaching & Research Aptitude, 50Q/100m, 10 fixed units × 5Q) + Paper 2 (subject-specific, 100Q/200m). +2 per correct, NO negative marking.",
+  "eligibility": ["Postgraduate (55%+ for General)", "No upper age limit for Assistant Professor; 31 for JRF"],
+  "age": "No limit (AP); 31 (JRF)",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "CBT (Paper 1 + Paper 2)", "mode": "objective", "note": "Single 3h session" }
+  ],
+  "patterns": [
+    {
+      "stage": "CBT",
+      "durationMin": 180, "questions": 150, "marks": 300, "negative": "none", "negFraction": 0,
+      "sections": [
+        { "name": "Paper 1 — Teaching & Research Aptitude", "questions": 50, "marks": 100, "durationMin": 60 },
+        { "name": "Paper 2 — Subject (e.g., Commerce, History, CS)", "questions": 100, "marks": 200, "durationMin": 120 }
+      ],
+      "notes": ["+2 each; no negative marking", "Free movement between papers", "Paper 1: 10 units × 5 questions each"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Paper 1 — Teaching & Research Aptitude", "weight": 0.34,
+      "topics": [
+        { "name": "Teaching Aptitude", "weight": 0.1, "pyq": 5, "difficulty": 2, "sub": ["Methods", "Evaluation", "Learner characteristics"] },
+        { "name": "Research Aptitude", "weight": 0.1, "pyq": 5, "difficulty": 3, "sub": ["Types of research", "Hypothesis", "Sampling", "Ethics"] },
+        { "name": "Reading Comprehension", "weight": 0.1, "pyq": 5, "difficulty": 2, "sub": ["Passages", "Inference"] },
+        { "name": "Communication", "weight": 0.1, "pyq": 5, "difficulty": 1, "sub": ["Models", "Barriers", "Classroom communication"] },
+        { "name": "Mathematical Reasoning & Aptitude", "weight": 0.1, "pyq": 5, "difficulty": 2, "sub": ["Number series", "Ratio", "Fractions"] },
+        { "name": "Logical Reasoning", "weight": 0.1, "pyq": 5, "difficulty": 2, "sub": ["Indian logic", "Venn", "Syllogism", "Fallacies"] },
+        { "name": "Data Interpretation", "weight": 0.1, "pyq": 5, "difficulty": 2, "sub": ["Tables", "Charts", "Percentages"] },
+        { "name": "ICT", "weight": 0.1, "pyq": 5, "difficulty": 1, "sub": ["Hardware", "Internet", "E-governance"] },
+        { "name": "People, Development & Environment", "weight": 0.1, "pyq": 5, "difficulty": 2, "sub": ["SDGs", "Pollution", "Disasters"] },
+        { "name": "Higher Education System", "weight": 0.1, "pyq": 5, "difficulty": 2, "sub": ["NEP 2020", "UGC", "NAAC", "Regulatory bodies"] }
+      ]
+    },
+    {
+      "subject": "Paper 2 — Subject (generic example: Commerce)", "weight": 0.66,
+      "topics": [
+        { "name": "Core subject concepts (Paper 2)", "weight": 1, "pyq": 5, "difficulty": 3, "sub": ["Configure your subject in-app", "PYQ-based", "Unit-wise syllabus"] }
+      ]
+    }
+  ],
+  "trends": [
+    "No negative marking — attempt ALL questions (strategy: never leave blanks)",
+    "Paper 1 is the rank-booster; 10 units are fixed",
+    "NEP 2020 & higher-education regulation questions are frequent",
+    "Paper 2 cutoffs for JRF are substantially higher"
+  ],
+  "sources": ["https://ugcnet.nta.ac.in", "https://testbook.com/ugc-net/exam-pattern", "https://www.kopykitab.com/blog/ugc-net-exam-pattern/"],
+  "samples": [
+    { "q": "Which type of research is aimed at solving an immediate practical problem?", "o": ["Fundamental research", "Applied research", "Historical research", "Descriptive research"], "a": 1, "x": "Applied (action-oriented) research targets immediate, practical problems.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Research Aptitude", "d": 2 },
+    { "q": "The National Education Policy 2020 proposes the school structure of:", "o": ["10+2", "5+3+3+4", "8+4", "4+4+4"], "a": 1, "x": "NEP 2020 restructures school education as 5 (foundational) + 3 (preparatory) + 3 (middle) + 4 (secondary).", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Higher Education System", "d": 1 },
+    { "q": "In communication, the process of converting a message into symbols is called:", "o": ["Decoding", "Encoding", "Feedback", "Noise"], "a": 1, "x": "Encoding = converting ideas into transmittable symbols; decoding is the reverse at the receiver's end.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Communication", "d": 1 },
+    { "q": "Find the missing number: 2, 6, 12, 20, 30, ?", "o": ["40", "42", "44", "36"], "a": 1, "x": "Differences 4, 6, 8, 10 → next +12 = 42 (n² + n pattern).", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Mathematical Reasoning & Aptitude", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 12, "hoursPerDay": 4,
+    "phases": [
+      { "name": "Paper 1 mastery", "weeks": 5, "focus": "All 10 units + PYQs", "tasks": ["Unit-wise notes + 20 MCQs/day", "DI practice", "NEP/regulatory updates"] },
+      { "name": "Paper 2 deep dive", "weeks": 5, "focus": "Subject unit-wise with PYQs", "tasks": ["Unit-wise study", "PYQ sets", "Weekly mock"] },
+      { "name": "Peak", "weeks": 2, "focus": "Full mocks", "tasks": ["Full CBT simulation 2/week", "Rapid revision"] }
+    ]
+  }
+}

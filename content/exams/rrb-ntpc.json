@@ -1,0 +1,90 @@
+{
+  "id": "rrb-ntpc",
+  "name": "RRB NTPC",
+  "fullName": "Railway Non-Technical Popular Categories",
+  "org": "Railway Recruitment Boards",
+  "icon": "🚂",
+  "color": "#fb923c",
+  "tagline": "Station Master, Clerk, Goods Guard — two CBTs, no interview.",
+  "overview": "CBT 1: 100Q/100m/90min (GA 40, Maths 30, Reasoning 30), −1/3, screening only. CBT 2: 120Q/120m/90min, −1/3, decides merit. Then CBAT/Typing for specific posts.",
+  "eligibility": ["Graduate for most posts; 12th for some", "Age 18–33 (post-wise)"],
+  "age": "18–33",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "CBT 1", "mode": "objective", "note": "Screening" },
+    { "name": "CBT 2", "mode": "objective", "note": "Merit" },
+    { "name": "CBAT / Typing", "mode": "skill", "note": "For SM/TA and typist posts" }
+  ],
+  "patterns": [
+    {
+      "stage": "CBT 1",
+      "durationMin": 90, "questions": 100, "marks": 100, "negative": "1/3 mark", "negFraction": 0.333,
+      "sections": [
+        { "name": "General Awareness", "questions": 40, "marks": 40, "durationMin": 36 },
+        { "name": "Mathematics", "questions": 30, "marks": 30, "durationMin": 27 },
+        { "name": "General Intelligence & Reasoning", "questions": 30, "marks": 30, "durationMin": 27 }
+      ],
+      "notes": ["1 mark each; −1/3 wrong", "Screening only — not in merit"]
+    },
+    {
+      "stage": "CBT 2",
+      "durationMin": 90, "questions": 120, "marks": 120, "negative": "1/3 mark", "negFraction": 0.333,
+      "sections": [
+        { "name": "General Awareness", "questions": 50, "marks": 50, "durationMin": 38 },
+        { "name": "Mathematics", "questions": 35, "marks": 35, "durationMin": 26 },
+        { "name": "General Intelligence & Reasoning", "questions": 35, "marks": 35, "durationMin": 26 }
+      ],
+      "notes": ["Merit stage", "Normalization across shifts"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "General Awareness", "weight": 0.4,
+      "topics": [
+        { "name": "Current affairs (national & railway)", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Railway schemes", "Appointments", "Awards", "Sports"] },
+        { "name": "Static GK", "weight": 0.35, "pyq": 5, "difficulty": 1, "sub": ["History", "Geography", "Polity basics", "Firsts"] },
+        { "name": "General science", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Physics", "Chemistry", "Biology"] }
+      ]
+    },
+    {
+      "subject": "Mathematics", "weight": 0.3,
+      "topics": [
+        { "name": "Number system & simplification", "weight": 0.2, "pyq": 5, "difficulty": 1, "sub": ["LCM/HCF", "BODMAS", "Decimals"] },
+        { "name": "Percentages, profit & loss, SI/CI", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Discount", "Interest"] },
+        { "name": "Time & work, speed & distance", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["Trains", "Pipes"] },
+        { "name": "Average, ratio, mixture", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Alligation", "Ages"] },
+        { "name": "Mensuration & geometry", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["2D/3D", "Triangles"] }
+      ]
+    },
+    {
+      "subject": "General Intelligence & Reasoning", "weight": 0.3,
+      "topics": [
+        { "name": "Analogy, classification, series", "weight": 0.3, "pyq": 5, "difficulty": 1, "sub": ["Number/letter", "Odd one out"] },
+        { "name": "Coding-decoding & blood relations", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Shifts", "Family"] },
+        { "name": "Syllogism, Venn & direction", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Statements", "Directions"] },
+        { "name": "Puzzles & non-verbal", "weight": 0.25, "pyq": 4, "difficulty": 3, "sub": ["Seating", "Mirror", "Folding"] }
+      ]
+    }
+  ],
+  "trends": [
+    "GA is 40% of CBT 1 — railway current affairs matter",
+    "Maths is easy-moderate; accuracy at speed is the game",
+    "Normalization across shifts — consistency matters",
+    "No interview: CBT 2 score is final"
+  ],
+  "sources": ["https://rrbcdg.gov.in", "https://www.careerpower.in/rrb-ntpc-syllabus.html", "https://www.class24.study/rrb-group-d/rrb-ntpc-exam-pattern"],
+  "samples": [
+    { "q": "Which train holds the record for India's fastest operational speed (Vande Bharat family)?", "o": ["Rajdhani Express", "Vande Bharat Express (180 km/h capable)", "Shatabdi Express", "Garib Rath"], "a": 1, "x": "Vande Bharat trains are designed for 180 km/h with operational speeds of 130–160 km/h — the fastest in Indian Railways' fleet.", "s": "General Awareness", "t": "Current affairs (national & railway)", "d": 2 },
+    { "q": "A train 240 m long crosses a platform 360 m long in 30 seconds. Its speed is:", "o": ["60 km/h", "72 km/h", "80 km/h", "90 km/h"], "a": 1, "x": "Total distance = 240 + 360 = 600 m in 30 s → 20 m/s = 72 km/h.", "s": "Mathematics", "t": "Time & work, speed & distance", "d": 2 },
+    { "q": "Find the next term: 3, 8, 15, 24, 35, ?", "o": ["46", "48", "50", "42"], "a": 1, "x": "Differences: 5, 7, 9, 11 → next +13 = 48.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 },
+    { "q": "The headquarters of the Indian Railways is located at:", "o": ["Mumbai", "Kolkata", "New Delhi (Rail Bhawan)", "Chennai"], "a": 2, "x": "Railway Board/Rail Bhawan, New Delhi.", "s": "General Awareness", "t": "Static GK", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 12, "hoursPerDay": 3,
+    "phases": [
+      { "name": "Basics", "weeks": 4, "focus": "Maths formulas + reasoning + static GK", "tasks": ["Maths chapter-wise", "Reasoning types", "Static GK revision"] },
+      { "name": "Practice", "weeks": 4, "focus": "Sectional sets + CA", "tasks": ["2 sectional sets/day", "Railway CA notes", "Weekly mock"] },
+      { "name": "Peak", "weeks": 4, "focus": "Mocks + revision", "tasks": ["3 mocks/week", "Error log", "GA rapid revision"] }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "id": "upsc-cse",
+  "name": "UPSC CSE",
+  "fullName": "Civil Services Examination",
+  "org": "Union Public Service Commission",
+  "icon": "🏛️",
+  "color": "#6d5cff",
+  "tagline": "The mothership — IAS, IPS, IFS and 20+ services.",
+  "overview": "Three-stage marathon: Prelims (objective, qualifying), Mains (9 descriptive papers) and Personality Test. Prelims GS-I decides the cutoff; CSAT is qualifying at 33%.",
+  "eligibility": ["Graduate in any discipline", "Age 21–32 (relaxations for OBC/SC/ST)"],
+  "age": "21–32",
+  "attempts": "General 6, OBC 9, SC/ST unlimited",
+  "stages": [
+    { "name": "Prelims", "mode": "objective", "note": "GS-I merit + CSAT qualifying" },
+    { "name": "Mains", "mode": "descriptive", "note": "9 papers, 1750 marks" },
+    { "name": "Interview", "mode": "interview", "note": "275 marks" }
+  ],
+  "patterns": [
+    {
+      "stage": "Prelims GS Paper I",
+      "durationMin": 120, "questions": 100, "marks": 200, "negative": "1/3 of marks", "negFraction": 0.333,
+      "sections": [{ "name": "General Studies", "questions": 100, "marks": 200, "durationMin": 120 }],
+      "notes": ["Each question +2; −0.66 per wrong answer", "Cutoff is decided on this paper only"]
+    },
+    {
+      "stage": "Prelims CSAT (Paper II)",
+      "durationMin": 120, "questions": 80, "marks": 200, "negative": "1/3 of marks", "negFraction": 0.333,
+      "sections": [{ "name": "CSAT", "questions": 80, "marks": 200, "durationMin": 120 }],
+      "notes": ["Each question +2.5; −0.83 per wrong", "QUALIFYING: 33% (66.67/200) required", "Not counted in merit"]
+    },
+    {
+      "stage": "Mains",
+      "durationMin": 180, "questions": 0, "marks": 1750, "negative": "none", "negFraction": 0,
+      "sections": [
+        { "name": "Essay", "questions": 2, "marks": 250 },
+        { "name": "GS I–IV", "questions": 20, "marks": 250 },
+        { "name": "Optional I & II", "questions": 20, "marks": 250 },
+        { "name": "Qualifying: English + Regional Language", "questions": 0, "marks": 300 }
+      ],
+      "notes": ["Descriptive; 3 hours per paper", "GS papers 250 marks each; Optional 500 total", "Qualifying papers need 25%"]
+    },
+    { "stage": "Interview", "durationMin": 30, "questions": 0, "marks": 275, "negative": "none", "negFraction": 0, "sections": [], "notes": ["Personality test, 275 marks"] }
+  ],
+  "syllabus": [
+    {
+      "subject": "Polity & Governance", "weight": 0.14,
+      "topics": [
+        { "name": "Constitution: FRs, DPSPs, amendments", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Preamble", "Fundamental Rights", "DPSP", "Amendment procedure"] },
+        { "name": "Parliament & State Legislatures", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Bills", "Committees", "Privileges"] },
+        { "name": "Executive & Judiciary", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["President", "Governor", "Supreme Court", "Judicial review"] },
+        { "name": "Local government & Panchayati Raj", "weight": 0.1, "pyq": 3, "difficulty": 1, "sub": ["73rd/74th Amendments"] },
+        { "name": "Constitutional & statutory bodies", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Election Commission", "CAG", "NITI Aayog"] }
+      ]
+    },
+    {
+      "subject": "History & Culture", "weight": 0.14,
+      "topics": [
+        { "name": "Ancient India", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Indus Valley", "Mauryas", "Guptas", "Buddhism/Jainism"] },
+        { "name": "Medieval India", "weight": 0.2, "pyq": 3, "difficulty": 2, "sub": ["Delhi Sultanate", "Mughals", "Bhakti-Sufi"] },
+        { "name": "Modern India & Freedom Struggle", "weight": 0.35, "pyq": 5, "difficulty": 2, "sub": ["1857", "INC sessions", "Gandhian movements", "Subhas Bose"] },
+        { "name": "Art & Culture", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["Classical dances", "Architecture styles", "UNESCO sites"] }
+      ]
+    },
+    {
+      "subject": "Geography", "weight": 0.13,
+      "topics": [
+        { "name": "Physical geography", "weight": 0.3, "pyq": 4, "difficulty": 3, "sub": ["Geomorphology", "Climatology", "Oceanography"] },
+        { "name": "Indian geography", "weight": 0.35, "pyq": 5, "difficulty": 2, "sub": ["Rivers & drainage", "Soils", "Monsoon", "Agriculture"] },
+        { "name": "World geography & maps", "weight": 0.15, "pyq": 3, "difficulty": 2, "sub": ["Continents", "Straits", "Map-based questions"] },
+        { "name": "Human & economic geography", "weight": 0.2, "pyq": 3, "difficulty": 2, "sub": ["Population", "Industries", "Resources"] }
+      ]
+    },
+    {
+      "subject": "Economy", "weight": 0.13,
+      "topics": [
+        { "name": "Basics: GDP, inflation, money", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["National income", "CPI/WPI", "Monetary policy"] },
+        { "name": "Banking & financial system", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["RBI", "NPAs", "Basel norms"] },
+        { "name": "Budget, taxation & fiscal policy", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["FRBM", "GST", "Direct/indirect taxes"] },
+        { "name": "External sector & organisations", "weight": 0.15, "pyq": 3, "difficulty": 2, "sub": ["BoP", "WTO", "IMF", "World Bank"] },
+        { "name": "Schemes & inclusive growth", "weight": 0.15, "pyq": 3, "difficulty": 2, "sub": ["PM schemes", "Poverty", "Employment"] }
+      ]
+    },
+    {
+      "subject": "Environment & Ecology", "weight": 0.12,
+      "topics": [
+        { "name": "Ecosystems & biodiversity", "weight": 0.3, "pyq": 4, "difficulty": 2, "sub": ["Food chains", "Biomes", "Biodiversity hotspots"] },
+        { "name": "Protected areas & species", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["National parks", "Tiger reserves", "IUCN status"] },
+        { "name": "Climate change & conventions", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["UNFCCC", "Paris Agreement", "COP"] },
+        { "name": "Pollution & environmental laws", "weight": 0.2, "pyq": 3, "difficulty": 2, "sub": ["Air/water acts", "NGT", "Plastic rules"] }
+      ]
+    },
+    {
+      "subject": "Science & Technology", "weight": 0.11,
+      "topics": [
+        { "name": "Biology & health", "weight": 0.3, "pyq": 4, "difficulty": 2, "sub": ["Genetics", "Immunity", "Diseases & vaccines"] },
+        { "name": "Physics & chemistry in daily life", "weight": 0.25, "pyq": 3, "difficulty": 3, "sub": ["Light", "Sound", "Polymers", "Everyday chemistry"] },
+        { "name": "Space & defence tech", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["ISRO missions", "Missiles", "Satellites"] },
+        { "name": "IT, AI & emerging tech", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["AI", "Quantum", "Semiconductors", "Cyber security"] }
+      ]
+    },
+    {
+      "subject": "Current Affairs", "weight": 0.13,
+      "topics": [
+        { "name": "National current affairs", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Government schemes", "Bills & acts", "Reports & indices"] },
+        { "name": "International current affairs", "weight": 0.35, "pyq": 5, "difficulty": 2, "sub": ["Summits", "Treaties", "Geopolitics"] },
+        { "name": "Awards, sports & misc", "weight": 0.25, "pyq": 4, "difficulty": 1, "sub": ["Nobel", "Bharat Ratna", "Olympics", "Books & authors"] }
+      ]
+    },
+    {
+      "subject": "CSAT Aptitude", "weight": 0.10,
+      "topics": [
+        { "name": "Comprehension (English)", "weight": 0.35, "pyq": 5, "difficulty": 2, "sub": ["RC passages", "Inference"] },
+        { "name": "Quantitative aptitude", "weight": 0.25, "pyq": 4, "difficulty": 3, "sub": ["Percentages", "Time & work", "Number system"] },
+        { "name": "Logical reasoning", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Syllogisms", "Puzzles", "Series"] },
+        { "name": "Decision making", "weight": 0.15, "pyq": 3, "difficulty": 3, "sub": ["Situational judgement"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Heavy current-affairs + static linkage questions ('Consider the following pairs/statements')",
+    "Map-based and art & culture questions are rising",
+    "Economy questions increasingly applied (inflation, banking terms) rather than pure theory",
+    "Environment overlaps with schemes (MISHTI, Amrit Dharohar style)",
+    "CSAT difficulty fluctuating — never neglect it (qualifying 33%)"
+  ],
+  "sources": ["https://upsc.gov.in", "https://clearias.com/upsc-prelims-2026-question-paper/", "https://theiashub.com/upsc/upsc-prelims-exam-pattern/"],
+  "samples": [
+    { "q": "Which of the following statements regarding the President of India is/are correct? 1. The President can be removed only for violation of the Constitution. 2. The President's veto over Money Bills is absolute.", "o": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"], "a": 0, "x": "Statement 2 is wrong: the President cannot withhold assent to Money Bills — Article 111 makes his assent effectively mandatory. Removal under Article 61 is only for violation of the Constitution.", "s": "Polity & Governance", "t": "Executive & Judiciary", "d": 3 },
+    { "q": "Consider the following pairs (National Park : State) — 1. Bandhavgarh : Madhya Pradesh, 2. Similipal : Odisha, 3. Namdapha : Arunachal Pradesh. How many pairs are correctly matched?", "o": ["Only one", "Only two", "All three", "None"], "a": 2, "x": "All three are correct. Bandhavgarh (MP), Similipal (Odisha), Namdapha (Arunachal Pradesh).", "s": "Environment & Ecology", "t": "Protected areas & species", "d": 1 },
+    { "q": "Which of the following is NOT a component of the monetary policy framework of the RBI?", "o": ["Repo rate", "Cash Reserve Ratio", "Fiscal deficit target", "Marginal Standing Facility"], "a": 2, "x": "Fiscal deficit target is part of fiscal policy (government budget), not RBI's monetary policy toolkit.", "s": "Economy", "t": "Banking & financial system", "d": 2 },
+    { "q": "The 'Great Barrier Reef' is located off the coast of which country?", "o": ["Indonesia", "Australia", "Philippines", "Madagascar"], "a": 1, "x": "Great Barrier Reef lies in the Coral Sea off Queensland, Australia — the world's largest coral reef system.", "s": "Geography", "t": "World geography & maps", "d": 1 },
+    { "q": "With reference to 'Bharat Stage (BS) VI' emission norms, consider: 1. They cap particulate matter (PM) and nitrogen oxides (NOx) from vehicles. 2. BS-VI fuel has lower sulphur content than BS-IV. Which is/are correct?", "o": ["1 only", "2 only", "Both 1 and 2", "Neither"], "a": 2, "x": "BS-VI tightened PM/NOx limits and mandated 10 ppm sulphur fuel (vs 50 ppm in BS-IV). Both correct.", "s": "Science & Technology", "t": "Pollution & environmental laws", "d": 2 },
+    { "q": "If the 4th day of a month is Friday, which day will be the 26th day of the same month?", "o": ["Saturday", "Sunday", "Wednesday", "Tuesday"], "a": 0, "x": "26 − 4 = 22 days = 3 weeks + 1 day → Friday + 1 = Saturday.", "s": "CSAT Aptitude", "t": "Logical reasoning", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 24, "hoursPerDay": 5,
+    "phases": [
+      { "name": "Foundation (NCERTs + basics)", "weeks": 8, "focus": "Polity (Laxmikanth), History, Geography, Economy basics; daily newspaper notes", "tasks": ["Finish NCERTs class 6–12 for History/Geo/Economy", "One Laxmikanth chapter daily", "Daily current affairs notes in one-liner format"] },
+      { "name": "Consolidation & PYQs", "weeks": 8, "focus": "Standard books + 10 years of PYQs subject-wise", "tasks": ["Solve 25 PYQs daily with error log", "Environment & S&T from Shankar IAS + newspaper", "Start weekly sectional tests"] },
+      { "name": "Revision & Mocks", "weeks": 8, "focus": "Full-length mocks, CSAT practice, rapid revision", "tasks": ["2 mocks/week with full analysis", "CSAT 1 paper/week (qualifying — never skip)", "Revise one-liners and error log twice weekly"] }
+    ]
+  }
+}

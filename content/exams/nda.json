@@ -1,0 +1,88 @@
+{
+  "id": "nda",
+  "name": "NDA",
+  "fullName": "National Defence Academy & Naval Academy Examination",
+  "org": "UPSC",
+  "icon": "🎖️",
+  "color": "#a78bfa",
+  "tagline": "Class 11–12 maths + GAT. 25% sectional cutoff in each paper.",
+  "overview": "Written: Maths 120Q/300m (2.5h) + GAT 150Q/600m (2.5h) = 900 marks. Negative 1/3 (−0.83 Maths, −1.33 GAT). Each paper has 25% sectional cutoff. SSB interview 900 marks follows.",
+  "eligibility": ["12th pass (appearing allowed)", "Age 16.5–19.5"],
+  "age": "16.5–19.5",
+  "attempts": "Age-limited only",
+  "stages": [
+    { "name": "Written", "mode": "objective", "note": "Maths + GAT, 900 marks" },
+    { "name": "SSB Interview", "mode": "interview", "note": "900 marks, 5-day process" }
+  ],
+  "patterns": [
+    {
+      "stage": "Mathematics",
+      "durationMin": 150, "questions": 120, "marks": 300, "negative": "1/3 (−0.83)", "negFraction": 0.333,
+      "sections": [{ "name": "Mathematics", "questions": 120, "marks": 300, "durationMin": 150 }],
+      "notes": ["+2.5 correct, −0.83 wrong", "25% sectional cutoff applies", "Class 11–12 level (CBSE)"]
+    },
+    {
+      "stage": "GAT",
+      "durationMin": 150, "questions": 150, "marks": 600, "negative": "1/3 (−1.33)", "negFraction": 0.333,
+      "sections": [
+        { "name": "English", "questions": 50, "marks": 200, "durationMin": 50 },
+        { "name": "General Knowledge (incl. Science)", "questions": 100, "marks": 400, "durationMin": 100 }
+      ],
+      "notes": ["+4 correct, −1.33 wrong", "25% sectional cutoff applies"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Mathematics", "weight": 0.5,
+      "topics": [
+        { "name": "Algebra & quadratic equations", "weight": 0.15, "pyq": 5, "difficulty": 2, "sub": ["Sets", "Progressions", "Complex numbers"] },
+        { "name": "Trigonometry", "weight": 0.15, "pyq": 5, "difficulty": 3, "sub": ["Identities", "Heights & distances", "Inverse functions"] },
+        { "name": "Coordinate geometry & conics", "weight": 0.2, "pyq": 5, "difficulty": 3, "sub": ["Lines", "Circles", "Parabola", "Ellipse"] },
+        { "name": "Calculus: limits, derivatives, integration", "weight": 0.2, "pyq": 5, "difficulty": 3, "sub": ["Differentiation", "Applications", "Integration basics"] },
+        { "name": "Vectors & 3D", "weight": 0.1, "pyq": 3, "difficulty": 3, "sub": ["Dot/cross product", "Lines & planes"] },
+        { "name": "Statistics & probability", "weight": 0.1, "pyq": 4, "difficulty": 2, "sub": ["Mean/median/mode", "Probability"] },
+        { "name": "Matrices & determinants", "weight": 0.1, "pyq": 3, "difficulty": 2, "sub": ["Operations", "Inverse", "Cramer's rule"] }
+      ]
+    },
+    {
+      "subject": "English (GAT)", "weight": 0.25,
+      "topics": [
+        { "name": "Grammar & usage", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Error spotting", "Tense", "Prepositions"] },
+        { "name": "Vocabulary", "weight": 0.35, "pyq": 5, "difficulty": 2, "sub": ["Synonyms", "Antonyms", "One-word", "Idioms"] },
+        { "name": "Comprehension & jumbles", "weight": 0.35, "pyq": 5, "difficulty": 2, "sub": ["Passages", "Para jumbles", "Cloze"] }
+      ]
+    },
+    {
+      "subject": "General Knowledge & Science", "weight": 0.25,
+      "topics": [
+        { "name": "Physics", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Mechanics", "Electricity", "Light", "Modern physics"] },
+        { "name": "Chemistry", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Elements", "Reactions", "Acids/bases", "Everyday chemistry"] },
+        { "name": "Biology", "weight": 0.15, "pyq": 4, "difficulty": 1, "sub": ["Human body", "Nutrition", "Diseases"] },
+        { "name": "History & freedom movement", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Ancient", "Medieval", "Modern India"] },
+        { "name": "Geography & current events", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["India & world maps", "Rivers", "Defence news", "Sports"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Maths paper is concept-heavy, not calculation-heavy",
+    "GAT Science questions are NCERT-level — high scoring",
+    "25% cutoff in each paper trips up maths-weak candidates",
+    "English: vocabulary + grammar = 65% of section"
+  ],
+  "sources": ["https://upsc.gov.in", "https://oswaalbooks.com/pages/nda-exam-pattern-2026", "https://pwonlyias.com/upsc-nda-exam-pattern/"],
+  "samples": [
+    { "q": "If sin θ = 3/5 and θ is acute, the value of tan θ is:", "o": ["3/4", "4/3", "3/5", "5/4"], "a": 0, "x": "cos θ = 4/5, so tan θ = (3/5)/(4/5) = 3/4.", "s": "Mathematics", "t": "Trigonometry", "d": 1 },
+    { "q": "The derivative of x²·sin x is:", "o": ["2x cos x", "x² cos x + 2x sin x", "2x sin x + x² cos x", "2x sin x"], "a": 2, "x": "Product rule: d/dx(x²)sin x + x²·d/dx(sin x) = 2x sin x + x² cos x.", "s": "Mathematics", "t": "Calculus: limits, derivatives, integration", "d": 2 },
+    { "q": "Choose the antonym of 'EPHEMERAL':", "o": ["Transient", "Permanent", "Fragile", "Momentary"], "a": 1, "x": "Ephemeral = short-lived; antonym is permanent.", "s": "English (GAT)", "t": "Vocabulary", "d": 1 },
+    { "q": "The SI unit of electric current is:", "o": ["Volt", "Ohm", "Ampere", "Watt"], "a": 2, "x": "Electric current is measured in amperes (A).", "s": "General Knowledge & Science", "t": "Physics", "d": 1 },
+    { "q": "Who led the 'Dandi March' of 1930?", "o": ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Sardar Patel"], "a": 1, "x": "Mahatma Gandhi led the Salt Satyagraha/Dandi March from Sabarmati to Dandi.", "s": "General Knowledge & Science", "t": "History & freedom movement", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 24, "hoursPerDay": 5,
+    "phases": [
+      { "name": "Concept building", "weeks": 10, "focus": "Class 11–12 maths chapters + NCERT science", "tasks": ["Maths chapter-wise with derivations", "NCERT Physics/Chemistry/Biology", "Daily vocab 20 words"] },
+      { "name": "Practice", "weeks": 8, "focus": "PYQs + sectional speed", "tasks": ["50 maths PYQs/day", "GAT sectional sets", "Weekly full mock"] },
+      { "name": "Peak", "weeks": 6, "focus": "Full mocks + SSB basics", "tasks": ["3 mocks/week with 25% cutoff check", "Error log revision", "SSB prep (OIR, PPDT basics)"] }
+    ]
+  }
+}

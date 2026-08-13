@@ -1,0 +1,124 @@
+{
+  "id": "ssc-cgl",
+  "name": "SSC CGL",
+  "fullName": "Combined Graduate Level Examination",
+  "org": "Staff Selection Commission",
+  "icon": "🏢",
+  "color": "#22d3ee",
+  "tagline": "Two tiers, zero interview. Tier 2 builds your rank.",
+  "overview": "Tier 1 is qualifying (100Q/60min). Tier 2 decides merit: Paper 1 (150Q/450m, section time-locks), Computer Knowledge qualifying, DEST qualifying. Paper 3 (Finance) removed from 2025-26; Paper 2 (Statistics) only for JSO.",
+  "eligibility": ["Graduate in any discipline", "Age 18–32 (varies by post)"],
+  "age": "18–32",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "Tier I", "mode": "objective", "note": "Qualifying only" },
+    { "name": "Tier II", "mode": "objective", "note": "Paper 1 merit + Computer/DEST qualifying" }
+  ],
+  "patterns": [
+    {
+      "stage": "Tier I",
+      "durationMin": 60, "questions": 100, "marks": 200, "negative": "0.50 mark", "negFraction": 0.25,
+      "sections": [
+        { "name": "General Intelligence & Reasoning", "questions": 25, "marks": 50, "durationMin": 15 },
+        { "name": "General Awareness", "questions": 25, "marks": 50, "durationMin": 15 },
+        { "name": "Quantitative Aptitude", "questions": 25, "marks": 50, "durationMin": 15 },
+        { "name": "English Comprehension", "questions": 25, "marks": 50, "durationMin": 15 }
+      ],
+      "notes": ["+2 correct, −0.50 wrong", "Sectional timing 15 min each", "Not counted in merit"]
+    },
+    {
+      "stage": "Tier II Paper 1",
+      "durationMin": 150, "questions": 150, "marks": 450, "negative": "1 mark", "negFraction": 0.333,
+      "sections": [
+        { "name": "Section I — Mathematical Abilities (Module I)", "questions": 30, "marks": 90, "durationMin": 60 },
+        { "name": "Section I — Reasoning & GI (Module II)", "questions": 30, "marks": 90, "durationMin": 60 },
+        { "name": "Section II — English (Module I)", "questions": 45, "marks": 135, "durationMin": 60 },
+        { "name": "Section II — General Awareness (Module II)", "questions": 25, "marks": 75, "durationMin": 60 },
+        { "name": "Section III — Computer Knowledge (Module I)", "questions": 20, "marks": 60, "durationMin": 15 }
+      ],
+      "notes": ["+3 correct, −1 wrong in Sections I & II", "Section I and Section II each locked to 1 hour", "Computer Knowledge is QUALIFYING only", "Each section must be cleared separately"]
+    },
+    {
+      "stage": "Tier II Paper 2 (JSO only)",
+      "durationMin": 120, "questions": 100, "marks": 200, "negative": "0.50 mark", "negFraction": 0.25,
+      "sections": [{ "name": "Statistics", "questions": 100, "marks": 200, "durationMin": 120 }],
+      "notes": ["Only for Junior Statistical Officer posts"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Quantitative Aptitude", "weight": 0.25,
+      "topics": [
+        { "name": "Number system & simplification", "weight": 0.15, "pyq": 5, "difficulty": 1, "sub": ["LCM/HCF", "BODMAS", "Surds"] },
+        { "name": "Percentages, profit & loss, SI/CI", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Discount", "Instalments"] },
+        { "name": "Ratio, average, mixture & alligation", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Partnership", "Ages"] },
+        { "name": "Time & work, pipes, speed & distance", "weight": 0.2, "pyq": 5, "difficulty": 3, "sub": ["Boats & streams", "Trains"] },
+        { "name": "Geometry & mensuration", "weight": 0.15, "pyq": 4, "difficulty": 3, "sub": ["Triangles", "Circles", "2D/3D figures"] },
+        { "name": "Trigonometry & heights-distances", "weight": 0.1, "pyq": 3, "difficulty": 2, "sub": ["Identities", "Angles of elevation"] },
+        { "name": "DI & statistics", "weight": 0.1, "pyq": 4, "difficulty": 2, "sub": ["Pie/bar/line charts", "Mean/median"] },
+        { "name": "Algebra", "weight": 0.1, "pyq": 4, "difficulty": 2, "sub": ["Linear equations", "Quadratic", "Maxima-minima"] }
+      ]
+    },
+    {
+      "subject": "General Intelligence & Reasoning", "weight": 0.25,
+      "topics": [
+        { "name": "Analogy, classification, series", "weight": 0.25, "pyq": 5, "difficulty": 1, "sub": ["Number/letter series", "Odd one out"] },
+        { "name": "Coding-decoding", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Letter shifting", "Symbol codes"] },
+        { "name": "Blood relations & direction sense", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Family trees", "Direction puzzles"] },
+        { "name": "Syllogism & Venn diagrams", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Statements-conclusions"] },
+        { "name": "Puzzles & seating arrangement", "weight": 0.15, "pyq": 5, "difficulty": 3, "sub": ["Linear/circular seating", "Floor puzzles"] },
+        { "name": "Non-verbal reasoning", "weight": 0.15, "pyq": 3, "difficulty": 2, "sub": ["Mirror/water images", "Paper folding", "Figure series"] }
+      ]
+    },
+    {
+      "subject": "English", "weight": 0.25,
+      "topics": [
+        { "name": "Error spotting & sentence improvement", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Grammar rules", "Tense", "Subject-verb"] },
+        { "name": "Vocabulary & one-word substitution", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["Synonyms", "Antonyms", "Idioms"] },
+        { "name": "Reading comprehension", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Passages", "Inference"] },
+        { "name": "Cloze test & para jumbles", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["Fillers", "Sequence"] },
+        { "name": "Spelling & active-passive/direct-indirect", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Voice", "Narration"] }
+      ]
+    },
+    {
+      "subject": "General Awareness", "weight": 0.25,
+      "topics": [
+        { "name": "Static GK: History, Geography, Polity", "weight": 0.35, "pyq": 5, "difficulty": 2, "sub": ["Freedom struggle", "Rivers", "Constitution basics"] },
+        { "name": "Science", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Physics/Chemistry/Biology basics"] },
+        { "name": "Current affairs (6–12 months)", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Awards", "Sports", "Schemes", "Appointments"] },
+        { "name": "Economy & misc", "weight": 0.15, "pyq": 3, "difficulty": 2, "sub": ["Budget basics", "Books & authors", "Firsts"] }
+      ]
+    },
+    {
+      "subject": "Computer Knowledge (Tier II)", "weight": 0.05,
+      "topics": [
+        { "name": "Computer fundamentals", "weight": 0.4, "pyq": 3, "difficulty": 1, "sub": ["Hardware", "Memory", "Number systems"] },
+        { "name": "MS Office & internet", "weight": 0.4, "pyq": 3, "difficulty": 1, "sub": ["Word/Excel shortcuts", "Protocols", "Email"] },
+        { "name": "Cyber security basics", "weight": 0.2, "pyq": 2, "difficulty": 2, "sub": ["Malware", "Phishing", "Safe practices"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Quant is the make-or-break section in Tier 2 (90 marks, −1 penalty)",
+    "GA increasingly current-affairs heavy; static GK basics still 40%",
+    "Tier 2 English carries 135 marks — highest single weight",
+    "Section time-locks mean you cannot borrow time from other sections",
+    "Reasoning has become puzzle-heavy"
+  ],
+  "sources": ["https://ssc.gov.in", "https://examtarikh.in/ssc-cgl-exam-pattern/", "https://www.adda247.com/jobs/ssc-cgl-syllabus-and-exam-pattern-2026/"],
+  "samples": [
+    { "q": "If + means ÷, − means ×, × means +, ÷ means −, then 36 + 4 − 3 × 6 ÷ 5 = ?", "o": ["30", "28", "24", "32"], "a": 1, "x": "Substituting: 36 ÷ 4 × 3 + 6 − 5 = 9 × 3 + 6 − 5 = 27 + 1 = 28.", "s": "General Intelligence & Reasoning", "t": "Coding-decoding", "d": 2 },
+    { "q": "A trader marks his goods 40% above cost price and gives a discount of 25%. His profit percentage is:", "o": ["5%", "10%", "12%", "15%"], "a": 0, "x": "CP=100 → MP=140 → SP=140×0.75=105 → profit 5%.", "s": "Quantitative Aptitude", "t": "Percentages, profit & loss, SI/CI", "d": 2 },
+    { "q": "Choose the correctly spelt word:", "o": ["Accomodation", "Accommodation", "Acommodation", "Accommodetion"], "a": 1, "x": "'Accommodation' — double c and double m.", "s": "English", "t": "Spelling & active-passive/direct-indirect", "d": 1 },
+    { "q": "Who was the first woman President of India?", "o": ["Indira Gandhi", "Pratibha Patil", "Sarojini Naidu", "Droupadi Murmu"], "a": 1, "x": "Pratibha Patil (2007–2012) was the first woman President. Droupadi Murmu (2022) is the first tribal woman President.", "s": "General Awareness", "t": "Static GK: History, Geography, Polity", "d": 1 },
+    { "q": "In a row of 40 students, Ravi is 12th from the left. What is his position from the right?", "o": ["28th", "29th", "30th", "27th"], "a": 1, "x": "Position from right = 40 − 12 + 1 = 29.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 16, "hoursPerDay": 4,
+    "phases": [
+      { "name": "Foundation", "weeks": 6, "focus": "Complete quant + reasoning basics; daily vocab", "tasks": ["Quant chapter-wise with 50 daily questions", "Reasoning basics + 25 puzzles/day", "20 vocabulary words/day with revision"] },
+      { "name": "Intensive practice", "weeks": 6, "focus": "Sectional tests, GA current affairs, Tier-2 level quant", "tasks": ["Sectional tests alternate days", "GA monthly digest + static revision", "Tier-2 quant & English advanced sets"] },
+      { "name": "Mocks & revision", "weeks": 4, "focus": "Full-length mocks with time-lock discipline", "tasks": ["3 full mocks/week with analysis", "Error-log revision", "Computer module practice"] }
+    ]
+  }
+}

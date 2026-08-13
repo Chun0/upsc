@@ -1,0 +1,86 @@
+{
+  "id": "cds",
+  "name": "CDS",
+  "fullName": "Combined Defence Services Examination",
+  "org": "UPSC",
+  "icon": "🪖",
+  "color": "#34d399",
+  "tagline": "IMA, INA, AFA & OTA — graduate entry to the forces.",
+  "overview": "English 120Q/100m, GK 120Q/100m, Elementary Maths 100Q/100m (IMA/INA/AFA only) — 2 hours each, negative 1/3. OTA has no Maths paper. SSB interview follows.",
+  "eligibility": ["Graduate (final-year allowed)", "Age: IMA 19–24, OTA 19–25, AFA 20–24"],
+  "age": "19–25 (stream-wise)",
+  "attempts": "Age-limited only",
+  "stages": [
+    { "name": "Written", "mode": "objective", "note": "3 papers (2 for OTA)" },
+    { "name": "SSB Interview", "mode": "interview", "note": "5-day assessment" }
+  ],
+  "patterns": [
+    {
+      "stage": "English",
+      "durationMin": 120, "questions": 120, "marks": 100, "negative": "1/3 of marks", "negFraction": 0.333,
+      "sections": [{ "name": "English", "questions": 120, "marks": 100, "durationMin": 120 }],
+      "notes": ["120 questions for 100 marks — mix of 1-mark and fractional-mark questions in practice"]
+    },
+    {
+      "stage": "General Knowledge",
+      "durationMin": 120, "questions": 120, "marks": 100, "negative": "1/3 of marks", "negFraction": 0.333,
+      "sections": [{ "name": "General Knowledge", "questions": 120, "marks": 100, "durationMin": 120 }],
+      "notes": ["Current affairs, history, polity, geography, science, defence"]
+    },
+    {
+      "stage": "Elementary Mathematics (IMA/INA/AFA)",
+      "durationMin": 120, "questions": 100, "marks": 100, "negative": "1/3 mark", "negFraction": 0.333,
+      "sections": [{ "name": "Elementary Mathematics", "questions": 100, "marks": 100, "durationMin": 120 }],
+      "notes": ["Class 10 level", "Not for OTA candidates"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "English", "weight": 0.34,
+      "topics": [
+        { "name": "Grammar & error spotting", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Articles", "Tense", "Subject-verb"] },
+        { "name": "Vocabulary", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Synonyms", "Antonyms", "Idioms"] },
+        { "name": "Comprehension, jumbles & cloze", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Passages", "Sequence", "Fillers"] }
+      ]
+    },
+    {
+      "subject": "General Knowledge", "weight": 0.33,
+      "topics": [
+        { "name": "Current affairs & defence", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["National events", "Defence exercises", "Appointments"] },
+        { "name": "History & polity", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Freedom struggle", "Constitution", "Acts"] },
+        { "name": "Geography & environment", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Maps", "Rivers", "Climate"] },
+        { "name": "Science & economy", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Physics", "Chemistry", "Biology", "Budget basics"] }
+      ]
+    },
+    {
+      "subject": "Elementary Mathematics", "weight": 0.33,
+      "topics": [
+        { "name": "Arithmetic", "weight": 0.3, "pyq": 5, "difficulty": 1, "sub": ["Percentages", "Profit & loss", "Time & work", "Speed"] },
+        { "name": "Number system & algebra", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["LCM/HCF", "Linear equations", "Quadratic"] },
+        { "name": "Geometry & mensuration", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Triangles", "Circles", "Areas & volumes"] },
+        { "name": "Trigonometry & statistics", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Identities", "Heights", "Mean/median"] }
+      ]
+    }
+  ],
+  "trends": [
+    "English has 120 questions — speed and elimination matter",
+    "GK current affairs + defence questions increasing",
+    "Maths is class-10 level but 100 questions in 2 hours needs drill",
+    "Practise 1-mark vs fractional-mark question mix"
+  ],
+  "sources": ["https://upsc.gov.in", "https://pwonlyias.com/upsc-cds-exam-pattern/"],
+  "samples": [
+    { "q": "Choose the correct form: 'Neither of the two boys ___ present.'", "o": ["were", "was", "are", "have been"], "a": 1, "x": "'Neither of' takes a singular verb — 'was'.", "s": "English", "t": "Grammar & error spotting", "d": 1 },
+    { "q": "Operation 'Brahmastra' style joint exercises between India and a friendly nation are conducted under which command framework?", "o": ["Tri-services command", "Annual bilateral defence exercise framework", "UN peacekeeping", "SAARC military protocol"], "a": 1, "x": "Named bilateral exercises (e.g., INDRA, Yudh Abhyas) are conducted under annual bilateral frameworks — expect GK questions on exercise-partner country pairs.", "s": "General Knowledge", "t": "Current affairs & defence", "d": 3 },
+    { "q": "The average of first 20 natural numbers is:", "o": ["10", "10.5", "11", "11.5"], "a": 1, "x": "Sum = 20×21/2 = 210; average = 210/20 = 10.5.", "s": "Elementary Mathematics", "t": "Arithmetic", "d": 1 },
+    { "q": "The Tropic of Cancer does NOT pass through which Indian state?", "o": ["Gujarat", "Madhya Pradesh", "Odisha", "West Bengal"], "a": 2, "x": "Tropic of Cancer passes through Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, WB, Tripura, Mizoram — not Odisha.", "s": "General Knowledge", "t": "Geography & environment", "d": 2 }
+  ],
+  "plan": {
+    "weeks": 16, "hoursPerDay": 4,
+    "phases": [
+      { "name": "Basics", "weeks": 6, "focus": "Class-10 maths + grammar + daily GK", "tasks": ["Maths chapter-wise", "Grammar rules + practice", "Daily current affairs"] },
+      { "name": "Practice", "weeks": 6, "focus": "PYQs + speed", "tasks": ["English 120Q timed sets", "Maths 50Q/day", "Weekly mock"] },
+      { "name": "Peak", "weeks": 4, "focus": "Mocks + revision", "tasks": ["3 mocks/week", "Vocab + GK rapid revision", "SSB basics"] }
+    ]
+  }
+}

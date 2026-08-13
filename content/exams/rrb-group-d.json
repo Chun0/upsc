@@ -1,0 +1,87 @@
+{
+  "id": "rrb-group-d",
+  "name": "RRB Group D",
+  "fullName": "Railway Group D (Level 1) — CEN 09/2025",
+  "org": "Railway Recruitment Boards",
+  "icon": "🛤️",
+  "color": "#fca5a5",
+  "tagline": "Track maintainer, helper, pointsman — 10th-pass entry.",
+  "overview": "Single CBT: 100Q/100m/90min — General Science 25, Mathematics 25, Reasoning 30, GA & Current Affairs 20 — with −1/3 negative marking. Then Physical Efficiency Test (PET) and DV/Medical.",
+  "eligibility": ["10th pass (or ITI/equiv)", "Age 18–33"],
+  "age": "18–33",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "CBT", "mode": "objective", "note": "100Q/90min" },
+    { "name": "PET", "mode": "physical", "note": "Running/lifting standards" },
+    { "name": "DV & Medical", "mode": "physical", "note": "Document verification" }
+  ],
+  "patterns": [
+    {
+      "stage": "CBT",
+      "durationMin": 90, "questions": 100, "marks": 100, "negative": "1/3 mark", "negFraction": 0.333,
+      "sections": [
+        { "name": "General Science", "questions": 25, "marks": 25, "durationMin": 23 },
+        { "name": "Mathematics", "questions": 25, "marks": 25, "durationMin": 22 },
+        { "name": "General Intelligence & Reasoning", "questions": 30, "marks": 30, "durationMin": 27 },
+        { "name": "General Awareness & Current Affairs", "questions": 20, "marks": 20, "durationMin": 18 }
+      ],
+      "notes": ["1 mark each; −1/3 wrong", "PwBD: 120 minutes"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "General Science", "weight": 0.25,
+      "topics": [
+        { "name": "Physics", "weight": 0.35, "pyq": 5, "difficulty": 1, "sub": ["Motion", "Light", "Electricity", "Units"] },
+        { "name": "Chemistry", "weight": 0.3, "pyq": 4, "difficulty": 1, "sub": ["Elements", "Acids/bases", "Everyday chemistry"] },
+        { "name": "Biology", "weight": 0.35, "pyq": 5, "difficulty": 1, "sub": ["Human body", "Nutrition", "Diseases", "Plants"] }
+      ]
+    },
+    {
+      "subject": "Mathematics", "weight": 0.25,
+      "topics": [
+        { "name": "Number system & simplification", "weight": 0.25, "pyq": 5, "difficulty": 1, "sub": ["LCM/HCF", "BODMAS", "Fractions"] },
+        { "name": "Percentages, profit & loss, SI", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Discount", "Interest"] },
+        { "name": "Time & work, speed & distance", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Work", "Trains"] },
+        { "name": "Average, ratio, mensuration", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Mixing", "Areas"] }
+      ]
+    },
+    {
+      "subject": "General Intelligence & Reasoning", "weight": 0.3,
+      "topics": [
+        { "name": "Analogy, classification, series", "weight": 0.3, "pyq": 5, "difficulty": 1, "sub": ["Number/letter", "Odd one out"] },
+        { "name": "Coding-decoding & blood relations", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Shifts", "Family"] },
+        { "name": "Syllogism, Venn & direction", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Statements", "Directions"] },
+        { "name": "Puzzles & non-verbal", "weight": 0.25, "pyq": 4, "difficulty": 3, "sub": ["Seating", "Mirror", "Folding"] }
+      ]
+    },
+    {
+      "subject": "General Awareness & Current Affairs", "weight": 0.2,
+      "topics": [
+        { "name": "Current affairs", "weight": 0.5, "pyq": 5, "difficulty": 1, "sub": ["National events", "Railways", "Sports", "Awards"] },
+        { "name": "Static GK & economy", "weight": 0.5, "pyq": 4, "difficulty": 1, "sub": ["History", "Geography", "Polity basics", "Budget basics"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Science questions are textbook-level — high scoring",
+    "Reasoning is the largest section (30Q)",
+    "Railway current affairs + static mix in GA",
+    "PET standards trip many — train alongside study"
+  ],
+  "sources": ["https://rrbcdg.gov.in", "https://testbook.com/rrb-group-d/syllabus", "https://www.adda247.com/exams/railway/rrb-group-d-exam-date-2026-out/"],
+  "samples": [
+    { "q": "Which vitamin is produced in the human body on exposure to sunlight?", "o": ["Vitamin A", "Vitamin B12", "Vitamin D", "Vitamin K"], "a": 2, "x": "UV radiation converts 7-dehydrocholesterol in skin to Vitamin D3.", "s": "General Science", "t": "Biology", "d": 1 },
+    { "q": "The LCM of 12, 18 and 24 is:", "o": ["36", "48", "72", "144"], "a": 2, "x": "12=2²·3, 18=2·3², 24=2³·3 → LCM = 2³·3² = 72.", "s": "Mathematics", "t": "Number system & simplification", "d": 1 },
+    { "q": "Pointing to a photograph, Ram says: 'She is the daughter of my grandfather's only son.' How is the girl related to Ram?", "o": ["Mother", "Sister", "Cousin", "Aunt"], "a": 1, "x": "Grandfather's only son = Ram's father; his daughter = Ram's sister.", "s": "General Intelligence & Reasoning", "t": "Coding-decoding & blood relations", "d": 2 },
+    { "q": "The first Indian to win an individual Olympic gold medal was:", "o": ["Neeraj Chopra", "Abhinav Bindra", "P. V. Sindhu", "Milkha Singh"], "a": 1, "x": "Abhinav Bindra — 10m Air Rifle, Beijing 2008. Neeraj Chopra is the first in athletics (2021).", "s": "General Awareness & Current Affairs", "t": "Static GK & economy", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 12, "hoursPerDay": 3,
+    "phases": [
+      { "name": "Basics", "weeks": 4, "focus": "NCERT science + maths formulas + reasoning", "tasks": ["Science NCERT revision", "Maths chapter-wise", "Reasoning types"] },
+      { "name": "Practice", "weeks": 4, "focus": "Sectional sets + CA", "tasks": ["2 sectional sets/day", "Daily CA 30 min", "Weekly mock"] },
+      { "name": "Peak", "weeks": 4, "focus": "Mocks + PET prep", "tasks": ["3 mocks/week", "Error log", "Physical training schedule"] }
+    ]
+  }
+}

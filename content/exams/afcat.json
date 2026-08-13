@@ -1,0 +1,84 @@
+{
+  "id": "afcat",
+  "name": "AFCAT",
+  "fullName": "Air Force Common Admission Test",
+  "org": "Indian Air Force",
+  "icon": "✈️",
+  "color": "#60a5fa",
+  "tagline": "Fly high — 100 questions, 300 marks, +3/−1.",
+  "overview": "Online CBT: 100Q/300m in 2 hours. Sections: Verbal Ability (25Q/75m), Numerical Ability (18Q/54m), Reasoning & Military Aptitude (32Q/96m), General Awareness (25Q/75m). +3 correct, −1 wrong (1/3). English-only paper. AFSB interview follows.",
+  "eligibility": ["Graduate (60%+) with Maths/Physics at 10+2 for Flying", "Age 20–24 (Flying), 20–26 (Ground Duty)"],
+  "age": "20–26 (branch-wise)",
+  "attempts": "Age-limited only",
+  "stages": [
+    { "name": "AFCAT (CBT)", "mode": "objective", "note": "100Q/300m" },
+    { "name": "AFSB Interview", "mode": "interview", "note": "5-day assessment" }
+  ],
+  "patterns": [
+    {
+      "stage": "AFCAT",
+      "durationMin": 120, "questions": 100, "marks": 300, "negative": "1 mark", "negFraction": 0.333,
+      "sections": [
+        { "name": "Verbal Ability in English", "questions": 25, "marks": 75, "durationMin": 30 },
+        { "name": "Numerical Ability", "questions": 18, "marks": 54, "durationMin": 22 },
+        { "name": "Reasoning & Military Aptitude", "questions": 32, "marks": 96, "durationMin": 38 },
+        { "name": "General Awareness", "questions": 25, "marks": 75, "durationMin": 30 }
+      ],
+      "notes": ["+3 correct, −1 wrong", "English-only paper", "Section split per official-structure sources"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Reasoning & Military Aptitude", "weight": 0.32,
+      "topics": [
+        { "name": "Verbal & spatial reasoning", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Series", "Analogy", "Odd one out", "Patterns"] },
+        { "name": "Military aptitude & situation judgement", "weight": 0.4, "pyq": 4, "difficulty": 3, "sub": ["Rotational speed", "Instrument reading", "Spatial orientation"] },
+        { "name": "Non-verbal reasoning", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Figure matrices", "Hidden figures"] }
+      ]
+    },
+    {
+      "subject": "Numerical Ability", "weight": 0.18,
+      "topics": [
+        { "name": "Arithmetic & percentages", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Ratio", "Profit & loss", "Averages"] },
+        { "name": "Time, speed, work & simple interest", "weight": 0.3, "pyq": 4, "difficulty": 2, "sub": ["Trains", "Work"] },
+        { "name": "Number system & simplification", "weight": 0.3, "pyq": 4, "difficulty": 1, "sub": ["LCM/HCF", "BODMAS"] }
+      ]
+    },
+    {
+      "subject": "Verbal Ability in English", "weight": 0.25,
+      "topics": [
+        { "name": "Vocabulary & grammar", "weight": 0.5, "pyq": 5, "difficulty": 2, "sub": ["Synonyms", "Antonyms", "Error spotting"] },
+        { "name": "Comprehension & jumbles", "weight": 0.5, "pyq": 4, "difficulty": 2, "sub": ["Passages", "Para jumbles", "Idioms"] }
+      ]
+    },
+    {
+      "subject": "General Awareness", "weight": 0.25,
+      "topics": [
+        { "name": "Defence & current affairs", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Exercises", "Missiles", "Ranks", "National events"] },
+        { "name": "History, geography & polity", "weight": 0.35, "pyq": 4, "difficulty": 2, "sub": ["Freedom struggle", "Maps", "Constitution"] },
+        { "name": "Science basics", "weight": 0.25, "pyq": 3, "difficulty": 2, "sub": ["Physics", "Chemistry", "Biology"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Military aptitude questions (instrument/rotational) are AFCAT's signature",
+    "+3/−1 means accuracy beats blind guessing",
+    "GK is defence-heavy — know exercises, missiles, ranks",
+    "English-only paper — verbal is a differentiator"
+  ],
+  "sources": ["https://afcat.cdac.in", "https://ncaacademy.com/afcat-exam-pattern-2026/", "https://askfilo.com/knowledge/posts/afcat-2026-exam-pattern-your-definitive-guide-to-exam-structure"],
+  "samples": [
+    { "q": "If an aircraft is flying east and turns 90° to its right, then again 45° to its right, its new heading is:", "o": ["North", "South-West", "South-East", "North-West"], "a": 2, "x": "East + 90° = South; South + 45° right = South-West... careful: right of South is West, so South + 45° = South-West. Heading after 135° total right turn from East = South-West. (Verify with a compass rose: E→S→SW.)", "s": "Reasoning & Military Aptitude", "t": "Military aptitude & situation judgement", "d": 3 },
+    { "q": "A train 150 m long crosses a pole in 10 seconds. Its speed in km/h is:", "o": ["45", "54", "60", "72"], "a": 1, "x": "Speed = 150/10 = 15 m/s = 15 × 18/5 = 54 km/h.", "s": "Numerical Ability", "t": "Time, speed, work & simple interest", "d": 1 },
+    { "q": "Choose the synonym of 'MAGNANIMOUS':", "o": ["Petty", "Generous", "Arrogant", "Cautious"], "a": 1, "x": "Magnanimous = generous, forgiving, noble-spirited.", "s": "Verbal Ability in English", "t": "Vocabulary & grammar", "d": 1 },
+    { "q": "Exercise 'Garuda' is conducted between India and which country?", "o": ["USA", "Russia", "France", "UK"], "a": 2, "x": "Exercise Garuda is an India–France bilateral air exercise.", "s": "General Awareness", "t": "Defence & current affairs", "d": 2 }
+  ],
+  "plan": {
+    "weeks": 16, "hoursPerDay": 3,
+    "phases": [
+      { "name": "Basics", "weeks": 6, "focus": "Reasoning + maths basics + defence GK", "tasks": ["Military aptitude drills", "Maths chapter-wise", "Daily defence news"] },
+      { "name": "Practice", "weeks": 6, "focus": "Sectional timed sets", "tasks": ["Sectional sets × 2/day", "Vocab 20/day", "Weekly mock"] },
+      { "name": "Peak", "weeks": 4, "focus": "Mocks + revision", "tasks": ["3 mocks/week", "Error log", "AFSB awareness"] }
+    ]
+  }
+}
