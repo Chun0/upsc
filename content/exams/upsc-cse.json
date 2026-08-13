@@ -17,29 +17,34 @@
   ],
   "patterns": [
     {
-      "stage": "Prelims GS Paper I",
+      "stage": "Prelims GS Paper I", "mode": "objective",
       "durationMin": 120, "questions": 100, "marks": 200, "negative": "1/3 of marks", "negFraction": 0.333,
       "sections": [{ "name": "General Studies", "questions": 100, "marks": 200, "durationMin": 120 }],
       "notes": ["Each question +2; −0.66 per wrong answer", "Cutoff is decided on this paper only"]
     },
     {
-      "stage": "Prelims CSAT (Paper II)",
+      "stage": "Prelims CSAT (Paper II)", "mode": "objective",
       "durationMin": 120, "questions": 80, "marks": 200, "negative": "1/3 of marks", "negFraction": 0.333,
       "sections": [{ "name": "CSAT", "questions": 80, "marks": 200, "durationMin": 120 }],
       "notes": ["Each question +2.5; −0.83 per wrong", "QUALIFYING: 33% (66.67/200) required", "Not counted in merit"]
     },
     {
-      "stage": "Mains",
+      "stage": "Mains", "mode": "descriptive",
       "durationMin": 180, "questions": 0, "marks": 1750, "negative": "none", "negFraction": 0,
       "sections": [
-        { "name": "Essay", "questions": 2, "marks": 250 },
-        { "name": "GS I–IV", "questions": 20, "marks": 250 },
-        { "name": "Optional I & II", "questions": 20, "marks": 250 },
-        { "name": "Qualifying: English + Regional Language", "questions": 0, "marks": 300 }
+        { "name": "Essay", "questions": 2, "marks": 250, "mode": "descriptive" },
+        { "name": "GS Paper I — Heritage, Culture, History, Geography", "questions": 0, "marks": 250, "mode": "descriptive" },
+        { "name": "GS Paper II — Governance, Polity, Social Justice, IR", "questions": 0, "marks": 250, "mode": "descriptive" },
+        { "name": "GS Paper III — Technology, Economy, Environment, Security", "questions": 0, "marks": 250, "mode": "descriptive" },
+        { "name": "GS Paper IV — Ethics, Integrity, Aptitude", "questions": 0, "marks": 250, "mode": "descriptive" },
+        { "name": "Optional Paper I", "questions": 0, "marks": 250, "mode": "descriptive" },
+        { "name": "Optional Paper II", "questions": 0, "marks": 250, "mode": "descriptive" },
+        { "name": "Qualifying — English", "questions": 0, "marks": 300, "mode": "descriptive" },
+        { "name": "Qualifying — Regional Language", "questions": 0, "marks": 300, "mode": "descriptive" }
       ],
-      "notes": ["Descriptive; 3 hours per paper", "GS papers 250 marks each; Optional 500 total", "Qualifying papers need 25%"]
+      "notes": ["Descriptive; 3 hours per paper", "7 merit papers = 1750 marks; 2 qualifying papers (300 each, 25% to pass)"]
     },
-    { "stage": "Interview", "durationMin": 30, "questions": 0, "marks": 275, "negative": "none", "negFraction": 0, "sections": [], "notes": ["Personality test, 275 marks"] }
+    { "stage": "Interview", "mode": "interview", "durationMin": 30, "questions": 0, "marks": 275, "negative": "none", "negFraction": 0, "sections": [], "notes": ["Personality test, 275 marks"] }
   ],
   "syllabus": [
     {
@@ -130,7 +135,17 @@
     { "q": "Which of the following is NOT a component of the monetary policy framework of the RBI?", "o": ["Repo rate", "Cash Reserve Ratio", "Fiscal deficit target", "Marginal Standing Facility"], "a": 2, "x": "Fiscal deficit target is part of fiscal policy (government budget), not RBI's monetary policy toolkit.", "s": "Economy", "t": "Banking & financial system", "d": 2 },
     { "q": "The 'Great Barrier Reef' is located off the coast of which country?", "o": ["Indonesia", "Australia", "Philippines", "Madagascar"], "a": 1, "x": "Great Barrier Reef lies in the Coral Sea off Queensland, Australia — the world's largest coral reef system.", "s": "Geography", "t": "World geography & maps", "d": 1 },
     { "q": "With reference to 'Bharat Stage (BS) VI' emission norms, consider: 1. They cap particulate matter (PM) and nitrogen oxides (NOx) from vehicles. 2. BS-VI fuel has lower sulphur content than BS-IV. Which is/are correct?", "o": ["1 only", "2 only", "Both 1 and 2", "Neither"], "a": 2, "x": "BS-VI tightened PM/NOx limits and mandated 10 ppm sulphur fuel (vs 50 ppm in BS-IV). Both correct.", "s": "Science & Technology", "t": "Pollution & environmental laws", "d": 2 },
-    { "q": "If the 4th day of a month is Friday, which day will be the 26th day of the same month?", "o": ["Saturday", "Sunday", "Wednesday", "Tuesday"], "a": 0, "x": "26 − 4 = 22 days = 3 weeks + 1 day → Friday + 1 = Saturday.", "s": "CSAT Aptitude", "t": "Logical reasoning", "d": 1 }
+    { "q": "If the 4th day of a month is Friday, which day will be the 26th day of the same month?", "o": ["Saturday", "Sunday", "Wednesday", "Tuesday"], "a": 0, "x": "26 − 4 = 22 days = 3 weeks + 1 day → Friday + 1 = Saturday.", "s": "CSAT Aptitude", "t": "Logical reasoning", "d": 1 },
+    { "q": "Which Part of the Constitution of India contains the Directive Principles of State Policy?", "o": ["Part III", "Part IV", "Part V", "Part VI"], "a": 1, "x": "Directive Principles are in Part IV (Articles 36–51); Fundamental Rights are in Part III.", "s": "Polity & Governance", "t": "Constitution: FRs, DPSPs, amendments", "d": 1 },
+    { "q": "The Dandi March of 1930 began from which place?", "o": ["Sabarmati Ashram", "Champaran", "Bardoli", "Dandi village"], "a": 0, "x": "Gandhi began the Salt Satyagraha march from Sabarmati Ashram on 12 March 1930 and reached Dandi on 6 April.", "s": "History & Culture", "t": "Modern India & Freedom Struggle", "d": 1 },
+    { "q": "Which river is known as the 'Sorrow of Bengal'?", "o": ["Damodar", "Kosi", "Hooghly", "Subarnarekha"], "a": 0, "x": "The Damodar, flowing through Jharkhand and West Bengal, was called the 'Sorrow of Bengal' for its floods.", "s": "Geography", "t": "Indian geography", "d": 1 },
+    { "q": "In India, wholesale price inflation is primarily measured by which index?", "o": ["Consumer Price Index", "Wholesale Price Index", "GDP deflator", "Index of Industrial Production"], "a": 1, "x": "The WPI tracks wholesale price changes; the RBI's inflation targeting uses CPI (retail).", "s": "Economy", "t": "Basics: GDP, inflation, money", "d": 2 },
+    { "q": "Kaziranga National Park is famous for the conservation of which species?", "o": ["One-horned rhinoceros", "Royal Bengal tiger", "Asiatic lion", "Great Indian bustard"], "a": 0, "x": "Kaziranga (Assam) holds the world's largest population of the one-horned rhinoceros.", "s": "Environment & Ecology", "t": "Protected areas & species", "d": 1 },
+    { "q": "Which was India's first mission to the Moon?", "o": ["Chandrayaan-1", "Mars Orbiter Mission", "Chandrayaan-2", "Aryabhata"], "a": 0, "x": "Chandrayaan-1 (2008) was India's first lunar probe; it confirmed water molecules on the Moon.", "s": "Science & Technology", "t": "Space & defence tech", "d": 1 },
+    { "q": "The Goods and Services Tax (GST) came into effect across India on which date?", "o": ["1 July 2017", "1 April 2017", "1 July 2016", "1 January 2018"], "a": 0, "x": "GST was rolled out on 1 July 2017, subsuming most indirect taxes under 'one nation, one tax'.", "s": "Current Affairs", "t": "National current affairs", "d": 1 },
+    { "q": "A number is divisible by both 3 and 5. By which of the following must it also be divisible?", "o": ["8", "15", "9", "25"], "a": 1, "x": "If a number is divisible by co-prime numbers 3 and 5, it is divisible by their product 15.", "s": "CSAT Aptitude", "t": "Quantitative aptitude", "d": 1 },
+    { "q": "Under Article 110, a Money Bill can be introduced only:", "o": ["In the Rajya Sabha", "In the Lok Sabha", "In either House", "Only by the President"], "a": 1, "x": "A Money Bill can be introduced only in the Lok Sabha and only with the President's recommendation.", "s": "Polity & Governance", "t": "Parliament & State Legislatures", "d": 2 },
+    { "q": "The rock-cut caves of Ajanta are primarily associated with which religion?", "o": ["Jainism", "Buddhism", "Hinduism", "Sikhism"], "a": 1, "x": "The Ajanta caves (Maharashtra) are Buddhist monuments famous for their paintings and sculpture.", "s": "History & Culture", "t": "Ancient India", "d": 1 }
   ],
   "plan": {
     "weeks": 24, "hoursPerDay": 5,

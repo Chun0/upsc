@@ -16,7 +16,7 @@
   ],
   "patterns": [
     {
-      "stage": "Tier I",
+      "stage": "Tier I", "mode": "objective",
       "durationMin": 60, "questions": 100, "marks": 200, "negative": "0.50 mark", "negFraction": 0.25,
       "sections": [
         { "name": "General Intelligence & Reasoning", "questions": 25, "marks": 50, "durationMin": 15 },
@@ -27,7 +27,7 @@
       "notes": ["+2 correct, −0.50 wrong", "Sectional timing 15 min each", "Not counted in merit"]
     },
     {
-      "stage": "Tier II Paper 1",
+      "stage": "Tier II Paper 1", "mode": "objective",
       "durationMin": 150, "questions": 150, "marks": 450, "negative": "1 mark", "negFraction": 0.333,
       "sections": [
         { "name": "Section I — Mathematical Abilities (Module I)", "questions": 30, "marks": 90, "durationMin": 60 },
@@ -39,7 +39,7 @@
       "notes": ["+3 correct, −1 wrong in Sections I & II", "Section I and Section II each locked to 1 hour", "Computer Knowledge is QUALIFYING only", "Each section must be cleared separately"]
     },
     {
-      "stage": "Tier II Paper 2 (JSO only)",
+      "stage": "Tier II Paper 2 (JSO only)", "mode": "objective",
       "durationMin": 120, "questions": 100, "marks": 200, "negative": "0.50 mark", "negFraction": 0.25,
       "sections": [{ "name": "Statistics", "questions": 100, "marks": 200, "durationMin": 120 }],
       "notes": ["Only for Junior Statistical Officer posts"]
@@ -49,14 +49,14 @@
     {
       "subject": "Quantitative Aptitude", "weight": 0.25,
       "topics": [
-        { "name": "Number system & simplification", "weight": 0.15, "pyq": 5, "difficulty": 1, "sub": ["LCM/HCF", "BODMAS", "Surds"] },
-        { "name": "Percentages, profit & loss, SI/CI", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Discount", "Instalments"] },
-        { "name": "Ratio, average, mixture & alligation", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Partnership", "Ages"] },
-        { "name": "Time & work, pipes, speed & distance", "weight": 0.2, "pyq": 5, "difficulty": 3, "sub": ["Boats & streams", "Trains"] },
-        { "name": "Geometry & mensuration", "weight": 0.15, "pyq": 4, "difficulty": 3, "sub": ["Triangles", "Circles", "2D/3D figures"] },
-        { "name": "Trigonometry & heights-distances", "weight": 0.1, "pyq": 3, "difficulty": 2, "sub": ["Identities", "Angles of elevation"] },
-        { "name": "DI & statistics", "weight": 0.1, "pyq": 4, "difficulty": 2, "sub": ["Pie/bar/line charts", "Mean/median"] },
-        { "name": "Algebra", "weight": 0.1, "pyq": 4, "difficulty": 2, "sub": ["Linear equations", "Quadratic", "Maxima-minima"] }
+        { "name": "Number system & simplification", "weight": 0.13, "pyq": 5, "difficulty": 1, "sub": ["LCM/HCF", "BODMAS", "Surds"] },
+        { "name": "Percentages, profit & loss, SI/CI", "weight": 0.21, "pyq": 5, "difficulty": 2, "sub": ["Discount", "Instalments"] },
+        { "name": "Ratio, average, mixture & alligation", "weight": 0.12, "pyq": 4, "difficulty": 2, "sub": ["Partnership", "Ages"] },
+        { "name": "Time & work, pipes, speed & distance", "weight": 0.17, "pyq": 5, "difficulty": 3, "sub": ["Boats & streams", "Trains"] },
+        { "name": "Geometry & mensuration", "weight": 0.12, "pyq": 4, "difficulty": 3, "sub": ["Triangles", "Circles", "2D/3D figures"] },
+        { "name": "Trigonometry & heights-distances", "weight": 0.08, "pyq": 3, "difficulty": 2, "sub": ["Identities", "Angles of elevation"] },
+        { "name": "DI & statistics", "weight": 0.09, "pyq": 4, "difficulty": 2, "sub": ["Pie/bar/line charts", "Mean/median"] },
+        { "name": "Algebra", "weight": 0.08, "pyq": 4, "difficulty": 2, "sub": ["Linear equations", "Quadratic", "Maxima-minima"] }
       ]
     },
     {
@@ -111,7 +111,15 @@
     { "q": "A trader marks his goods 40% above cost price and gives a discount of 25%. His profit percentage is:", "o": ["5%", "10%", "12%", "15%"], "a": 0, "x": "CP=100 → MP=140 → SP=140×0.75=105 → profit 5%.", "s": "Quantitative Aptitude", "t": "Percentages, profit & loss, SI/CI", "d": 2 },
     { "q": "Choose the correctly spelt word:", "o": ["Accomodation", "Accommodation", "Acommodation", "Accommodetion"], "a": 1, "x": "'Accommodation' — double c and double m.", "s": "English", "t": "Spelling & active-passive/direct-indirect", "d": 1 },
     { "q": "Who was the first woman President of India?", "o": ["Indira Gandhi", "Pratibha Patil", "Sarojini Naidu", "Droupadi Murmu"], "a": 1, "x": "Pratibha Patil (2007–2012) was the first woman President. Droupadi Murmu (2022) is the first tribal woman President.", "s": "General Awareness", "t": "Static GK: History, Geography, Polity", "d": 1 },
-    { "q": "In a row of 40 students, Ravi is 12th from the left. What is his position from the right?", "o": ["28th", "29th", "30th", "27th"], "a": 1, "x": "Position from right = 40 − 12 + 1 = 29.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 }
+    { "q": "In a row of 40 students, Ravi is 12th from the left. What is his position from the right?", "o": ["28th", "29th", "30th", "27th"], "a": 1, "x": "Position from right = 40 − 12 + 1 = 29.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 },
+    { "q": "A shopkeeper sells an article at a loss of 10%. If the selling price is ₹450, the cost price is:", "o": ["₹500", "₹495", "₹510", "₹405"], "a": 0, "x": "CP = SP ÷ (1 − loss%) = 450 ÷ 0.9 = ₹500.", "s": "Quantitative Aptitude", "t": "Percentages, profit & loss, SI/CI", "d": 2 },
+    { "q": "Find the next number in the series: 1, 4, 9, 16, 25, ?", "o": ["30", "36", "49", "35"], "a": 1, "x": "Perfect squares 1²,2²,3²,4²,5² → next is 6² = 36.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 },
+    { "q": "Choose the one-word substitute for 'a person who believes in the existence of God':", "o": ["Atheist", "Theist", "Agnostic", "Pagan"], "a": 1, "x": "A theist believes in God; an atheist denies God; an agnostic is unsure.", "s": "English", "t": "Vocabulary & one-word substitution", "d": 1 },
+    { "q": "The Battle of Plassey was fought in which year?", "o": ["1757", "1764", "1857", "1707"], "a": 0, "x": "The Battle of Plassey (1757) established British East India Company control over Bengal.", "s": "General Awareness", "t": "Static GK: History, Geography, Polity", "d": 1 },
+    { "q": "A and B together can complete a work in 12 days; A alone in 20 days. In how many days can B alone complete it?", "o": ["15", "25", "30", "24"], "a": 2, "x": "B's 1-day work = 1/12 − 1/20 = 1/30, so B alone takes 30 days.", "s": "Quantitative Aptitude", "t": "Time & work, pipes, speed & distance", "d": 2 },
+    { "q": "Pointing to a photograph, a man says: 'She is the daughter of my grandfather's only son.' How is the girl related to him?", "o": ["Sister", "Cousin", "Niece", "Daughter"], "a": 0, "x": "Grandfather's only son is his father; his father's daughter is his sister.", "s": "General Intelligence & Reasoning", "t": "Blood relations & direction sense", "d": 2 },
+    { "q": "Choose the grammatically correct sentence:", "o": ["He has been working here since 2010.", "He has been working here from 2010.", "He is working here since 2010.", "He works here since 2010."], "a": 0, "x": "'Since + point of time' takes the present perfect continuous tense.", "s": "English", "t": "Error spotting & sentence improvement", "d": 2 },
+    { "q": "Which gas is the most abundant in the Earth's atmosphere?", "o": ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"], "a": 2, "x": "Nitrogen makes up about 78% of the atmosphere; oxygen about 21%.", "s": "General Awareness", "t": "Science", "d": 1 }
   ],
   "plan": {
     "weeks": 16, "hoursPerDay": 4,

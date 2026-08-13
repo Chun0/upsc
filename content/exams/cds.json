@@ -16,19 +16,19 @@
   ],
   "patterns": [
     {
-      "stage": "English",
+      "stage": "English", "mode": "objective",
       "durationMin": 120, "questions": 120, "marks": 100, "negative": "1/3 of marks", "negFraction": 0.333,
       "sections": [{ "name": "English", "questions": 120, "marks": 100, "durationMin": 120 }],
       "notes": ["120 questions for 100 marks — mix of 1-mark and fractional-mark questions in practice"]
     },
     {
-      "stage": "General Knowledge",
+      "stage": "General Knowledge", "mode": "objective",
       "durationMin": 120, "questions": 120, "marks": 100, "negative": "1/3 of marks", "negFraction": 0.333,
       "sections": [{ "name": "General Knowledge", "questions": 120, "marks": 100, "durationMin": 120 }],
       "notes": ["Current affairs, history, polity, geography, science, defence"]
     },
     {
-      "stage": "Elementary Mathematics (IMA/INA/AFA)",
+      "stage": "Elementary Mathematics (IMA/INA/AFA)", "mode": "objective",
       "durationMin": 120, "questions": 100, "marks": 100, "negative": "1/3 mark", "negFraction": 0.333,
       "sections": [{ "name": "Elementary Mathematics", "questions": 100, "marks": 100, "durationMin": 120 }],
       "notes": ["Class 10 level", "Not for OTA candidates"]
@@ -73,7 +73,14 @@
     { "q": "Choose the correct form: 'Neither of the two boys ___ present.'", "o": ["were", "was", "are", "have been"], "a": 1, "x": "'Neither of' takes a singular verb — 'was'.", "s": "English", "t": "Grammar & error spotting", "d": 1 },
     { "q": "Operation 'Brahmastra' style joint exercises between India and a friendly nation are conducted under which command framework?", "o": ["Tri-services command", "Annual bilateral defence exercise framework", "UN peacekeeping", "SAARC military protocol"], "a": 1, "x": "Named bilateral exercises (e.g., INDRA, Yudh Abhyas) are conducted under annual bilateral frameworks — expect GK questions on exercise-partner country pairs.", "s": "General Knowledge", "t": "Current affairs & defence", "d": 3 },
     { "q": "The average of first 20 natural numbers is:", "o": ["10", "10.5", "11", "11.5"], "a": 1, "x": "Sum = 20×21/2 = 210; average = 210/20 = 10.5.", "s": "Elementary Mathematics", "t": "Arithmetic", "d": 1 },
-    { "q": "The Tropic of Cancer does NOT pass through which Indian state?", "o": ["Gujarat", "Madhya Pradesh", "Odisha", "West Bengal"], "a": 2, "x": "Tropic of Cancer passes through Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, WB, Tripura, Mizoram — not Odisha.", "s": "General Knowledge", "t": "Geography & environment", "d": 2 }
+    { "q": "The Tropic of Cancer does NOT pass through which Indian state?", "o": ["Gujarat", "Madhya Pradesh", "Odisha", "West Bengal"], "a": 2, "x": "Tropic of Cancer passes through Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, WB, Tripura, Mizoram — not Odisha.", "s": "General Knowledge", "t": "Geography & environment", "d": 2 },
+    { "q": "Choose the antonym of 'EXPAND':", "o": ["Enlarge", "Contract", "Extend", "Spread"], "a": 1, "x": "Contract is the opposite of expand.", "s": "English", "t": "Vocabulary", "d": 1 },
+    { "q": "The 'Operation Vijay' of 1999 is associated with which conflict?", "o": ["Kargil War", "Indo-Pak War of 1971", "Indo-China War of 1962", "World War II"], "a": 0, "x": "Operation Vijay was the 1999 Kargil operation.", "s": "General Knowledge", "t": "Current affairs & defence", "d": 2 },
+    { "q": "A train 150 m long crosses a pole in 15 seconds. Its speed in km/h is:", "o": ["30", "36", "40", "45"], "a": 1, "x": "Speed = 150/15 = 10 m/s = 36 km/h.", "s": "Elementary Mathematics", "t": "Arithmetic", "d": 2 },
+    { "q": "The Constitution of India was adopted on which date?", "o": ["26 January 1950", "26 November 1949", "15 August 1947", "26 January 1949"], "a": 1, "x": "Adopted on 26 November 1949; it came into force on 26 January 1950.", "s": "General Knowledge", "t": "History & polity", "d": 1 },
+    { "q": "Choose the correct sentence:", "o": ["He is senior than me.", "He is senior to me.", "He is more senior than me.", "He is senior from me."], "a": 1, "x": "'Senior' takes the preposition 'to'.", "s": "English", "t": "Grammar & error spotting", "d": 1 },
+    { "q": "The smallest prime number is:", "o": ["1", "2", "3", "0"], "a": 1, "x": "2 is the smallest prime number.", "s": "Elementary Mathematics", "t": "Number system & algebra", "d": 1 },
+    { "q": "The Reserve Bank of India was established in which year?", "o": ["1935", "1947", "1949", "1930"], "a": 0, "x": "The RBI was established on 1 April 1935 and nationalised in 1949.", "s": "General Knowledge", "t": "Science & economy", "d": 1 }
   ],
   "plan": {
     "weeks": 16, "hoursPerDay": 4,

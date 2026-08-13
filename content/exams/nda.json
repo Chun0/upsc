@@ -16,13 +16,13 @@
   ],
   "patterns": [
     {
-      "stage": "Mathematics",
+      "stage": "Mathematics", "mode": "objective",
       "durationMin": 150, "questions": 120, "marks": 300, "negative": "1/3 (−0.83)", "negFraction": 0.333,
       "sections": [{ "name": "Mathematics", "questions": 120, "marks": 300, "durationMin": 150 }],
       "notes": ["+2.5 correct, −0.83 wrong", "25% sectional cutoff applies", "Class 11–12 level (CBSE)"]
     },
     {
-      "stage": "GAT",
+      "stage": "GAT", "mode": "objective",
       "durationMin": 150, "questions": 150, "marks": 600, "negative": "1/3 (−1.33)", "negFraction": 0.333,
       "sections": [
         { "name": "English", "questions": 50, "marks": 200, "durationMin": 50 },
@@ -75,7 +75,15 @@
     { "q": "The derivative of x²·sin x is:", "o": ["2x cos x", "x² cos x + 2x sin x", "2x sin x + x² cos x", "2x sin x"], "a": 2, "x": "Product rule: d/dx(x²)sin x + x²·d/dx(sin x) = 2x sin x + x² cos x.", "s": "Mathematics", "t": "Calculus: limits, derivatives, integration", "d": 2 },
     { "q": "Choose the antonym of 'EPHEMERAL':", "o": ["Transient", "Permanent", "Fragile", "Momentary"], "a": 1, "x": "Ephemeral = short-lived; antonym is permanent.", "s": "English (GAT)", "t": "Vocabulary", "d": 1 },
     { "q": "The SI unit of electric current is:", "o": ["Volt", "Ohm", "Ampere", "Watt"], "a": 2, "x": "Electric current is measured in amperes (A).", "s": "General Knowledge & Science", "t": "Physics", "d": 1 },
-    { "q": "Who led the 'Dandi March' of 1930?", "o": ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Sardar Patel"], "a": 1, "x": "Mahatma Gandhi led the Salt Satyagraha/Dandi March from Sabarmati to Dandi.", "s": "General Knowledge & Science", "t": "History & freedom movement", "d": 1 }
+    { "q": "Who led the 'Dandi March' of 1930?", "o": ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Sardar Patel"], "a": 1, "x": "Mahatma Gandhi led the Salt Satyagraha/Dandi March from Sabarmati to Dandi.", "s": "General Knowledge & Science", "t": "History & freedom movement", "d": 1 },
+    { "q": "If x² − 5x + 6 = 0, the roots are:", "o": ["2 and 3", "1 and 6", "−2 and −3", "2 and −3"], "a": 0, "x": "x² − 5x + 6 = (x − 2)(x − 3) = 0, so x = 2, 3.", "s": "Mathematics", "t": "Algebra & quadratic equations", "d": 1 },
+    { "q": "The value of sin 30° is:", "o": ["1", "0", "1/2", "√3/2"], "a": 2, "x": "sin 30° = 1/2.", "s": "Mathematics", "t": "Trigonometry", "d": 1 },
+    { "q": "The SI unit of force is:", "o": ["Joule", "Newton", "Watt", "Pascal"], "a": 1, "x": "Force is measured in newtons (N).", "s": "General Knowledge & Science", "t": "Physics", "d": 1 },
+    { "q": "Which gas is commonly known as 'marsh gas'?", "o": ["Methane", "Oxygen", "Hydrogen", "Carbon dioxide"], "a": 0, "x": "Methane (CH₄) is called marsh gas.", "s": "General Knowledge & Science", "t": "Chemistry", "d": 1 },
+    { "q": "Choose the synonym of 'VALIANT':", "o": ["Cowardly", "Brave", "Weak", "Timid"], "a": 1, "x": "Valiant means brave or courageous.", "s": "English (GAT)", "t": "Vocabulary", "d": 1 },
+    { "q": "The derivative of x² with respect to x is:", "o": ["x", "2x", "x²", "2"], "a": 1, "x": "d/dx (x²) = 2x.", "s": "Mathematics", "t": "Calculus: limits, derivatives, integration", "d": 1 },
+    { "q": "Who founded the 'Forward Bloc' in 1939?", "o": ["Subhas Chandra Bose", "Mahatma Gandhi", "Jawaharlal Nehru", "Bhagat Singh"], "a": 0, "x": "Subhas Chandra Bose founded the All India Forward Bloc in 1939.", "s": "General Knowledge & Science", "t": "History & freedom movement", "d": 2 },
+    { "q": "Which is the highest peak located within India?", "o": ["Kangchenjunga", "K2", "Nanda Devi", "Mount Everest"], "a": 0, "x": "Kangchenjunga (8,586 m) is India's highest peak; K2 is in PoK and Everest is in Nepal.", "s": "General Knowledge & Science", "t": "Geography & current events", "d": 1 }
   ],
   "plan": {
     "weeks": 24, "hoursPerDay": 5,

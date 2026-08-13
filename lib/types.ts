@@ -10,6 +10,7 @@ export interface SectionDef {
   questions: number;
   marks: number;
   durationMin?: number;
+  mode?: "objective" | "descriptive"; // descriptive sections are excluded from MCQ mocks
 }
 export interface PatternDef {
   stage: string;
@@ -20,6 +21,7 @@ export interface PatternDef {
   negFraction: number;
   sections: SectionDef[];
   notes?: string[];
+  mode?: "objective" | "mixed" | "descriptive" | "interview"; // how this stage is tested
 }
 export interface TopicDef {
   name: string;

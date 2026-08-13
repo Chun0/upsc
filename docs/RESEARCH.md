@@ -44,3 +44,24 @@ Sources: SSC CGL (examtarikh.in, adda247), SBI PO (bankopedia.co.in, indianexpre
 - Negative marking varies (0, 0.25, 1/3, 0.5, 1) → scoring engine is parameterised per exam/section; the report includes a **guess audit** (questions answered in <8s that were wrong) with break-even math.
 - CSAT-type papers are **qualifying** → mini-mocks flag qualifying-vs-merit sections.
 - Exams without negative marking (UGC NET, CTET) → strategy copy changes ("attempt everything").
+
+
+## 5. Corrections after re-verification (2026-08-14)
+
+A second verification pass against live 2025-26 sources (guidely, pw.live, shiksha,
+mahendras, adda247, examtarikh, careerpower, sarkariresult.zone, bankersadda,
+practicemock, edutap, prepp, ncaacademy) found and fixed these errors:
+
+| Exam | Corrected |
+|---|---|
+| IBPS PO Mains | 155 objective Q (not 170): RCA 45 / DI 35 / English 35 / GA 40 + 2 descriptive |
+| SBI PO Prelims | 40/30/30 (English 40, Quant 30, Reasoning 30) — 2025-26 revision |
+| MPPSC Prelims | 3 marks/Q = 300 marks, 1/3 negative introduced 2026 (CSAT qualifying 33% per most sources; some cite 40/30 — both noted) |
+| SSC CHSL Tier 2 | 135 Q / 405 marks (Computer 15 Q / 45 m), not 120/360 |
+| UPSC CSE Mains | accurate 9-paper split (Essay, GS I-IV, Optional I-II = 1750 + English & Regional qualifying) |
+| RBI Grade B Phase 2 | ESI/FM papers are 120 min (30 objective + 90 descriptive) |
+| SSC CGL | Quant topic weights normalised to sum 1.0 |
+
+Also: 105 new PYQ-style sample questions added across all 14 exams (offline bank +
+AI style anchors); `PatternDef.mode` now distinguishes objective/mixed/descriptive/
+interview stages so descriptive papers are never offered as MCQ mocks.
