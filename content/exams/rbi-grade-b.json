@@ -17,7 +17,7 @@
   ],
   "patterns": [
     {
-      "stage": "Phase 1",
+      "stage": "Phase 1", "mode": "objective",
       "durationMin": 120, "questions": 200, "marks": 200, "negative": "0.25 mark", "negFraction": 0.25,
       "sections": [
         { "name": "General Awareness", "questions": 80, "marks": 80, "durationMin": 25 },
@@ -28,28 +28,28 @@
       "notes": ["GA is the heaviest section (80Q) — banking + economy focus", "Sectional timers auto-lock"]
     },
     {
-      "stage": "Phase 2 Paper 1 — ESI",
-      "durationMin": 90, "questions": 36, "marks": 100, "negative": "objective only", "negFraction": 0.25,
+      "stage": "Phase 2 Paper 1 — ESI", "mode": "mixed",
+      "durationMin": 120, "questions": 36, "marks": 100, "negative": "objective only", "negFraction": 0.25,
       "sections": [
-        { "name": "ESI Objective", "questions": 30, "marks": 50 },
-        { "name": "ESI Descriptive (attempt 4 of 6)", "questions": 6, "marks": 50 }
+        { "name": "ESI Objective", "questions": 30, "marks": 50, "durationMin": 30 },
+        { "name": "ESI Descriptive (attempt 4 of 6)", "questions": 6, "marks": 50, "mode": "descriptive" }
       ],
-      "notes": ["Economic & Social Issues", "Descriptive answers evaluated on structure + data"]
+      "notes": ["Economic & Social Issues", "Descriptive answers evaluated on structure + data", "120 min = 30 min objective + 90 min descriptive"]
     },
     {
-      "stage": "Phase 2 Paper 2 — English",
+      "stage": "Phase 2 Paper 2 — English", "mode": "descriptive",
       "durationMin": 90, "questions": 3, "marks": 100, "negative": "none", "negFraction": 0,
       "sections": [{ "name": "Descriptive (Essay, Précis, Comprehension)", "questions": 3, "marks": 100 }],
       "notes": ["Writing skills paper"]
     },
     {
-      "stage": "Phase 2 Paper 3 — Finance & Management",
-      "durationMin": 90, "questions": 36, "marks": 100, "negative": "objective only", "negFraction": 0.25,
+      "stage": "Phase 2 Paper 3 — Finance & Management", "mode": "mixed",
+      "durationMin": 120, "questions": 36, "marks": 100, "negative": "objective only", "negFraction": 0.25,
       "sections": [
-        { "name": "FM Objective", "questions": 30, "marks": 50 },
-        { "name": "FM Descriptive (attempt 4 of 6)", "questions": 6, "marks": 50 }
+        { "name": "FM Objective", "questions": 30, "marks": 50, "durationMin": 30 },
+        { "name": "FM Descriptive (attempt 4 of 6)", "questions": 6, "marks": 50, "mode": "descriptive" }
       ],
-      "notes": ["Finance + Management mix"]
+      "notes": ["Finance + Management mix", "120 min = 30 min objective + 90 min descriptive"]
     }
   ],
   "syllabus": [
@@ -105,7 +105,15 @@
     { "q": "The 'Ways and Means Advances' (WMA) facility is provided by:", "o": ["SEBI to brokers", "RBI to the government", "NABARD to farmers", "SIDBI to MSMEs"], "a": 1, "x": "WMA is a temporary liquidity facility RBI provides to the central and state governments to bridge mismatches in receipts and payments.", "s": "General Awareness (Phase 1)", "t": "Banking & financial awareness", "d": 2 },
     { "q": "Which committee's recommendations led to the introduction of the Monetary Policy Committee (MPC) in India?", "o": ["Narasimham Committee", "Urjit Patel Committee", "Rangarajan Committee", "Nachiket Mor Committee"], "a": 1, "x": "The Urjit Patel Committee (2014) recommended an MPC and inflation targeting; MPC became statutory in 2016.", "s": "Economic & Social Issues (ESI)", "t": "Inflation & monetary/fiscal policy", "d": 3 },
     { "q": "CPI-based inflation in India is released by which agency?", "o": ["CSO (NSO)", "RBI", "NITI Aayog", "Ministry of Finance"], "a": 0, "x": "The National Statistical Office (NSO) compiles CPI; RBI uses it as the policy anchor.", "s": "Economic & Social Issues (ESI)", "t": "Inflation & monetary/fiscal policy", "d": 2 },
-    { "q": "Basel III norms primarily target:", "o": ["Agricultural credit", "Bank capital adequacy and liquidity", "Export finance", "MSME lending"], "a": 1, "x": "Basel III strengthens capital, leverage and liquidity requirements of banks.", "s": "Finance & Management", "t": "Risk, regulation & basics of accounting", "d": 2 }
+    { "q": "Basel III norms primarily target:", "o": ["Agricultural credit", "Bank capital adequacy and liquidity", "Export finance", "MSME lending"], "a": 1, "x": "Basel III strengthens capital, leverage and liquidity requirements of banks.", "s": "Finance & Management", "t": "Risk, regulation & basics of accounting", "d": 2 },
+    { "q": "In India's flexible inflation-targeting framework, the inflation target is set by whom?", "o": ["RBI Governor", "Government of India", "Finance Commission", "SEBI"], "a": 1, "x": "The Government sets the inflation target (4% ± 2%) in consultation with the RBI every five years.", "s": "Economic & Social Issues (ESI)", "t": "Inflation & monetary/fiscal policy", "d": 2 },
+    { "q": "Open Market Operations (OMOs) refer to the RBI's:", "o": ["Buying/selling of government securities", "Fixing of the repo rate", "Regulating NBFCs", "Issuing currency"], "a": 0, "x": "OMOs are the RBI's sale or purchase of government securities to manage liquidity.", "s": "Finance & Management", "t": "Financial system & markets", "d": 2 },
+    { "q": "Which of the following is NOT a payment system operated by the NPCI?", "o": ["UPI", "RuPay", "NEFT", "IMPS"], "a": 2, "x": "UPI, RuPay and IMPS are NPCI systems; NEFT is operated by the RBI.", "s": "General Awareness (Phase 1)", "t": "Banking & financial awareness", "d": 2 },
+    { "q": "The 'span of control' in management refers to:", "o": ["The number of subordinates a manager directly supervises", "The total staff of an organisation", "The number of management levels", "The geographic reach of a firm"], "a": 0, "x": "Span of control is the number of direct subordinates under one manager.", "s": "Finance & Management", "t": "Management fundamentals", "d": 1 },
+    { "q": "Which organisation publishes the 'World Development Report'?", "o": ["World Bank", "IMF", "UNDP", "WTO"], "a": 0, "x": "The World Bank publishes the World Development Report.", "s": "Economic & Social Issues (ESI)", "t": "Poverty, unemployment & inequality", "d": 1 },
+    { "q": "Find the next number: 2, 6, 12, 20, 30, ?", "o": ["40", "42", "44", "36"], "a": 1, "x": "Differences are 4,6,8,10 → next 12, so 30 + 12 = 42.", "s": "Reasoning & Quant (Phase 1)", "t": "Puzzles, syllogism, DI", "d": 2 },
+    { "q": "GDP at market prices minus net indirect taxes equals:", "o": ["GDP at factor cost", "GNP", "NDP", "Gross Value Added"], "a": 0, "x": "GDP at factor cost = GDP at market prices − indirect taxes + subsidies.", "s": "Economic & Social Issues (ESI)", "t": "Growth & development", "d": 2 },
+    { "q": "The Financial Stability Report is published half-yearly by which body?", "o": ["RBI", "SEBI", "NITI Aayog", "Ministry of Finance"], "a": 0, "x": "The RBI publishes the Financial Stability Report (FSR) twice a year.", "s": "General Awareness (Phase 1)", "t": "Current affairs", "d": 2 }
   ],
   "plan": {
     "weeks": 20, "hoursPerDay": 4,

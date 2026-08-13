@@ -67,7 +67,7 @@ export function examContextText(exam: ExamDef, maxTopicsPerSubject = 8): string 
     );
     if (p.notes?.length) lines.push(`  Notes: ${p.notes.join("; ")}`);
   }
-  lines.push("SYLLABUS (subject weight; topic weight 1-5 PYQ frequency, difficulty 1-5):");
+  lines.push("SYLLABUS (subject weight 0-1; each topic tagged with PYQ frequency 1-5 and difficulty 1-5):");
   for (const s of exam.syllabus) {
     const topics = s.topics.slice(0, maxTopicsPerSubject).map((t) => `${t.name} [pyq:${t.pyq}/5, diff:${t.difficulty}/5${t.sub?.length ? " (" + t.sub.join(", ") + ")" : ""}]`);
     lines.push(`- ${s.subject} (weight ${Math.round(s.weight * 100)}%): ${topics.join("; ")}`);

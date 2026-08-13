@@ -15,7 +15,7 @@
   ],
   "patterns": [
     {
-      "stage": "CBT",
+      "stage": "CBT", "mode": "objective",
       "durationMin": 180, "questions": 150, "marks": 300, "negative": "none", "negFraction": 0,
       "sections": [
         { "name": "Paper 1 — Teaching & Research Aptitude", "questions": 50, "marks": 100, "durationMin": 60 },
@@ -58,7 +58,13 @@
     { "q": "Which type of research is aimed at solving an immediate practical problem?", "o": ["Fundamental research", "Applied research", "Historical research", "Descriptive research"], "a": 1, "x": "Applied (action-oriented) research targets immediate, practical problems.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Research Aptitude", "d": 2 },
     { "q": "The National Education Policy 2020 proposes the school structure of:", "o": ["10+2", "5+3+3+4", "8+4", "4+4+4"], "a": 1, "x": "NEP 2020 restructures school education as 5 (foundational) + 3 (preparatory) + 3 (middle) + 4 (secondary).", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Higher Education System", "d": 1 },
     { "q": "In communication, the process of converting a message into symbols is called:", "o": ["Decoding", "Encoding", "Feedback", "Noise"], "a": 1, "x": "Encoding = converting ideas into transmittable symbols; decoding is the reverse at the receiver's end.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Communication", "d": 1 },
-    { "q": "Find the missing number: 2, 6, 12, 20, 30, ?", "o": ["40", "42", "44", "36"], "a": 1, "x": "Differences 4, 6, 8, 10 → next +12 = 42 (n² + n pattern).", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Mathematical Reasoning & Aptitude", "d": 1 }
+    { "q": "Find the missing number: 2, 6, 12, 20, 30, ?", "o": ["40", "42", "44", "36"], "a": 1, "x": "Differences 4, 6, 8, 10 → next +12 = 42 (n² + n pattern).", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Mathematical Reasoning & Aptitude", "d": 1 },
+    { "q": "Which type of evaluation is conducted at the end of a course to measure overall achievement?", "o": ["Formative", "Summative", "Diagnostic", "Placement"], "a": 1, "x": "Summative evaluation assesses learning at the end of instruction.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Teaching Aptitude", "d": 1 },
+    { "q": "The variable manipulated by a researcher in an experiment is called the:", "o": ["Dependent variable", "Independent variable", "Control variable", "Extraneous variable"], "a": 1, "x": "The independent variable is manipulated to observe its effect on the dependent variable.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Research Aptitude", "d": 2 },
+    { "q": "Which of the following is NOT a form of non-verbal communication?", "o": ["Gestures", "Facial expressions", "Written memo", "Eye contact"], "a": 2, "x": "A written memo is verbal (written) communication.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Communication", "d": 1 },
+    { "q": "Which of the following is an open-source operating system?", "o": ["Windows", "Linux", "iOS", "macOS"], "a": 1, "x": "Linux is open source.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "ICT", "d": 1 },
+    { "q": "The University Grants Commission (UGC) was established in which year?", "o": ["1953", "1956", "1947", "1961"], "a": 0, "x": "The UGC was set up in 1953 and became a statutory body in 1956.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Higher Education System", "d": 2 },
+    { "q": "If all roses are flowers and some flowers fade quickly, then:", "o": ["All roses fade quickly", "Some roses may fade quickly", "No roses fade quickly", "All flowers are roses"], "a": 1, "x": "'Some flowers fade quickly' may include roses — only a possibility follows.", "s": "Paper 1 — Teaching & Research Aptitude", "t": "Logical Reasoning", "d": 2 }
   ],
   "plan": {
     "weeks": 12, "hoursPerDay": 4,

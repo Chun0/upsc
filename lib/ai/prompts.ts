@@ -29,6 +29,14 @@ export function ctxQuiz(exam: ExamDef, opts: {
 - subject/topic strings must be drawn from the exam syllabus above where possible.
 - difficulty is an integer 1..5.
 - Facts must be accurate; prefer stable, well-established facts over volatile recent events unless the exam is current-affairs heavy.`);
+  // one real PYQ-style anchor so the model matches this exam's phrasing & trap quality
+  const anchor = exam.samples?.[0];
+  if (anchor?.q) {
+    const letters = ["A", "B", "C", "D"];
+    parts.push(
+      `STYLE REFERENCE (match this exam's real question phrasing, trap quality and difficulty — do NOT reuse this exact question):\nQ: ${anchor.q}\n${(anchor.o || []).map((o, i) => `${letters[i]}) ${o}`).join("  ")}\nAnswer: ${letters[anchor.a ?? 0]} — ${anchor.x}`
+    );
+  }
   parts.push(JSON_RULE);
   parts.push(`Schema: { "questions": [ { "question": string, "options": string[4], "answerIndex": 0..3, "explanation": string, "subject": string, "topic": string, "difficulty": 1..5 } ] }`);
   return parts.join("\n\n");

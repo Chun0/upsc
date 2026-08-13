@@ -152,7 +152,8 @@ export function miniMockPlan(
   maxQuestions = 25
 ): { sections: { name: string; questions: number; marks: number; durationMin: number; negFraction: number }[]; totalMarks: number; totalDurationMin: number } {
   const pattern = exam.patterns.find((p) => (stageName ? p.stage === stageName : p.questions > 0)) || exam.patterns[0];
-  const sections = pattern.sections.filter((s) => s.questions > 0);
+  // descriptive sections (Mains answer-writing) are never turned into MCQs — skip them
+  const sections = pattern.sections.filter((s) => s.questions > 0 && s.mode !== "descriptive");
   const totalQ = sections.reduce((a, s) => a + s.questions, 0) || 1;
   const scale = maxQuestions / totalQ;
   const perQ = pattern.marks / (pattern.questions || 1);
@@ -178,10 +179,16 @@ const SECTION_SUBJECT_HINTS: [string, string[]][] = [
   ["english", ["English", "English Language", "Verbal Ability in English", "English (GAT)"]],
   ["comprehension", ["English", "English Language"]],
   ["verbal", ["Verbal Ability in English", "English"]],
-  ["awareness", ["General Awareness", "General Awareness & Current Affairs", "General / Banking Awareness", "General / Economy / Banking Awareness"]],
+  ["awareness", ["General Awareness", "General Awareness & Current Affairs", "General / Banking Awareness", "General / Economy / Banking Awareness", "General Awareness (Phase 1)"]],
   ["knowledge", ["General Knowledge", "General Knowledge & Science"]],
   ["general", ["General Awareness", "General Studies", "General Knowledge"]],
   ["numerical", ["Numerical Ability", "Quantitative Aptitude"]],
+  ["data", ["Data Analysis & Interpretation"]],
+  ["fm", ["Finance & Management"]],
+  ["finance", ["Finance & Management"]],
+  ["esi", ["Economic & Social Issues (ESI)"]],
+  ["economic", ["Economic & Social Issues (ESI)"]],
+  ["computer", ["Computer Aptitude", "Computer Knowledge (Tier II)", "Computer (Tier II)"]],
   ["science", ["General Science", "General Knowledge & Science", "Science & Technology"]],
   ["aptitude", ["CSAT Aptitude", "Quantitative Aptitude"]],
   ["csat", ["CSAT Aptitude"]],

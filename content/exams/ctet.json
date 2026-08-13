@@ -16,7 +16,7 @@
   ],
   "patterns": [
     {
-      "stage": "Paper 1",
+      "stage": "Paper 1", "mode": "objective",
       "durationMin": 150, "questions": 150, "marks": 150, "negative": "none", "negFraction": 0,
       "sections": [
         { "name": "Child Development & Pedagogy", "questions": 30, "marks": 30 },
@@ -28,7 +28,7 @@
       "notes": ["1 mark each, no negative marking", "Pass: 60% (90/150)"]
     },
     {
-      "stage": "Paper 2",
+      "stage": "Paper 2", "mode": "objective",
       "durationMin": 150, "questions": 150, "marks": 150, "negative": "none", "negFraction": 0,
       "sections": [
         { "name": "Child Development & Pedagogy", "questions": 30, "marks": 30 },
@@ -76,7 +76,13 @@
     { "q": "According to Piaget, a child in the 'concrete operational stage' can typically:", "o": ["Think abstractly and hypothetically", "Perform logical operations on concrete objects", "Only respond to sensory stimuli", "Use hypothetico-deductive reasoning"], "a": 1, "x": "Concrete operational stage (7–11 years): logical thinking about concrete objects, not yet abstract/hypothetical.", "s": "Child Development & Pedagogy", "t": "Development & learning theories", "d": 2 },
     { "q": "Under RTE 2009, free and compulsory education applies to children aged:", "o": ["4–14", "6–14", "6–18", "5–16"], "a": 1, "x": "Right to Education Act 2009 covers ages 6–14 (classes 1–8).", "s": "Child Development & Pedagogy", "t": "Assessment & inclusive education", "d": 1 },
     { "q": "A teacher finds a student repeatedly making mistakes in subtraction with borrowing. The best first step is:", "o": ["Give more drill worksheets", "Diagnose the underlying misconception about place value", "Send the student for remedial class after school", "Ask parents to teach at home"], "a": 1, "x": "Diagnostic teaching first identifies the specific misconception (often place value), then remediates.", "s": "Mathematics & EVS / Science / SST", "t": "Maths pedagogy & misconceptions", "d": 2 },
-    { "q": "Which is a 'renewable' source of energy?", "o": ["Coal", "Petroleum", "Solar energy", "Natural gas"], "a": 2, "x": "Solar energy is renewable; fossil fuels are exhaustible.", "s": "Mathematics & EVS / Science / SST", "t": "EVS / Science / Social Studies content", "d": 1 }
+    { "q": "Which is a 'renewable' source of energy?", "o": ["Coal", "Petroleum", "Solar energy", "Natural gas"], "a": 2, "x": "Solar energy is renewable; fossil fuels are exhaustible.", "s": "Mathematics & EVS / Science / SST", "t": "EVS / Science / Social Studies content", "d": 1 },
+    { "q": "Who proposed the theory of 'Multiple Intelligences'?", "o": ["Piaget", "Howard Gardner", "Kohlberg", "Skinner"], "a": 1, "x": "Howard Gardner proposed eight multiple intelligences.", "s": "Child Development & Pedagogy", "t": "Development & learning theories", "d": 1 },
+    { "q": "Continuous and Comprehensive Evaluation (CCE) was mandated under which framework?", "o": ["NEP 2020", "RTE Act 2009", "NCF 2005", "NPE 1986"], "a": 1, "x": "CCE was introduced under the RTE Act 2009 framework.", "s": "Child Development & Pedagogy", "t": "Assessment & inclusive education", "d": 2 },
+    { "q": "The period most critical for first-language acquisition is:", "o": ["Adolescence", "Early childhood", "Middle age", "Old age"], "a": 1, "x": "Early childhood is the critical period for language acquisition.", "s": "Language I & II", "t": "Language pedagogy & acquisition", "d": 1 },
+    { "q": "Which of the following is a non-renewable source of energy?", "o": ["Solar", "Wind", "Coal", "Biogas"], "a": 2, "x": "Coal is a fossil fuel and non-renewable.", "s": "Mathematics & EVS / Science / SST", "t": "EVS / Science / Social Studies content", "d": 1 },
+    { "q": "IQ (Intelligence Quotient) is computed as:", "o": ["MA ÷ CA × 100", "CA ÷ MA × 100", "MA × CA", "(MA + CA) ÷ 2"], "a": 0, "x": "IQ = (Mental Age ÷ Chronological Age) × 100.", "s": "Child Development & Pedagogy", "t": "Intelligence & individual differences", "d": 2 },
+    { "q": "Choose the synonym of 'SERENE':", "o": ["Agitated", "Calm", "Noisy", "Rough"], "a": 1, "x": "Serene means calm and peaceful.", "s": "Language I & II", "t": "Comprehension", "d": 1 }
   ],
   "plan": {
     "weeks": 10, "hoursPerDay": 3,

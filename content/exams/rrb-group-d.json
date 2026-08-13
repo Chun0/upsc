@@ -17,7 +17,7 @@
   ],
   "patterns": [
     {
-      "stage": "CBT",
+      "stage": "CBT", "mode": "objective",
       "durationMin": 90, "questions": 100, "marks": 100, "negative": "1/3 mark", "negFraction": 0.333,
       "sections": [
         { "name": "General Science", "questions": 25, "marks": 25, "durationMin": 23 },
@@ -74,7 +74,14 @@
     { "q": "Which vitamin is produced in the human body on exposure to sunlight?", "o": ["Vitamin A", "Vitamin B12", "Vitamin D", "Vitamin K"], "a": 2, "x": "UV radiation converts 7-dehydrocholesterol in skin to Vitamin D3.", "s": "General Science", "t": "Biology", "d": 1 },
     { "q": "The LCM of 12, 18 and 24 is:", "o": ["36", "48", "72", "144"], "a": 2, "x": "12=2²·3, 18=2·3², 24=2³·3 → LCM = 2³·3² = 72.", "s": "Mathematics", "t": "Number system & simplification", "d": 1 },
     { "q": "Pointing to a photograph, Ram says: 'She is the daughter of my grandfather's only son.' How is the girl related to Ram?", "o": ["Mother", "Sister", "Cousin", "Aunt"], "a": 1, "x": "Grandfather's only son = Ram's father; his daughter = Ram's sister.", "s": "General Intelligence & Reasoning", "t": "Coding-decoding & blood relations", "d": 2 },
-    { "q": "The first Indian to win an individual Olympic gold medal was:", "o": ["Neeraj Chopra", "Abhinav Bindra", "P. V. Sindhu", "Milkha Singh"], "a": 1, "x": "Abhinav Bindra — 10m Air Rifle, Beijing 2008. Neeraj Chopra is the first in athletics (2021).", "s": "General Awareness & Current Affairs", "t": "Static GK & economy", "d": 1 }
+    { "q": "The first Indian to win an individual Olympic gold medal was:", "o": ["Neeraj Chopra", "Abhinav Bindra", "P. V. Sindhu", "Milkha Singh"], "a": 1, "x": "Abhinav Bindra — 10m Air Rifle, Beijing 2008. Neeraj Chopra is the first in athletics (2021).", "s": "General Awareness & Current Affairs", "t": "Static GK & economy", "d": 1 },
+    { "q": "Sound travels fastest in which medium?", "o": ["Air", "Water", "Steel", "Vacuum"], "a": 2, "x": "Sound travels fastest in solids (steel); it cannot travel through a vacuum.", "s": "General Science", "t": "Physics", "d": 1 },
+    { "q": "The square root of 144 is:", "o": ["11", "12", "13", "14"], "a": 1, "x": "12 × 12 = 144.", "s": "Mathematics", "t": "Number system & simplification", "d": 1 },
+    { "q": "Find the odd one out: Rose, Lotus, Marigold, Onion", "o": ["Rose", "Lotus", "Marigold", "Onion"], "a": 3, "x": "Onion is a vegetable; the others are flowers.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 },
+    { "q": "The currency of Japan is:", "o": ["Yuan", "Yen", "Won", "Ringgit"], "a": 1, "x": "Japan's currency is the yen.", "s": "General Awareness & Current Affairs", "t": "Static GK & economy", "d": 1 },
+    { "q": "Which organ filters waste from the blood in the human body?", "o": ["Heart", "Lungs", "Kidney", "Liver"], "a": 2, "x": "The kidneys filter waste products from the blood.", "s": "General Science", "t": "Biology", "d": 1 },
+    { "q": "The chemical formula of common salt is:", "o": ["NaCl", "KCl", "NaOH", "HCl"], "a": 0, "x": "Common salt is sodium chloride (NaCl).", "s": "General Science", "t": "Chemistry", "d": 1 },
+    { "q": "A man bought a cycle for ₹2,000 and sold it for ₹2,400. His profit per cent is:", "o": ["10%", "15%", "20%", "25%"], "a": 2, "x": "Profit = 400 ÷ 2000 = 20%.", "s": "Mathematics", "t": "Percentages, profit & loss, SI", "d": 1 }
   ],
   "plan": {
     "weeks": 12, "hoursPerDay": 3,

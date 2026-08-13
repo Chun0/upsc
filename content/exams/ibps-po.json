@@ -6,7 +6,7 @@
   "icon": "🏦",
   "color": "#f59e0b",
   "tagline": "The classic bank-PO grind — speed, accuracy, sectional cutoffs.",
-  "overview": "Prelims (100Q/60min, sectional 20-min timers, −0.25) → Mains (revised 2026: 170Q objective 200m + 25m descriptive, 3.5h) → Interview. Sectional cutoffs apply at both stages.",
+  "overview": "Prelims (100Q/60min, sectional 20-min timers, −0.25) → Mains (revised 2026: 155Q objective 200m + 25m descriptive, 3.5h) → Interview. Sectional cutoffs apply at both stages.",
   "eligibility": ["Graduate in any discipline", "Age 20–30"],
   "age": "20–30",
   "attempts": "No limit",
@@ -17,7 +17,7 @@
   ],
   "patterns": [
     {
-      "stage": "Prelims",
+      "stage": "Prelims", "mode": "objective",
       "durationMin": 60, "questions": 100, "marks": 100, "negative": "0.25 mark", "negFraction": 0.25,
       "sections": [
         { "name": "English Language", "questions": 30, "marks": 30, "durationMin": 20 },
@@ -27,16 +27,16 @@
       "notes": ["Each question 1 mark; −0.25 wrong", "Sectional timing: 20 min each, auto-lock", "Must clear sectional AND overall cutoffs"]
     },
     {
-      "stage": "Mains (revised 2026)",
-      "durationMin": 180, "questions": 170, "marks": 200, "negative": "0.25 mark", "negFraction": 0.25,
+      "stage": "Mains (revised 2026)", "mode": "mixed",
+      "durationMin": 180, "questions": 155, "marks": 200, "negative": "0.25 mark", "negFraction": 0.25,
       "sections": [
         { "name": "Reasoning & Computer Aptitude", "questions": 45, "marks": 60, "durationMin": 60 },
         { "name": "Data Analysis & Interpretation", "questions": 35, "marks": 60, "durationMin": 45 },
         { "name": "English Language", "questions": 35, "marks": 40, "durationMin": 40 },
         { "name": "General / Economy / Banking Awareness", "questions": 40, "marks": 40, "durationMin": 35 },
-        { "name": "Descriptive (Letter + Essay)", "questions": 2, "marks": 25, "durationMin": 30 }
+        { "name": "Descriptive (Letter + Essay)", "questions": 2, "marks": 25, "durationMin": 30, "mode": "descriptive" }
       ],
-      "notes": ["Objective 170Q/200m + descriptive 25m (30 min)", "Section split indicative — verify with official notification", "Descriptive evaluated separately"]
+      "notes": ["Objective 155Q/200m (RCA 45, DI 35, English 35, GA 40) + descriptive 2Q/25m (30 min)", "Section split indicative — verify with official notification", "Descriptive evaluated separately"]
     }
   ],
   "syllabus": [
@@ -94,7 +94,15 @@
     { "q": "Eight people sit around a circular table facing the centre. A sits third to the right of B. C sits second to the left of A... If D sits exactly between A and C, who sits opposite B? (Data sufficient to solve in full paper; here identify the approach.)", "o": ["Start with A–B relation and place C", "Start with D between A and C", "Cannot be determined from given data", "Place B first"], "a": 2, "x": "With only these clues the position opposite B cannot be uniquely determined — always count how many distinct arrangements satisfy all clues before marking.", "s": "Reasoning Ability", "t": "Puzzles & seating arrangement", "d": 3 },
     { "q": "A shopkeeper sells an item at 20% discount on marked price and still gains 12%. If cost price is ₹500, the marked price is:", "o": ["₹640", "₹700", "₹720", "₹750"], "a": 1, "x": "SP = 500 × 1.12 = 560. MP = 560 / 0.8 = 700.", "s": "Quantitative Aptitude", "t": "Arithmetic word problems", "d": 2 },
     { "q": "Which institution publishes the 'Financial Stability Report' in India?", "o": ["SEBI", "RBI", "Ministry of Finance", "NITI Aayog"], "a": 1, "x": "The RBI publishes the half-yearly Financial Stability Report (FSR).", "s": "General / Banking Awareness", "t": "Banking & financial awareness", "d": 2 },
-    { "q": "Choose the word most similar in meaning to 'CANDID':", "o": ["Secretive", "Frank", "Biased", "Cunning"], "a": 1, "x": "Candid = frank, honest, straightforward.", "s": "English Language", "t": "Vocabulary & match the column", "d": 1 }
+    { "q": "Choose the word most similar in meaning to 'CANDID':", "o": ["Secretive", "Frank", "Biased", "Cunning"], "a": 1, "x": "Candid = frank, honest, straightforward.", "s": "English Language", "t": "Vocabulary & match the column", "d": 1 },
+    { "q": "Three friends A, B and C sit in a row. A sits to the immediate left of B, and C sits to the immediate right of B. Who sits in the middle?", "o": ["A", "B", "C", "Cannot be determined"], "a": 1, "x": "The order is A–B–C, so B is in the middle.", "s": "Reasoning Ability", "t": "Puzzles & seating arrangement", "d": 1 },
+    { "q": "Find the missing number: 3, 6, 18, 72, ?", "o": ["144", "216", "360", "288"], "a": 2, "x": "Multipliers are ×2, ×3, ×4, ×5 → 72 × 5 = 360.", "s": "Quantitative Aptitude", "t": "Simplification & number series", "d": 2 },
+    { "q": "Spot the error: 'The committee have decided to postpone the meeting.'", "o": ["The committee", "have decided", "to postpone", "No error"], "a": 1, "x": "'Committee' as a unit takes a singular verb — 'has decided'.", "s": "English Language", "t": "Error detection & phrase replacement", "d": 2 },
+    { "q": "The Reserve Bank of India's policy repo rate decisions are taken by which committee?", "o": ["Monetary Policy Committee (MPC)", "SEBI Board", "NABARD Board", "Finance Commission"], "a": 0, "x": "The six-member MPC sets the policy repo rate; it was constituted under the RBI Act amendment of 2016.", "s": "General / Banking Awareness", "t": "Banking & financial awareness", "d": 2 },
+    { "q": "A sum of money doubles itself at simple interest in 10 years. The rate of interest is:", "o": ["5%", "10%", "12%", "8%"], "a": 1, "x": "SI equals the principal when it doubles in 10 years → rate = 100/10 = 10%.", "s": "Quantitative Aptitude", "t": "Arithmetic word problems", "d": 2 },
+    { "q": "A is the father of B and C. D is the mother of C. How is A related to D?", "o": ["Brother", "Husband", "Father", "Son"], "a": 1, "x": "A (father) and D (mother) of C are husband and wife.", "s": "Reasoning Ability", "t": "Blood relations & direction", "d": 2 },
+    { "q": "Choose the word opposite in meaning to 'TRANSPARENT':", "o": ["Clear", "Opaque", "Lucid", "Obvious"], "a": 1, "x": "Opaque is the opposite of transparent.", "s": "English Language", "t": "Vocabulary & match the column", "d": 1 },
+    { "q": "Which organisation insures bank deposits up to ₹5 lakh per depositor in India?", "o": ["DICGC", "IRDAI", "SEBI", "PFRDA"], "a": 0, "x": "DICGC, a wholly-owned RBI subsidiary, insures each depositor's balance up to ₹5 lakh per bank.", "s": "General / Banking Awareness", "t": "Economy & current affairs", "d": 2 }
   ],
   "plan": {
     "weeks": 16, "hoursPerDay": 4,
