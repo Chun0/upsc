@@ -26,7 +26,15 @@ function MockBuilder() {
       .catch(() => undefined);
   }, []);
 
-  const meritStages = useMemo(() => exam.patterns.filter((p) => p.questions > 0 && !/qualify/i.test(p.stage) || p.questions > 0 && exam.patterns.length <= 1), [exam]);
+  // MCQ-mockable stages only: objective or mixed patterns with questions; exclude
+  // descriptive (Mains answer-writing) and interview stages from the mock builder.
+  const meritStages = useMemo(
+    () =>
+      exam.patterns.filter(
+        (p) => p.questions > 0 && (p.mode === "objective" || p.mode === "mixed") && (!/qualify/i.test(p.stage) || exam.patterns.length <= 1)
+      ),
+    [exam]
+  );
   const effectiveStage = stage || meritStages[0]?.stage || exam.patterns[0]?.stage;
   const plan = miniMockPlan(exam, effectiveStage, scale);
 

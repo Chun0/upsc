@@ -17,17 +17,17 @@
   ],
   "patterns": [
     {
-      "stage": "Prelims",
+      "stage": "Prelims", "mode": "objective",
       "durationMin": 60, "questions": 100, "marks": 100, "negative": "1/4 mark", "negFraction": 0.25,
       "sections": [
-        { "name": "English Language", "questions": 30, "marks": 30, "durationMin": 20 },
-        { "name": "Quantitative Aptitude", "questions": 35, "marks": 35, "durationMin": 20 },
-        { "name": "Reasoning Ability", "questions": 35, "marks": 35, "durationMin": 20 }
+        { "name": "English Language", "questions": 40, "marks": 40, "durationMin": 20 },
+        { "name": "Quantitative Aptitude", "questions": 30, "marks": 30, "durationMin": 20 },
+        { "name": "Reasoning Ability", "questions": 30, "marks": 30, "durationMin": 20 }
       ],
-      "notes": ["1 mark/question; −0.25 wrong", "20-min sectional timers"]
+      "notes": ["1 mark/question; −0.25 wrong", "2025-26 revision: English 40Q, Quant 30Q, Reasoning 30Q (earlier 30/35/35)", "20-min sectional timers"]
     },
     {
-      "stage": "Mains Objective",
+      "stage": "Mains Objective", "mode": "objective",
       "durationMin": 180, "questions": 170, "marks": 200, "negative": "1/4 mark", "negFraction": 0.25,
       "sections": [
         { "name": "Reasoning & Computer Aptitude", "questions": 40, "marks": 60, "durationMin": 50 },
@@ -35,7 +35,7 @@
         { "name": "General / Economy / Banking Awareness", "questions": 60, "marks": 60, "durationMin": 45 },
         { "name": "English Language", "questions": 40, "marks": 20, "durationMin": 40 }
       ],
-      "notes": ["GA section is 60 questions — heaviest count", "Descriptive: 30 marks, 30 min (2026 cycle, reduced from 50)", "Letter + Essay"]
+      "notes": ["GA section is 60 questions — heaviest count", "Descriptive: 30 marks, 30 min (2026 cycle, reduced from 50)", "Descriptive 2026: 30m — Email + Situation Analysis + Report/Précis (earlier Letter+Essay, 50m)"]
     }
   ],
   "syllabus": [
@@ -91,7 +91,15 @@
     { "q": "Direction: In the question, three statements are given followed by two conclusions. Statements: All pens are boxes. Some boxes are red. No red is blue. Conclusions: I. Some pens are red. II. No blue is a box. Which follows?", "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"], "a": 3, "x": "I does not follow (pens may be outside red). II does not follow (boxes may include blue outside red). Neither follows.", "s": "Reasoning Ability", "t": "Syllogism & inequality", "d": 3 },
     { "q": "Study the data: Company revenue ₹120 cr, expenses ₹90 cr. If next year revenue grows 15% and expenses grow 10%, the profit increases by:", "o": ["20%", "25%", "30%", "35%"], "a": 2, "x": "Profit now 30; next year revenue 138, expenses 99 → profit 39. Increase = 9/30 = 30%.", "s": "Data Analysis & Interpretation", "t": "Caselet & arithmetic DI", "d": 2 },
     { "q": "Which of the following is NOT a function of the RBI?", "o": ["Issuing currency notes", "Managing foreign exchange reserves", "Fixing interest rates on fixed deposits of all banks", "Regulating payment systems"], "a": 2, "x": "RBI regulates banks but does not fix retail FD rates — those are decided by banks themselves.", "s": "General / Economy / Banking Awareness", "t": "Banking & financial awareness", "d": 2 },
-    { "q": "Rearrange: P. the monsoon arrived early Q. farmers began sowing R. as soon as S. their kharif crops", "o": ["RQSP", "PRQS", "QSPR", "SPRQ"], "a": 1, "x": "'As soon as the monsoon arrived early, farmers began sowing their kharif crops' → R-P-Q-S.", "s": "English Language", "t": "Cloze, jumbles & vocabulary", "d": 2 }
+    { "q": "Rearrange: P. the monsoon arrived early Q. farmers began sowing R. as soon as S. their kharif crops", "o": ["RQSP", "PRQS", "QSPR", "SPRQ"], "a": 1, "x": "'As soon as the monsoon arrived early, farmers began sowing their kharif crops' → R-P-Q-S.", "s": "English Language", "t": "Cloze, jumbles & vocabulary", "d": 2 },
+    { "q": "A bar chart shows sales of 120, 150, 90 and 180 units over four months. The average monthly sales is:", "o": ["135", "120", "150", "140"], "a": 0, "x": "(120 + 150 + 90 + 180) ÷ 4 = 540 ÷ 4 = 135.", "s": "Data Analysis & Interpretation", "t": "Tabular & bar/line DI", "d": 1 },
+    { "q": "Statements: All pens are pencils. Some pencils are erasers. Conclusions: I. Some erasers are pens. II. Some pencils are pens.", "o": ["Only I follows", "Only II follows", "Both follow", "Neither follows"], "a": 1, "x": "'All pens are pencils' converts to 'Some pencils are pens' (II); I does not follow.", "s": "Reasoning Ability", "t": "Syllogism & inequality", "d": 3 },
+    { "q": "Choose the synonym of 'CONCISE':", "o": ["Verbose", "Brief", "Lengthy", "Detailed"], "a": 1, "x": "Concise means brief and to the point.", "s": "English Language", "t": "Reading comprehension", "d": 1 },
+    { "q": "The 'base rate' system for bank lending in India was replaced from April 2016 by which regime?", "o": ["MCLR", "PLR", "Repo-linked rate", "LIBOR"], "a": 0, "x": "The Marginal Cost of funds-based Lending Rate (MCLR) replaced the base rate system in April 2016.", "s": "General / Economy / Banking Awareness", "t": "Banking & financial awareness", "d": 2 },
+    { "q": "In a class, 60% are boys and the rest are girls. If there are 24 girls, the total strength is:", "o": ["60", "48", "40", "72"], "a": 0, "x": "40% = 24 → total = 24 ÷ 0.4 = 60.", "s": "Data Analysis & Interpretation", "t": "Caselet & arithmetic DI", "d": 2 },
+    { "q": "In a row of 25 students, Ramesh is 7th from the left. What is his position from the right?", "o": ["18th", "19th", "20th", "17th"], "a": 1, "x": "Position from right = 25 − 7 + 1 = 19th.", "s": "Reasoning Ability", "t": "Puzzles & seating arrangement", "d": 1 },
+    { "q": "Choose the correct form: 'Neither of the two candidates ___ eligible.'", "o": ["are", "is", "were", "have been"], "a": 1, "x": "'Neither' takes a singular verb — 'is'.", "s": "English Language", "t": "Error detection & sentence improvement", "d": 2 },
+    { "q": "The Pradhan Mantri Jan Dhan Yojana was launched in which year?", "o": ["2012", "2014", "2016", "2010"], "a": 1, "x": "PMJDY was launched on 28 August 2014.", "s": "General / Economy / Banking Awareness", "t": "Economy & government schemes", "d": 1 }
   ],
   "plan": {
     "weeks": 20, "hoursPerDay": 5,

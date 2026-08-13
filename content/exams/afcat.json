@@ -16,7 +16,7 @@
   ],
   "patterns": [
     {
-      "stage": "AFCAT",
+      "stage": "AFCAT", "mode": "objective",
       "durationMin": 120, "questions": 100, "marks": 300, "negative": "1 mark", "negFraction": 0.333,
       "sections": [
         { "name": "Verbal Ability in English", "questions": 25, "marks": 75, "durationMin": 30 },
@@ -71,7 +71,14 @@
     { "q": "If an aircraft is flying east and turns 90° to its right, then again 45° to its right, its new heading is:", "o": ["North", "South-West", "South-East", "North-West"], "a": 2, "x": "East + 90° = South; South + 45° right = South-West... careful: right of South is West, so South + 45° = South-West. Heading after 135° total right turn from East = South-West. (Verify with a compass rose: E→S→SW.)", "s": "Reasoning & Military Aptitude", "t": "Military aptitude & situation judgement", "d": 3 },
     { "q": "A train 150 m long crosses a pole in 10 seconds. Its speed in km/h is:", "o": ["45", "54", "60", "72"], "a": 1, "x": "Speed = 150/10 = 15 m/s = 15 × 18/5 = 54 km/h.", "s": "Numerical Ability", "t": "Time, speed, work & simple interest", "d": 1 },
     { "q": "Choose the synonym of 'MAGNANIMOUS':", "o": ["Petty", "Generous", "Arrogant", "Cautious"], "a": 1, "x": "Magnanimous = generous, forgiving, noble-spirited.", "s": "Verbal Ability in English", "t": "Vocabulary & grammar", "d": 1 },
-    { "q": "Exercise 'Garuda' is conducted between India and which country?", "o": ["USA", "Russia", "France", "UK"], "a": 2, "x": "Exercise Garuda is an India–France bilateral air exercise.", "s": "General Awareness", "t": "Defence & current affairs", "d": 2 }
+    { "q": "Exercise 'Garuda' is conducted between India and which country?", "o": ["USA", "Russia", "France", "UK"], "a": 2, "x": "Exercise Garuda is an India–France bilateral air exercise.", "s": "General Awareness", "t": "Defence & current affairs", "d": 2 },
+    { "q": "If 20% of a number is 60, the number is:", "o": ["300", "240", "120", "30"], "a": 0, "x": "0.2x = 60 → x = 300.", "s": "Numerical Ability", "t": "Arithmetic & percentages", "d": 1 },
+    { "q": "Choose the synonym of 'NIMBLE':", "o": ["Clumsy", "Agile", "Slow", "Heavy"], "a": 1, "x": "Nimble means quick and light in movement — agile.", "s": "Verbal Ability in English", "t": "Vocabulary & grammar", "d": 1 },
+    { "q": "Who is the Supreme Commander of the Indian Armed Forces?", "o": ["Prime Minister", "President", "Defence Minister", "Chief of Defence Staff"], "a": 1, "x": "The President of India is the Supreme Commander of the Armed Forces.", "s": "General Awareness", "t": "Defence & current affairs", "d": 1 },
+    { "q": "Ravi ranks 15th from the top and 21st from the bottom in a class. How many students are there?", "o": ["35", "36", "34", "37"], "a": 0, "x": "Total = 15 + 21 − 1 = 35.", "s": "Reasoning & Military Aptitude", "t": "Verbal & spatial reasoning", "d": 2 },
+    { "q": "The simple interest on ₹2,000 at 5% per annum for 3 years is:", "o": ["₹300", "₹250", "₹350", "₹200"], "a": 0, "x": "SI = 2000 × 5 × 3 ÷ 100 = ₹300.", "s": "Numerical Ability", "t": "Time, speed, work & simple interest", "d": 1 },
+    { "q": "The national motto 'Satyameva Jayate' is taken from which Upanishad?", "o": ["Mundaka Upanishad", "Katha Upanishad", "Isa Upanishad", "Chandogya Upanishad"], "a": 0, "x": "'Satyameva Jayate' is from the Mundaka Upanishad.", "s": "General Awareness", "t": "History, geography & polity", "d": 2 },
+    { "q": "In a plane mirror, the word 'AFCAT' will appear as:", "o": ["TACFA", "TAFCA", "TACAF", "TCAAF"], "a": 0, "x": "A mirror reverses left–right: A-F-C-A-T becomes T-A-C-F-A.", "s": "Reasoning & Military Aptitude", "t": "Non-verbal reasoning", "d": 2 }
   ],
   "plan": {
     "weeks": 16, "hoursPerDay": 3,

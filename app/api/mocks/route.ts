@@ -24,7 +24,10 @@ export async function POST(req: NextRequest) {
   const offline = Boolean(body.offline);
   const maxQ = Math.min(50, Math.max(10, Number(body.maxQuestions) || 25));
 
-  const pattern = exam.patterns.find((p) => p.stage === body.stage && p.questions > 0) || exam.patterns.find((p) => p.questions > 0) || exam.patterns[0];
+  const pattern =
+    exam.patterns.find((p) => p.stage === body.stage && p.questions > 0 && p.mode !== "descriptive" && p.mode !== "interview") ||
+    exam.patterns.find((p) => p.questions > 0 && p.mode !== "descriptive" && p.mode !== "interview") ||
+    exam.patterns[0];
   const plan = miniMockPlan(exam, pattern.stage, maxQ);
 
   // ------- offline path -------

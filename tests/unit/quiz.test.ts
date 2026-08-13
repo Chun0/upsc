@@ -159,6 +159,69 @@ describe("buildOfflineQuiz", () => {
     expect(q.questions.length).toBe(3);
     expect(q.questions.every((x) => exam.samples.some((s) => s.s === x.subject))).toBe(true);
   });
+  it("maps Finance sections to Finance & Management samples (RBI FM mock)", () => {
+    const exam = getExam("rbi-grade-b")!;
+    const q = buildOfflineQuiz(exam, { count: 3, kind: "mock", sectionName: "FM Objective", marksPerQ: 1.67, negFraction: 0.25 });
+    expect(q.questions.length).toBeGreaterThan(0);
+    expect(q.questions.every((x) => x.subject === "Finance & Management")).toBe(true);
+  });
+});
+
+describe("miniMockPlan descriptive-section exclusion", () => {
+  it("RBI Grade B Phase-2 Finance & Management mock drops the descriptive section", () => {
+    const exam = getExam("rbi-grade-b")!;
+    const plan = miniMockPlan(exam, "Phase 2 Paper 3 — Finance & Management", 20);
+    expect(plan.sections.length).toBe(1);
+    expect(plan.sections[0].name).toContain("Objective");
+  });
+  it("IBPS PO Mains mock keeps only the 4 objective sections", () => {
+    const exam = getExam("ibps-po")!;
+    const plan = miniMockPlan(exam, "Mains (revised 2026)", 20);
+    expect(plan.sections.length).toBe(4);
+    expect(plan.sections.every((s) => !/descriptive/i.test(s.name))).toBe(true);
+  });
+});
+
+describe("exam knowledge-base corrections (2025-26 patterns)", () => {
+  it("IBPS PO Mains is 155 objective questions, not 170", () => {
+    const exam = getExam("ibps-po")!;
+    const mains = exam.patterns.find((p) => p.stage.includes("Mains"))!;
+    expect(mains.questions).toBe(155);
+    expect(mains.marks).toBe(200);
+    const obj = mains.sections.filter((s) => s.mode !== "descriptive");
+    expect(obj.reduce((a, s) => a + s.questions, 0)).toBe(155);
+  });
+  it("SBI PO Prelims uses the revised 40/30/30 split", () => {
+    const exam = getExam("sbi-po")!;
+    const pre = exam.patterns.find((p) => p.stage === "Prelims")!;
+    const byName = Object.fromEntries(pre.sections.map((s) => [s.name, s.questions]));
+    expect(byName["English Language"]).toBe(40);
+    expect(byName["Quantitative Aptitude"]).toBe(30);
+    expect(byName["Reasoning Ability"]).toBe(30);
+  });
+  it("MPPSC Prelims 2026 is 300 marks with 3 marks/question", () => {
+    const exam = getExam("mppsc")!;
+    const gs = exam.patterns.find((p) => p.stage === "Prelims GS")!;
+    expect(gs.marks).toBe(300);
+    expect(gs.negFraction).toBeCloseTo(1 / 3, 3);
+    const csat = exam.patterns.find((p) => p.stage === "Prelims CSAT")!;
+    expect(csat.marks).toBe(300);
+  });
+  it("SSC CHSL Tier 2 is 135 questions / 405 marks with Computer 15Q", () => {
+    const exam = getExam("ssc-chsl")!;
+    const t2 = exam.patterns.find((p) => p.stage === "Tier II Session 1")!;
+    expect(t2.questions).toBe(135);
+    expect(t2.marks).toBe(405);
+    const comp = t2.sections.find((s) => /Computer/i.test(s.name))!;
+    expect(comp.questions).toBe(15);
+    expect(comp.marks).toBe(45);
+  });
+  it("SSC CGL Quant topic weights sum to ~1", () => {
+    const exam = getExam("ssc-cgl")!;
+    const quant = exam.syllabus.find((s) => s.subject === "Quantitative Aptitude")!;
+    const sum = quant.topics.reduce((a, t) => a + t.weight, 0);
+    expect(sum).toBeCloseTo(1, 2);
+  });
 });
 
 describe("normalizedSelection", () => {

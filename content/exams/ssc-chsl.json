@@ -16,7 +16,7 @@
   ],
   "patterns": [
     {
-      "stage": "Tier I",
+      "stage": "Tier I", "mode": "objective",
       "durationMin": 60, "questions": 100, "marks": 200, "negative": "0.50 mark", "negFraction": 0.25,
       "sections": [
         { "name": "General Intelligence & Reasoning", "questions": 25, "marks": 50 },
@@ -27,12 +27,12 @@
       "notes": ["+2 correct, −0.50 wrong", "60 minutes total"]
     },
     {
-      "stage": "Tier II Session 1",
-      "durationMin": 135, "questions": 120, "marks": 360, "negative": "1 mark", "negFraction": 0.333,
+      "stage": "Tier II Session 1", "mode": "objective",
+      "durationMin": 135, "questions": 135, "marks": 405, "negative": "1 mark", "negFraction": 0.333,
       "sections": [
         { "name": "Section I — Maths & Reasoning", "questions": 60, "marks": 180, "durationMin": 60 },
         { "name": "Section II — English & GA", "questions": 60, "marks": 180, "durationMin": 60 },
-        { "name": "Section III (Module I) — Computer", "questions": 20, "marks": 60, "durationMin": 15 }
+        { "name": "Section III (Module I) — Computer", "questions": 15, "marks": 45, "durationMin": 15 }
       ],
       "notes": ["+3 correct, −1 wrong", "Section III Module I is qualifying", "Session 2: typing/skill test (10–15 min)"]
     }
@@ -93,7 +93,15 @@
     { "q": "Select the odd one out: 121, 144, 169, 196, 225", "o": ["121", "144", "196", "All are squares of consecutive numbers"], "a": 3, "x": "All are perfect squares of 11, 12, 13, 14, 15 — none is odd. (Trap question style: check before answering.)", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 2 },
     { "q": "A sum of ₹4,000 becomes ₹4,840 in 2 years at simple interest. The rate is:", "o": ["8%", "10.5%", "11%", "12%"], "a": 1, "x": "SI = 840 over 2 years → 420/year. Rate = 420/4000 × 100 = 10.5%.", "s": "Quantitative Aptitude", "t": "Percentages, profit & loss, SI/CI", "d": 2 },
     { "q": "Identify the part with an error: 'Each of the students (A)/ have submitted (B)/ their assignments (C)/ No error (D)'", "o": ["A", "B", "C", "D"], "a": 1, "x": "'Each of the students' is singular → 'has submitted'.", "s": "English", "t": "Error spotting & fillers", "d": 1 },
-    { "q": "Who founded the Brahmo Samaj?", "o": ["Swami Vivekananda", "Raja Ram Mohan Roy", "Dayanand Saraswati", "Ishwar Chandra Vidyasagar"], "a": 1, "x": "Raja Ram Mohan Roy founded the Brahmo Samaj in 1828.", "s": "General Awareness", "t": "Static GK", "d": 1 }
+    { "q": "Who founded the Brahmo Samaj?", "o": ["Swami Vivekananda", "Raja Ram Mohan Roy", "Dayanand Saraswati", "Ishwar Chandra Vidyasagar"], "a": 1, "x": "Raja Ram Mohan Roy founded the Brahmo Samaj in 1828.", "s": "General Awareness", "t": "Static GK", "d": 1 },
+    { "q": "The HCF of two numbers is 12 and their LCM is 144. If one number is 36, the other is:", "o": ["24", "48", "72", "96"], "a": 1, "x": "Other number = (HCF × LCM) ÷ one = 12 × 144 ÷ 36 = 48.", "s": "Quantitative Aptitude", "t": "Number system & simplification", "d": 2 },
+    { "q": "In a certain code, ROAD is written as URDG. How is MIND written in that code?", "o": ["PLQG", "PLPF", "OKPF", "PLQF"], "a": 0, "x": "Each letter moves +3: M+3=P, I+3=L, N+3=Q, D+3=G → PLQG.", "s": "General Intelligence & Reasoning", "t": "Coding-decoding & blood relations", "d": 2 },
+    { "q": "Choose the word closest in meaning to 'ABUNDANT':", "o": ["Scarce", "Plentiful", "Rare", "Meagre"], "a": 1, "x": "Abundant means existing in large quantities — plentiful.", "s": "English", "t": "Vocabulary & idioms", "d": 1 },
+    { "q": "Who wrote the book 'The Discovery of India'?", "o": ["Jawaharlal Nehru", "Mahatma Gandhi", "Rabindranath Tagore", "Dr. B. R. Ambedkar"], "a": 0, "x": "Jawaharlal Nehru wrote 'The Discovery of India' (1946).", "s": "General Awareness", "t": "Static GK", "d": 1 },
+    { "q": "The average of five consecutive odd numbers is 27. The largest of them is:", "o": ["29", "31", "33", "35"], "a": 1, "x": "Middle term = 27, so the numbers are 23,25,27,29,31 → largest 31.", "s": "Quantitative Aptitude", "t": "Ratio, average, time & work, speed", "d": 2 },
+    { "q": "A man walks 5 km north, turns right and walks 3 km, then turns right and walks 5 km. How far is he from the start?", "o": ["3 km", "5 km", "8 km", "13 km"], "a": 0, "x": "He ends 3 km east of the starting point.", "s": "General Intelligence & Reasoning", "t": "Syllogism, Venn & direction", "d": 2 },
+    { "q": "Choose the correctly spelt word:", "o": ["Maintainance", "Maintenance", "Maintanence", "Maintenence"], "a": 1, "x": "The correct spelling is 'maintenance'.", "s": "English", "t": "Error spotting & fillers", "d": 1 },
+    { "q": "Which vitamin is produced in the human body on exposure to sunlight?", "o": ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"], "a": 3, "x": "Sunlight (UV-B) helps the skin synthesise Vitamin D.", "s": "General Awareness", "t": "Science basics", "d": 1 }
   ],
   "plan": {
     "weeks": 12, "hoursPerDay": 3,

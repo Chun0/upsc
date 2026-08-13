@@ -17,7 +17,7 @@
   ],
   "patterns": [
     {
-      "stage": "CBT 1",
+      "stage": "CBT 1", "mode": "objective",
       "durationMin": 90, "questions": 100, "marks": 100, "negative": "1/3 mark", "negFraction": 0.333,
       "sections": [
         { "name": "General Awareness", "questions": 40, "marks": 40, "durationMin": 36 },
@@ -27,7 +27,7 @@
       "notes": ["1 mark each; −1/3 wrong", "Screening only — not in merit"]
     },
     {
-      "stage": "CBT 2",
+      "stage": "CBT 2", "mode": "objective",
       "durationMin": 90, "questions": 120, "marks": 120, "negative": "1/3 mark", "negFraction": 0.333,
       "sections": [
         { "name": "General Awareness", "questions": 50, "marks": 50, "durationMin": 38 },
@@ -77,7 +77,15 @@
     { "q": "Which train holds the record for India's fastest operational speed (Vande Bharat family)?", "o": ["Rajdhani Express", "Vande Bharat Express (180 km/h capable)", "Shatabdi Express", "Garib Rath"], "a": 1, "x": "Vande Bharat trains are designed for 180 km/h with operational speeds of 130–160 km/h — the fastest in Indian Railways' fleet.", "s": "General Awareness", "t": "Current affairs (national & railway)", "d": 2 },
     { "q": "A train 240 m long crosses a platform 360 m long in 30 seconds. Its speed is:", "o": ["60 km/h", "72 km/h", "80 km/h", "90 km/h"], "a": 1, "x": "Total distance = 240 + 360 = 600 m in 30 s → 20 m/s = 72 km/h.", "s": "Mathematics", "t": "Time & work, speed & distance", "d": 2 },
     { "q": "Find the next term: 3, 8, 15, 24, 35, ?", "o": ["46", "48", "50", "42"], "a": 1, "x": "Differences: 5, 7, 9, 11 → next +13 = 48.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 },
-    { "q": "The headquarters of the Indian Railways is located at:", "o": ["Mumbai", "Kolkata", "New Delhi (Rail Bhawan)", "Chennai"], "a": 2, "x": "Railway Board/Rail Bhawan, New Delhi.", "s": "General Awareness", "t": "Static GK", "d": 1 }
+    { "q": "The headquarters of the Indian Railways is located at:", "o": ["Mumbai", "Kolkata", "New Delhi (Rail Bhawan)", "Chennai"], "a": 2, "x": "Railway Board/Rail Bhawan, New Delhi.", "s": "General Awareness", "t": "Static GK", "d": 1 },
+    { "q": "Who is known as the 'Father of the Indian Constitution'?", "o": ["Jawaharlal Nehru", "Dr. B. R. Ambedkar", "Rajendra Prasad", "Sardar Patel"], "a": 1, "x": "Dr. B. R. Ambedkar chaired the Constitution's Drafting Committee.", "s": "General Awareness", "t": "Static GK", "d": 1 },
+    { "q": "The LCM of 12 and 18 is:", "o": ["36", "72", "24", "6"], "a": 0, "x": "LCM(12, 18) = 36.", "s": "Mathematics", "t": "Number system & simplification", "d": 1 },
+    { "q": "Book : Author :: Film : ?", "o": ["Director", "Actor", "Cinema", "Story"], "a": 0, "x": "A book is created by an author; a film by its director.", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 1 },
+    { "q": "Which blood group is called the 'universal donor'?", "o": ["AB+", "O−", "A+", "B−"], "a": 1, "x": "O-negative blood can be transfused to any blood group.", "s": "General Awareness", "t": "General science", "d": 1 },
+    { "q": "20% of 250 is:", "o": ["25", "50", "75", "40"], "a": 1, "x": "0.20 × 250 = 50.", "s": "Mathematics", "t": "Percentages, profit & loss, SI/CI", "d": 1 },
+    { "q": "If CAT is coded as DBU, how is DOG coded?", "o": ["EPH", "EQH", "EPI", "FPH"], "a": 0, "x": "Each letter moves +1: D→E, O→P, G→H.", "s": "General Intelligence & Reasoning", "t": "Coding-decoding & blood relations", "d": 2 },
+    { "q": "India's first indigenously built semi-high-speed train set is:", "o": ["Vande Bharat Express", "Shatabdi Express", "Rajdhani Express", "Gatimaan Express"], "a": 0, "x": "Vande Bharat (Train 18) is India's first indigenously built semi-high-speed train.", "s": "General Awareness", "t": "Current affairs (national & railway)", "d": 1 },
+    { "q": "A car travels 180 km in 3 hours. Its average speed is:", "o": ["50 km/h", "60 km/h", "70 km/h", "90 km/h"], "a": 1, "x": "180 ÷ 3 = 60 km/h.", "s": "Mathematics", "t": "Time & work, speed & distance", "d": 1 }
   ],
   "plan": {
     "weeks": 12, "hoursPerDay": 3,
