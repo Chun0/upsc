@@ -45,10 +45,10 @@ export default function ReportReview({
       </button>
       {!aiAnalysis && hasMarkdown ? (
         <button className="btn small primary" onClick={analyze} disabled={busy}>
-          {busy ? <span className="spinner" /> : "🤖"} {busy ? "Analysing…" : "Analyze with AI"}
+          {busy ? <span className="spinner" /> : "✎"} {busy ? "Analysing…" : "Analyze with AI"}
         </button>
       ) : aiAnalysis ? (
-        <span className="badge success">🤖 AI analysed</span>
+        <span className="badge success">AI analysed</span>
       ) : null}
     </div>
   );

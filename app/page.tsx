@@ -53,6 +53,7 @@ export default function DashboardPage() {
       <OnboardingModal />
       <Hero3D />
       <DashboardGrid
+        candidateName={profile?.name || ""}
         examCountdown={examCountdown}
         streak={streak}
         todayQuestions={todayQuestions}

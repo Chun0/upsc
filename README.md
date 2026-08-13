@@ -17,7 +17,7 @@
 | **Study** | Streaming AI summaries (concise/detailed/ELI5), scroll progress, reading library, AI study plans built around your measured weak topics |
 | **Revision** | Flashcards with SM-2-lite spaced repetition, one-click deck generation from your wrong answers |
 | **Daily digest** | Exam-aware current-affairs digest with Google Search grounding + self-test MCQs |
-| **3D UX** | Scroll-panned 3D hero (rocket takeoff), tilt cards, glassmorphism, Rokky's personality throughout |
+| **Design** | "Paper & Ink" exam-hall design system (OMR sheets, ballpoint blue, the examiner's red pen) — light warm paper UI, a real 3D OMR answer-sheet hero that pans up on scroll, custom stroke icons, Fraunces + Public Sans + JetBrains Mono type, bespoke motion tokens, Rokky's personality throughout |
 
 ## 🛠 Quick start
 

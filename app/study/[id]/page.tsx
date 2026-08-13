@@ -14,8 +14,8 @@ export default async function StudyDocPage({ params }: { params: Promise<{ id: s
 
   return (
     <div className="split" style={{ gridTemplateColumns: "1fr 240px" }}>
-      <div className="card" style={{ padding: "28px 32px" }}>
-        <div className="row mb16">
+      <div className="card reader" style={{ padding: "28px 32px 24px" }}>
+        <div className="row mb16" style={{ borderBottom: "1px solid var(--hair)", paddingBottom: 12 }}>
           <span className="badge info">{doc.subject}</span>
           <span className="badge neutral">{doc.style}</span>
           <span className="badge neutral">{doc.wordCount} words</span>
@@ -30,14 +30,21 @@ export default async function StudyDocPage({ params }: { params: Promise<{ id: s
         <div className="card">
           <h3 style={{ fontSize: 14 }}>Actions</h3>
           <Link href={`/practice?exam=${doc.examId}&topic=${encodeURIComponent(doc.topic)}`} className="btn primary block small">
-            ✍️ Quiz me on this
+            Quiz me on this
           </Link>
           <Link href={`/mocks?exam=${doc.examId}`} className="btn block small mt8">
-            🎯 Mock on {doc.examId}
+            Mock on {doc.examId}
           </Link>
           <button className="btn block small mt8 no-print" onClick={() => window.print()}>
-            🖨️ Print / PDF
+            Print / PDF
           </button>
+        </div>
+        <div className="card">
+          <h3 style={{ fontSize: 14 }}>Reading progress</h3>
+          <div className="bar mt8">
+            <div style={{ width: `${Math.round(doc.readProgress * 100)}%` }} />
+          </div>
+          <div className="hint mt8">Scroll to the end and it logs as read — then drill it with a quiz.</div>
         </div>
       </div>
     </div>

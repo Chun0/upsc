@@ -21,7 +21,6 @@ function Builder() {
   });
   const [count, setCount] = useState(10);
   const [difficulty, setDifficulty] = useState(2);
-  const [mode, setMode] = useState<"ai" | "offline">("ai");
   const [genning, setGenning] = useState(false);
   const [hasKey, setHasKey] = useState(true);
 
@@ -95,93 +94,106 @@ function Builder() {
   };
 
   return (
-    <div className="split">
-      <div className="side-sticky">
-        <div className="card">
-          <h3>🧭 Build your quiz</h3>
-          <div className="field mt8">
-            <label className="fld">Exam</label>
-            <select value={examId} onChange={(e) => { setExamId(e.target.value); setSubject(""); setTopics([]); }}>
-              {exams.map((e) => (
-                <option key={e.id} value={e.id}>
-                  {e.icon} {e.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="field">
-            <label className="fld">Subject (optional)</label>
-            <select value={subject} onChange={(e) => { setSubject(e.target.value); setTopics([]); }}>
-              <option value="">All subjects</option>
-              {exam.syllabus.map((s) => (
-                <option key={s.subject} value={s.subject}>
-                  {s.subject}
-                </option>
-              ))}
-            </select>
-          </div>
-          {subjectTopics.length > 0 ? (
-            <div className="field">
-              <label className="fld">Topics ({topics.length || "all"})</label>
-              <div className="row" style={{ gap: 6 }}>
-                {subjectTopics.map((t) => (
-                  <button key={t} className={`chip${topics.includes(t) ? " on" : ""}`} onClick={() => setTopics((cur) => (cur.includes(t) ? cur.filter((x) => x !== t) : [...cur, t]))}>
-                    {t.length > 26 ? t.slice(0, 25) + "…" : t}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ) : null}
-          <div className="field">
-            <label className="fld">Questions: {count}</label>
-            <input type="range" min={5} max={30} step={5} value={count} onChange={(e) => setCount(Number(e.target.value))} />
-          </div>
-          <div className="field">
-            <label className="fld">Difficulty: {difficulty}/5 ({["", "Easy", "Easy-Moderate", "Moderate", "Moderate-Hard", "Hard"][difficulty]})</label>
-            <input type="range" min={1} max={5} step={1} value={difficulty} onChange={(e) => setDifficulty(Number(e.target.value))} />
-          </div>
-          <div className="row">
-            <button className="btn primary grow" onClick={() => build(false)} disabled={genning || !hasKey}>
-              {genning ? <span className="spinner" /> : "✨"} {genning ? "Rokky is writing…" : "Generate with AI"}
-            </button>
-          </div>
-          <div className="row mt8">
-            <button className="btn grow" onClick={() => build(true)} disabled={genning}>
-              📦 Sample questions (offline)
-            </button>
-          </div>
-          {!hasKey ? <div className="hint mt8">AI generation needs a Gemini key — Settings → Models & Keys. Offline mode uses bundled PYQ-style samples.</div> : null}
-        </div>
+    <div>
+      <div className="page-head">
+        <div className="eyebrow">Practice</div>
+        <h1>Set a paper, fill the bubbles</h1>
+        <p className="dim" style={{ maxWidth: 660 }}>
+          A focused quiz on one subject or topic, in the exam&apos;s own pattern — negative marking included,
+          guesses audited on every report.
+        </p>
       </div>
 
-      <div>
-        <div className="card">
-          <div className="row">
-            <div className="exam-ico" style={{ background: `${exam.color}22`, border: `1px solid ${exam.color}55` }}>{exam.icon}</div>
-            <div>
-              <h2 style={{ margin: 0 }}>{exam.name} — pattern loaded</h2>
-              <div className="dim small">{pattern.stage} • {pattern.questions} Q • {pattern.marks} marks • {pattern.durationMin} min</div>
+      <div className="split">
+        <div className="side-sticky">
+          <div className="card">
+            <h3 style={{ fontFamily: "var(--font-display)" }}>Build your quiz</h3>
+            <div className="field mt8">
+              <label className="fld">Exam</label>
+              <select value={examId} onChange={(e) => { setExamId(e.target.value); setSubject(""); setTopics([]); }}>
+                {exams.map((e) => (
+                  <option key={e.id} value={e.id}>
+                    {e.icon} {e.name}
+                  </option>
+                ))}
+              </select>
             </div>
-            <Link href={`/exams/${exam.id}`} className="btn small ghost right">Exam details →</Link>
+            <div className="field">
+              <label className="fld">Subject (optional)</label>
+              <select value={subject} onChange={(e) => { setSubject(e.target.value); setTopics([]); }}>
+                <option value="">All subjects</option>
+                {exam.syllabus.map((s) => (
+                  <option key={s.subject} value={s.subject}>
+                    {s.subject}
+                  </option>
+                ))}
+              </select>
+            </div>
+            {subjectTopics.length > 0 ? (
+              <div className="field">
+                <label className="fld">Topics ({topics.length || "all"})</label>
+                <div className="row" style={{ gap: 6 }}>
+                  {subjectTopics.map((t) => (
+                    <button key={t} className={`chip${topics.includes(t) ? " on" : ""}`} onClick={() => setTopics((cur) => (cur.includes(t) ? cur.filter((x) => x !== t) : [...cur, t]))}>
+                      {t.length > 26 ? t.slice(0, 25) + "…" : t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            <div className="field">
+              <label className="fld">Questions: {count}</label>
+              <input type="range" min={5} max={30} step={5} value={count} onChange={(e) => setCount(Number(e.target.value))} />
+            </div>
+            <div className="field">
+              <label className="fld">Difficulty: {difficulty}/5 ({["", "Easy", "Easy-Moderate", "Moderate", "Moderate-Hard", "Hard"][difficulty]})</label>
+              <input type="range" min={1} max={5} step={1} value={difficulty} onChange={(e) => setDifficulty(Number(e.target.value))} />
+            </div>
+            <button className="btn primary grow" onClick={() => build(false)} disabled={genning || !hasKey}>
+              {genning ? <span className="spinner" /> : "✎"} {genning ? "Rokky is writing…" : "Generate with AI"}
+            </button>
+            <div className="row mt8">
+              <button className="btn grow" onClick={() => build(true)} disabled={genning}>
+                Sample questions (offline)
+              </button>
+            </div>
+            {!hasKey ? <div className="hint mt8">AI generation needs a Gemini key — Settings → Models &amp; Keys. Offline mode uses bundled PYQ-style samples.</div> : null}
           </div>
-          <div className="divider" />
-          <div className="row">
-            <span className={`badge ${negFrac > 0 ? "danger" : "success"}`}>Negative marking: {pattern.negative}</span>
-            <span className="badge info">+{pattern.marks / Math.max(1, pattern.questions)} avg/question</span>
-            <span className="badge neutral">{exam.syllabus.length} subjects mapped</span>
-          </div>
-          {negFrac > 0 ? (
-            <p className="small dim mt16">
-              🧮 Strategy engine note: with this negative marking, guessing only pays above {Math.round((negFrac / (1 + negFrac)) * 100)}% accuracy — Rokky will audit your guesses in every report.
-            </p>
-          ) : (
-            <p className="small dim mt16">🟢 No negative marking here — attempt every question. Rokky will remind you.</p>
-          )}
         </div>
 
-        <div className="card mt16">
-          <h3>📋 Recent quizzes for {exam.name}</h3>
-          <RecentQuizzes examId={exam.id} />
+        <div>
+          <div className="card" style={{ borderTop: "3px solid var(--ink)" }}>
+            <div className="row">
+              <div className="exam-ico" style={{ background: `${exam.color}14`, border: `1px solid ${exam.color}55` }}>{exam.icon}</div>
+              <div>
+                <div className="eyebrow">Question paper cover</div>
+                <h2 style={{ margin: "2px 0 0" }}>{exam.name}</h2>
+                <div className="dim small">{pattern.stage}</div>
+              </div>
+              <Link href={`/exams/${exam.id}`} className="btn small ghost right">Exam details →</Link>
+            </div>
+            <div className="divider" />
+            <div className="pattern-row"><span className="k">Questions</span><span className="v">{pattern.questions} Q</span></div>
+            <div className="pattern-row"><span className="k">Marks</span><span className="v">{pattern.marks}</span></div>
+            <div className="pattern-row"><span className="k">Duration</span><span className="v">{pattern.durationMin} min</span></div>
+            <div className="pattern-row"><span className="k">Negative marking</span><span className="v" style={{ color: negFrac > 0 ? "var(--red)" : "var(--tick)" }}>{pattern.negative}</span></div>
+            <div className="pattern-row"><span className="k">Subjects mapped</span><span className="v">{exam.syllabus.length}</span></div>
+            {negFrac > 0 ? (
+              <p className="small dim mt16">
+                Strategy note: with this negative marking, guessing only pays above {Math.round((negFrac / (1 + negFrac)) * 100)}% accuracy — Rokky audits your guesses in every report.
+              </p>
+            ) : (
+              <p className="small dim mt16">No negative marking here — attempt every question. Rokky will remind you.</p>
+            )}
+          </div>
+
+          <div className="card mt16" style={{ padding: "8px 18px 14px" }}>
+            <div className="card-title-row" style={{ padding: "10px 2px 6px" }}>
+              <h3 style={{ fontFamily: "var(--font-display)" }}>Recent quizzes</h3>
+              <span className="eyebrow right">{exam.name}</span>
+            </div>
+            <RecentQuizzes examId={exam.id} />
+          </div>
         </div>
       </div>
     </div>

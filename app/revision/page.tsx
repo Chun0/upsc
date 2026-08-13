@@ -56,7 +56,6 @@ export default function RevisionPage() {
   const generateFromWrong = async () => {
     setGenning(true);
     try {
-      // collect wrong answers from recent attempts for this exam
       const res = await fetch(`/api/analytics?examId=${examId}`);
       const db = await res.json();
       const quizMap = new Map<string, { questions: { id: string; answerIndex?: number; options?: string[]; text: string }[] }>((db.quizzes || []).map((q: { id: string; questions: { id: string; answerIndex?: number; options?: string[]; text: string }[] }) => [q.id, q]));
@@ -87,7 +86,7 @@ export default function RevisionPage() {
         body: JSON.stringify({ examId, subject: "Weak topics", cards: data.cards }),
       });
       if (!save.ok) throw new Error("save failed");
-      toast(`${data.cards?.length || 0} cards created from your wrong answers! 🧠`, "success");
+      toast(`${data.cards?.length || 0} cards created from your wrong answers!`, "success");
       load();
     } catch (e) {
       toast(String((e as Error).message || e), "error");
@@ -97,88 +96,99 @@ export default function RevisionPage() {
   };
 
   return (
-    <div className="split">
-      <div className="side-sticky">
-        <div className="card">
-          <h3>🧠 Spaced repetition</h3>
-          <div className="field mt8">
-            <label className="fld">Exam</label>
-            <select value={examId} onChange={(e) => setExamId(e.target.value)}>
-              {exams.map((e) => (
-                <option key={e.id} value={e.id}>
-                  {e.icon} {e.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="pattern-row">
-            <span className="k">Due now</span>
-            <span className="v">{due.length}</span>
-          </div>
-          <div className="pattern-row">
-            <span className="k">Total cards</span>
-            <span className="v">{total}</span>
-          </div>
-          <button className="btn primary grow mt8" onClick={generateFromWrong} disabled={genning}>
-            {genning ? <span className="spinner" /> : "✨"} {genning ? "Generating…" : "Cards from my wrong answers"}
-          </button>
-          <div className="hint mt8">SM-2-lite scheduling: intervals grow when you remember, reset when you lapse.</div>
-        </div>
+    <div>
+      <div className="page-head">
+        <div className="eyebrow">Revision</div>
+        <h1>Cards that remember for you</h1>
+        <p className="dim" style={{ maxWidth: 660 }}>
+          SM-2-lite spaced repetition — intervals grow when you remember, reset when you lapse. Generate a
+          deck straight from your wrong answers.
+        </p>
       </div>
 
-      <div>
-        {loading ? (
-          <div className="loading-block">
-            <span className="spinner big" /> Loading deck…
-          </div>
-        ) : !card ? (
+      <div className="split">
+        <div className="side-sticky">
           <div className="card">
-            <div className="empty">
-              <span className="ico">🎉</span>
-              {total === 0 ? "No cards yet — generate some from your wrong answers!" : "Deck clear for now. Rokky is proud. Next reviews appear when due."}
+            <h3 style={{ fontFamily: "var(--font-display)" }}>Spaced repetition</h3>
+            <div className="field mt8">
+              <label className="fld">Exam</label>
+              <select value={examId} onChange={(e) => setExamId(e.target.value)}>
+                {exams.map((e) => (
+                  <option key={e.id} value={e.id}>
+                    {e.icon} {e.name}
+                  </option>
+                ))}
+              </select>
             </div>
+            <div className="pattern-row">
+              <span className="k">Due now</span>
+              <span className="v">{due.length}</span>
+            </div>
+            <div className="pattern-row">
+              <span className="k">Total cards</span>
+              <span className="v">{total}</span>
+            </div>
+            <button className="btn primary grow mt8" onClick={generateFromWrong} disabled={genning}>
+              {genning ? <span className="spinner" /> : "✎"} {genning ? "Generating…" : "Cards from my wrong answers"}
+            </button>
+            <div className="hint mt8">SM-2-lite scheduling: intervals grow when you remember, reset when you lapse.</div>
           </div>
-        ) : (
-          <div>
-            <div className="card" style={{ padding: 0, overflow: "hidden", cursor: "pointer" }} onClick={() => setFlipped(!flipped)}>
-              <div className={`flip${flipped ? " flipped" : ""}`}>
-                <div className="flip-inner">
-                  <div className="flip-face">
-                    <div>
-                      <div className="row" style={{ justifyContent: "center", gap: 8 }}>
-                        <span className="badge info">{card.subject}</span>
-                        <span className="badge neutral">{card.topic}</span>
+        </div>
+
+        <div>
+          {loading ? (
+            <div className="loading-block">
+              <span className="spinner big" /> Loading deck…
+            </div>
+          ) : !card ? (
+            <div className="card">
+              <div className="empty">
+                <span className="ico">🎉</span>
+                {total === 0 ? "No cards yet — generate some from your wrong answers!" : "Deck clear for now. Rokky is proud. Next reviews appear when due."}
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div className="card" style={{ padding: 0, overflow: "hidden", cursor: "pointer" }} onClick={() => setFlipped(!flipped)}>
+                <div className={`flip${flipped ? " flipped" : ""}`}>
+                  <div className="flip-inner">
+                    <div className="flip-face">
+                      <div>
+                        <div className="row" style={{ justifyContent: "center", gap: 8 }}>
+                          <span className="badge info">{card.subject}</span>
+                          <span className="badge neutral">{card.topic}</span>
+                        </div>
+                        <div style={{ fontSize: 19, marginTop: 18 }}>{card.front}</div>
+                        <div className="small muted mt16">tap to flip ↻</div>
                       </div>
-                      <div style={{ fontSize: 19, marginTop: 18 }}>{card.front}</div>
-                      <div className="small muted mt16">tap to flip ↻</div>
                     </div>
-                  </div>
-                  <div className="flip-face flip-back">
-                    <div>
-                      <div className="small muted mb8">ANSWER</div>
-                      <div style={{ fontSize: 16.5, lineHeight: 1.7 }}>{card.back}</div>
-                      <div className="small muted mt16">
-                        {card.lapses > 0 ? `${card.lapses} lapses • ` : ""}interval {card.intervalDays}d • ease {card.ease.toFixed(1)}
+                    <div className="flip-face flip-back">
+                      <div>
+                        <div className="eyebrow mb8">Answer</div>
+                        <div style={{ fontSize: 16.5, lineHeight: 1.7 }}>{card.back}</div>
+                        <div className="small muted mt16">
+                          {card.lapses > 0 ? `${card.lapses} lapses • ` : ""}interval {card.intervalDays}d • ease {card.ease.toFixed(1)}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="row mt16" style={{ justifyContent: "center" }}>
+                <button className="btn danger big" onClick={() => review("again")}>
+                  Again (10 min)
+                </button>
+                <button className="btn big" onClick={() => review("good")}>
+                  Good
+                </button>
+                <button className="btn success big" onClick={() => review("easy")}>
+                  Easy
+                </button>
+              </div>
+              <div className="hint mt8 center">{due.length - 1} more due after this one.</div>
             </div>
-            <div className="row mt16" style={{ justifyContent: "center" }}>
-              <button className="btn danger big" onClick={() => review("again")}>
-                🔁 Again (10 min)
-              </button>
-              <button className="btn big" onClick={() => review("good")}>
-                🙂 Good
-              </button>
-              <button className="btn success big" style={{ borderColor: "rgba(52,211,153,0.5)", color: "var(--success)", background: "rgba(52,211,153,0.08)" }} onClick={() => review("easy")}>
-                🚀 Easy
-              </button>
-            </div>
-            <div className="hint mt8 center">{due.length - 1} more due after this one.</div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

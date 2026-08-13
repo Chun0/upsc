@@ -18,7 +18,7 @@ export default function QuestionReview({ quiz, attempt }: { quiz: Quiz; attempt:
           const sel = attempt.answers[q.id]?.selected || [];
           const ok = correct(q, sel);
           return (
-            <div key={q.id} className="card pad-sm mb8" style={{ borderColor: sel.length ? (ok ? "rgba(52,211,153,0.4)" : "rgba(251,113,133,0.4)") : undefined }}>
+            <div key={q.id} className="card pad-sm mb8" style={{ borderColor: sel.length ? (ok ? "rgba(29,122,67,0.4)" : "rgba(179,38,30,0.4)") : undefined, borderLeft: sel.length ? (ok ? "3px solid var(--tick)" : "3px solid var(--red)") : undefined }}>
               <button
                 className="row"
                 style={{ width: "100%", background: "none", border: "none", cursor: "pointer", color: "inherit", fontFamily: "inherit", textAlign: "left" }}

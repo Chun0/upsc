@@ -4,15 +4,15 @@ import { fmtDate, fmtDuration, pct, round2 } from "../utils";
 import { barChart, donutChart, miniStat, progressRing, radarChart } from "./charts";
 
 const VERDICT_COLORS: Record<string, string> = {
-  strong: "#34d399",
-  ok: "#fbbf24",
-  weak: "#fb7185",
-  untouched: "#94a3b8",
-  developing: "#fbbf24",
+  strong: "#1d7a43",
+  ok: "#96690c",
+  weak: "#b3261e",
+  untouched: "#9b9384",
+  developing: "#96690c",
 };
 
 function callout(type: "success" | "warn" | "danger" | "info", title: string, body: string): string {
-  const color = { success: "#34d399", warn: "#fbbf24", danger: "#fb7185", info: "#38bdf8" }[type];
+  const color = { success: "#1d7a43", warn: "#96690c", danger: "#b3261e", info: "#2241a8" }[type];
   return `<div class="callout ${type}" style="border-left:4px solid ${color}">
 <div class="callout-title" style="color:${color}">${title}</div>
 ${body}
@@ -38,7 +38,7 @@ export function buildReportMarkdown(opts: {
   lines.push("## Score Card");
   lines.push(
     miniStat([
-      { label: "Score", value: `${score.obtained} / ${score.max}`, accent: score.percent >= 70 ? "#34d399" : score.percent >= 40 ? "#fbbf24" : "#fb7185" },
+      { label: "Score", value: `${score.obtained} / ${score.max}`, accent: score.percent >= 70 ? "#1d7a43" : score.percent >= 40 ? "#96690c" : "#b3261e" },
       { label: "Percentage", value: `${score.percent}%` },
       { label: "Accuracy", value: pct(score.accuracy) },
       { label: "Attempted", value: `${score.attempted} / ${quiz.questions.length}` },
@@ -49,9 +49,9 @@ export function buildReportMarkdown(opts: {
   lines.push("");
   const donutHtml = donutChart(
     [
-      { label: "Correct", value: score.correct, color: "#34d399" },
-      { label: "Wrong", value: score.wrong, color: "#fb7185" },
-      { label: "Skipped", value: score.unattempted, color: "#64748b" },
+      { label: "Correct", value: score.correct, color: "#1d7a43" },
+      { label: "Wrong", value: score.wrong, color: "#b3261e" },
+      { label: "Skipped", value: score.unattempted, color: "#9b9384" },
     ],
     160,
     24,
@@ -71,7 +71,7 @@ export function buildReportMarkdown(opts: {
           value: s.obtained,
           max: s.max,
           display: `${s.obtained}/${s.max} (${s.accuracy ? pct(s.accuracy) : "—"})`,
-          color: s.max ? (s.obtained / s.max >= 0.6 ? "#34d399" : s.obtained / s.max >= 0.35 ? "#fbbf24" : "#fb7185") : "#22d3ee",
+          color: s.max ? (s.obtained / s.max >= 0.6 ? "#1d7a43" : s.obtained / s.max >= 0.35 ? "#96690c" : "#b3261e") : "#2241a8",
         }))
       )
     );
@@ -116,8 +116,8 @@ export function buildReportMarkdown(opts: {
     if (ai.topicBreakdown?.length) {
       lines.push("## Topic Map");
       const rows = ai.topicBreakdown.map((t) => {
-        const color = VERDICT_COLORS[t.verdict.toLowerCase()] || "#94a3b8";
-        return `<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;margin:3px;border-radius:999px;background:rgba(148,163,184,0.08);border:1px solid ${color}55"><span style="width:8px;height:8px;border-radius:50%;background:${color}"></span><strong>${t.topic}</strong> — ${t.comment}</span>`;
+        const color = VERDICT_COLORS[t.verdict.toLowerCase()] || "#9b9384";
+        return `<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;margin:3px;border-radius:999px;background:rgba(32,29,22,0.04);border:1px solid ${color}55"><span style="width:8px;height:8px;border-radius:50%;background:${color}"></span><strong>${t.topic}</strong> — ${t.comment}</span>`;
       });
       lines.push(`<div style="margin:8px 0">${rows.join("")}</div>`);
       lines.push("");
@@ -178,5 +178,5 @@ export function reportHeaderStats(attempt: Attempt): string {
 }
 
 export function readinessRing(r: number): string {
-  return progressRing(r / 100, 120, r >= 70 ? "#34d399" : r >= 40 ? "#fbbf24" : "#fb7185", `${Math.round(r)}%`);
+  return progressRing(r / 100, 120, r >= 70 ? "#1d7a43" : r >= 40 ? "#96690c" : "#9b9384", `${Math.round(r)}%`);
 }

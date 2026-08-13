@@ -5,6 +5,7 @@ import Modal from "@/components/ui/Modal";
 import { useToast } from "@/components/ui/Toast";
 import { getExam } from "@/lib/content/exams";
 import { listExams } from "@/lib/content/exams";
+import { RokkyMascot } from "@/components/three/Mascot";
 
 interface Profile {
   name: string;
@@ -43,7 +44,7 @@ export default function OnboardingModal() {
       });
       if (!res.ok) throw new Error("save failed");
       setOpen(false);
-      toast("Welcome aboard, pilot! Rokky is ready. 🚀", "success");
+      toast("Welcome aboard — Rokky is ready to fly. 🚀", "success");
     } catch {
       toast("Could not save profile", "error");
     } finally {
@@ -52,7 +53,13 @@ export default function OnboardingModal() {
   };
 
   return (
-    <Modal open={open} onClose={() => undefined} title="🚀 Welcome to UDAAN — one quick pre-flight check">
+    <Modal open={open} onClose={() => undefined} title="Before you take off — four quick marks">
+      <div className="row mb16" style={{ alignItems: "center", gap: 12 }}>
+        <RokkyMascot size={48} />
+        <p className="small dim" style={{ margin: 0 }}>
+          One minute of setup. Every paper, plan and report from here is built around these four answers.
+        </p>
+      </div>
       <div className="field">
         <label className="fld">What should Rokky call you?</label>
         <input value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} placeholder="Your name, topper-to-be" autoFocus />
@@ -68,20 +75,20 @@ export default function OnboardingModal() {
         </select>
       </div>
       <div className="field">
-        <label className="fld">Exam date (optional — powers your countdown & urgency ranking)</label>
+        <label className="fld">Exam date (optional — powers your countdown &amp; urgency ranking)</label>
         <input type="date" value={profile.examDate || ""} onChange={(e) => setProfile({ ...profile, examDate: e.target.value })} />
       </div>
       <div className="field">
         <label className="fld">Daily question goal: {profile.dailyGoal} questions/day</label>
         <input type="range" min={10} max={200} step={10} value={profile.dailyGoal} onChange={(e) => setProfile({ ...profile, dailyGoal: Number(e.target.value) })} />
-        <div className="hint">Rokky will nag you (lovingly) if you miss it.</div>
+        <div className="hint">Rokky will nudge you (lovingly) if you miss it.</div>
       </div>
       <div className="row">
         <button className="btn primary big grow" onClick={save} disabled={saving || !profile.name.trim()}>
-          {saving ? <span className="spinner" /> : null} Let&apos;s take off! 🚀
+          {saving ? <span className="spinner" /> : null} {saving ? "Filling your admit card…" : "Let's take off"}
         </button>
       </div>
-      <div className="hint mt8 center">Tip: add your Gemini API key in Settings → Models & Keys to unlock AI quiz generation & coach analysis.</div>
+      <div className="hint mt8 center">Add a Gemini API key in Settings → Models &amp; Keys to unlock AI quiz generation &amp; coach analysis.</div>
     </Modal>
   );
 }

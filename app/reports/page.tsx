@@ -10,9 +10,15 @@ export default function ReportsPage() {
 
   return (
     <div>
-      <p className="dim" style={{ marginTop: -8 }}>
-        Every submission gets a predesigned markdown report card — charts built by code, analysis filled by the master model.
-      </p>
+      <div className="page-head">
+        <div className="eyebrow">Reports</div>
+        <h1>Your marksheet, kept honestly</h1>
+        <p className="dim" style={{ maxWidth: 660 }}>
+          Every submission gets a predesigned report card — charts built by code, analysis filled by the
+          master model. Nothing flattering, nothing hidden.
+        </p>
+      </div>
+
       {attempts.length === 0 ? (
         <div className="card mt24">
           <div className="empty">
@@ -21,20 +27,29 @@ export default function ReportsPage() {
           </div>
         </div>
       ) : (
-        <div className="card mt16" style={{ padding: 6 }}>
-          {attempts.map((a) => (
-            <Link key={a.id} href={`/reports/${a.id}`} className="topic-row" style={{ color: "inherit", padding: "13px 12px" }}>
+        <div className="card" style={{ padding: "6px 0" }}>
+          <div className="eyebrow" style={{ padding: "12px 18px 6px", borderBottom: "1px solid var(--hair)" }}>
+            Ledger · {attempts.length} entries
+          </div>
+          {attempts.map((a, i) => (
+            <Link key={a.id} href={`/reports/${a.id}`} className="exam-row" style={{ color: "inherit" }}>
+              <span className="eyebrow" style={{ minWidth: 26 }}>{String(i + 1).padStart(2, "0")}</span>
               <span className={`badge ${a.kind === "mock" ? "info" : a.kind === "descriptive" ? "warn" : "neutral"}`}>{a.kind}</span>
-              <span className="name" style={{ fontWeight: 650 }}>
+              <span className="name" style={{ fontWeight: 650, minWidth: 0 }}>
                 {a.title}
                 <small>
-                  {fmtDateTime(a.submittedAt || a.startedAt)} • {a.aiAnalysis ? "🤖 AI analysed" : "⚙️ offline report"}
+                  {fmtDateTime(a.submittedAt || a.startedAt)} • {a.aiAnalysis ? "AI analysed" : "offline report"}
                 </small>
               </span>
-              <span className={`badge ${(a.score?.percent || 0) >= 70 ? "success" : (a.score?.percent || 0) >= 40 ? "warn" : "danger"}`}>
-                {a.score ? `${a.score.obtained}/${a.score.max}` : "—"}
+              <span className="small muted reg-meta" style={{ whiteSpace: "nowrap" }}>
+                {a.score ? `accuracy ${(a.score.accuracy * 100).toFixed(0)}%` : "—"}
               </span>
-              <span className="small muted">view →</span>
+              <span style={{ textAlign: "right" }}>
+                <span className={`badge ${(a.score?.percent || 0) >= 70 ? "success" : (a.score?.percent || 0) >= 40 ? "warn" : "danger"}`}>
+                  {a.score ? `${a.score.obtained}/${a.score.max}` : "—"}
+                </span>
+                <span className="small muted" style={{ display: "block", marginTop: 4 }}>view →</span>
+              </span>
             </Link>
           ))}
         </div>
