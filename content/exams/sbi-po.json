@@ -1,0 +1,104 @@
+{
+  "id": "sbi-po",
+  "name": "SBI PO",
+  "fullName": "State Bank of India Probationary Officer",
+  "org": "State Bank of India",
+  "icon": "🏧",
+  "color": "#38bdf8",
+  "tagline": "Banking's biggest prize — mains is where they separate toppers.",
+  "overview": "Prelims (100Q/60min, −1/4, sectional 20-min timers) → Mains (170Q objective 200m + descriptive 30m in 2026 cycle, 3.5h) → Psychometric + Group Exercise + Interview (50m, normalized to 25). Final merit: Mains normalized to 75 + Phase III 25.",
+  "eligibility": ["Graduate in any discipline", "Age 21–30"],
+  "age": "21–30",
+  "attempts": "General 4, OBC 7, SC/ST no limit",
+  "stages": [
+    { "name": "Prelims", "mode": "objective", "note": "Qualifying" },
+    { "name": "Mains", "mode": "objective", "note": "Objective + descriptive" },
+    { "name": "Psychometric + GE + Interview", "mode": "interview", "note": "50 marks normalized to 25" }
+  ],
+  "patterns": [
+    {
+      "stage": "Prelims",
+      "durationMin": 60, "questions": 100, "marks": 100, "negative": "1/4 mark", "negFraction": 0.25,
+      "sections": [
+        { "name": "English Language", "questions": 30, "marks": 30, "durationMin": 20 },
+        { "name": "Quantitative Aptitude", "questions": 35, "marks": 35, "durationMin": 20 },
+        { "name": "Reasoning Ability", "questions": 35, "marks": 35, "durationMin": 20 }
+      ],
+      "notes": ["1 mark/question; −0.25 wrong", "20-min sectional timers"]
+    },
+    {
+      "stage": "Mains Objective",
+      "durationMin": 180, "questions": 170, "marks": 200, "negative": "1/4 mark", "negFraction": 0.25,
+      "sections": [
+        { "name": "Reasoning & Computer Aptitude", "questions": 40, "marks": 60, "durationMin": 50 },
+        { "name": "Data Analysis & Interpretation", "questions": 30, "marks": 60, "durationMin": 45 },
+        { "name": "General / Economy / Banking Awareness", "questions": 60, "marks": 60, "durationMin": 45 },
+        { "name": "English Language", "questions": 40, "marks": 20, "durationMin": 40 }
+      ],
+      "notes": ["GA section is 60 questions — heaviest count", "Descriptive: 30 marks, 30 min (2026 cycle, reduced from 50)", "Letter + Essay"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Reasoning Ability", "weight": 0.28,
+      "topics": [
+        { "name": "Puzzles & seating arrangement", "weight": 0.4, "pyq": 5, "difficulty": 4, "sub": ["Complex circular", "Floor puzzles", "Month/day puzzles"] },
+        { "name": "Syllogism & inequality", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Coded inequality", "Possibility"] },
+        { "name": "Blood relations, direction, coding", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["Coded", "New pattern"] },
+        { "name": "Data sufficiency & misc", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["DS", "Input-output"] }
+      ]
+    },
+    {
+      "subject": "Data Analysis & Interpretation", "weight": 0.28,
+      "topics": [
+        { "name": "Tabular & bar/line DI", "weight": 0.3, "pyq": 5, "difficulty": 3, "sub": ["Missing data", "Ratio-based"] },
+        { "name": "Pie & mixed charts", "weight": 0.25, "pyq": 4, "difficulty": 3, "sub": ["Degree to %", "Combined charts"] },
+        { "name": "Caselet & arithmetic DI", "weight": 0.25, "pyq": 5, "difficulty": 4, "sub": ["Paragraph data", "Profit-loss DI"] },
+        { "name": "Probability & data sufficiency", "weight": 0.2, "pyq": 3, "difficulty": 3, "sub": ["Probability", "DS"] }
+      ]
+    },
+    {
+      "subject": "English Language", "weight": 0.2,
+      "topics": [
+        { "name": "Reading comprehension", "weight": 0.4, "pyq": 5, "difficulty": 3, "sub": ["Long passages", "Tone questions"] },
+        { "name": "Error detection & sentence improvement", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Grammar", "Phrase replacement"] },
+        { "name": "Cloze, jumbles & vocabulary", "weight": 0.35, "pyq": 4, "difficulty": 3, "sub": ["Fillers", "Synonyms"] }
+      ]
+    },
+    {
+      "subject": "General / Economy / Banking Awareness", "weight": 0.2,
+      "topics": [
+        { "name": "Banking & financial awareness", "weight": 0.5, "pyq": 5, "difficulty": 2, "sub": ["RBI updates", "Banking terms", "Mergers", "Regulations"] },
+        { "name": "Economy & government schemes", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Budget", "Schemes", "Reports & indices"] },
+        { "name": "Current affairs (last 6 months)", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Appointments", "Awards", "Sports"] }
+      ]
+    },
+    {
+      "subject": "Computer Aptitude", "weight": 0.04,
+      "topics": [
+        { "name": "Computer & networking basics", "weight": 1, "pyq": 3, "difficulty": 1, "sub": ["Hardware", "Internet", "Security"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Mains DI & puzzles are the toughest in banking — caselets dominate",
+    "GA: 60 questions in Mains — current banking awareness decides cutoffs",
+    "Descriptive reduced from 50 to 30 marks in 2026 cycle",
+    "Prelims has NO sectional cutoff (overall merit only) — but timer still locks per section"
+  ],
+  "sources": ["https://sbi.co.in", "https://www.bankopedia.co.in/banking-exams/sbi-po-exam-pattern-2026", "https://www.practicemock.com/blog/sbi-po-syllabus-2026-prelims-mains-guide/"],
+  "samples": [
+    { "q": "Direction: In the question, three statements are given followed by two conclusions. Statements: All pens are boxes. Some boxes are red. No red is blue. Conclusions: I. Some pens are red. II. No blue is a box. Which follows?", "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"], "a": 3, "x": "I does not follow (pens may be outside red). II does not follow (boxes may include blue outside red). Neither follows.", "s": "Reasoning Ability", "t": "Syllogism & inequality", "d": 3 },
+    { "q": "Study the data: Company revenue ₹120 cr, expenses ₹90 cr. If next year revenue grows 15% and expenses grow 10%, the profit increases by:", "o": ["20%", "25%", "30%", "35%"], "a": 2, "x": "Profit now 30; next year revenue 138, expenses 99 → profit 39. Increase = 9/30 = 30%.", "s": "Data Analysis & Interpretation", "t": "Caselet & arithmetic DI", "d": 2 },
+    { "q": "Which of the following is NOT a function of the RBI?", "o": ["Issuing currency notes", "Managing foreign exchange reserves", "Fixing interest rates on fixed deposits of all banks", "Regulating payment systems"], "a": 2, "x": "RBI regulates banks but does not fix retail FD rates — those are decided by banks themselves.", "s": "General / Economy / Banking Awareness", "t": "Banking & financial awareness", "d": 2 },
+    { "q": "Rearrange: P. the monsoon arrived early Q. farmers began sowing R. as soon as S. their kharif crops", "o": ["RQSP", "PRQS", "QSPR", "SPRQ"], "a": 1, "x": "'As soon as the monsoon arrived early, farmers began sowing their kharif crops' → R-P-Q-S.", "s": "English Language", "t": "Cloze, jumbles & vocabulary", "d": 2 }
+  ],
+  "plan": {
+    "weeks": 20, "hoursPerDay": 5,
+    "phases": [
+      { "name": "Foundation", "weeks": 8, "focus": "Reasoning + DI basics; daily banking CA", "tasks": ["Puzzles 15/day", "DI sets 3/day", "Banking awareness notes"] },
+      { "name": "Intensive", "weeks": 8, "focus": "Mains-level sets + sectional timing", "tasks": ["Mains DI/puzzle sets daily", "Weekly mocks", "Descriptive essay/letter weekly"] },
+      { "name": "Peak", "weeks": 4, "focus": "Mocks + revision", "tasks": ["3 mocks/week", "GA rapid revision", "Error log"] }
+    ]
+  }
+}

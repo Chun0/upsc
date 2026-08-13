@@ -1,0 +1,106 @@
+{
+  "id": "ssc-chsl",
+  "name": "SSC CHSL",
+  "fullName": "Combined Higher Secondary Level Examination",
+  "org": "Staff Selection Commission",
+  "icon": "📇",
+  "color": "#4ade80",
+  "tagline": "LDC, DEO & court clerks — 12th-pass gateway to central govt.",
+  "overview": "Tier 1 (100Q/200m/60min, +2/−0.5) is qualifying. Tier 2: Section I (180m) & Section II (180m) decide merit (+3/−1), Section III (Computer + typing) is qualifying. Questions easier than CGL; speed matters.",
+  "eligibility": ["12th pass", "Age 18–27 (varies by post)"],
+  "age": "18–27",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "Tier I", "mode": "objective", "note": "Qualifying" },
+    { "name": "Tier II", "mode": "objective", "note": "Section I+II merit; Section III qualifying (computer + typing)" }
+  ],
+  "patterns": [
+    {
+      "stage": "Tier I",
+      "durationMin": 60, "questions": 100, "marks": 200, "negative": "0.50 mark", "negFraction": 0.25,
+      "sections": [
+        { "name": "General Intelligence & Reasoning", "questions": 25, "marks": 50 },
+        { "name": "General Awareness", "questions": 25, "marks": 50 },
+        { "name": "Quantitative Aptitude", "questions": 25, "marks": 50 },
+        { "name": "English Language", "questions": 25, "marks": 50 }
+      ],
+      "notes": ["+2 correct, −0.50 wrong", "60 minutes total"]
+    },
+    {
+      "stage": "Tier II Session 1",
+      "durationMin": 135, "questions": 120, "marks": 360, "negative": "1 mark", "negFraction": 0.333,
+      "sections": [
+        { "name": "Section I — Maths & Reasoning", "questions": 60, "marks": 180, "durationMin": 60 },
+        { "name": "Section II — English & GA", "questions": 60, "marks": 180, "durationMin": 60 },
+        { "name": "Section III (Module I) — Computer", "questions": 20, "marks": 60, "durationMin": 15 }
+      ],
+      "notes": ["+3 correct, −1 wrong", "Section III Module I is qualifying", "Session 2: typing/skill test (10–15 min)"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Quantitative Aptitude", "weight": 0.25,
+      "topics": [
+        { "name": "Number system & simplification", "weight": 0.2, "pyq": 5, "difficulty": 1, "sub": ["BODMAS", "LCM/HCF"] },
+        { "name": "Percentages, profit & loss, SI/CI", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Discount", "Interest"] },
+        { "name": "Ratio, average, time & work, speed", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Mixtures", "Trains"] },
+        { "name": "Geometry & mensuration", "weight": 0.15, "pyq": 3, "difficulty": 2, "sub": ["Area", "Volume"] },
+        { "name": "DI & algebra", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Charts", "Linear equations"] }
+      ]
+    },
+    {
+      "subject": "General Intelligence & Reasoning", "weight": 0.25,
+      "topics": [
+        { "name": "Analogy, classification, series", "weight": 0.3, "pyq": 5, "difficulty": 1, "sub": ["Letter/number", "Odd one out"] },
+        { "name": "Coding-decoding & blood relations", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Shifts", "Family"] },
+        { "name": "Syllogism, Venn & direction", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Statements", "Directions"] },
+        { "name": "Puzzles & non-verbal", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["Seating", "Mirror images", "Folding"] }
+      ]
+    },
+    {
+      "subject": "English", "weight": 0.25,
+      "topics": [
+        { "name": "Error spotting & fillers", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Grammar", "Prepositions"] },
+        { "name": "Vocabulary & idioms", "weight": 0.25, "pyq": 5, "difficulty": 2, "sub": ["Synonyms", "Antonyms", "One-word"] },
+        { "name": "Comprehension & cloze", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Passages", "Cloze"] },
+        { "name": "Para jumbles & spelling", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Sequence", "Spelling"] }
+      ]
+    },
+    {
+      "subject": "General Awareness", "weight": 0.25,
+      "topics": [
+        { "name": "Static GK", "weight": 0.4, "pyq": 5, "difficulty": 1, "sub": ["History", "Geography", "Polity basics", "Firsts"] },
+        { "name": "Science basics", "weight": 0.3, "pyq": 4, "difficulty": 2, "sub": ["Physics", "Chemistry", "Biology"] },
+        { "name": "Current affairs", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Awards", "Sports", "Appointments"] }
+      ]
+    },
+    {
+      "subject": "Computer (Tier II)", "weight": 0.05,
+      "topics": [
+        { "name": "Computer fundamentals & MS Office", "weight": 0.6, "pyq": 3, "difficulty": 1, "sub": ["Hardware", "Word", "Excel"] },
+        { "name": "Internet & security", "weight": 0.4, "pyq": 2, "difficulty": 1, "sub": ["Protocols", "Safety"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Tier 1 GA is very scoring (easy-moderate static + CA)",
+    "Tier 2 English weight jumped after pattern change — grammar-heavy",
+    "Speed is the real differentiator: ~36 sec/question in Tier 1",
+    "Typing test (35 wpm English / 30 wpm Hindi) eliminated many candidates"
+  ],
+  "sources": ["https://ssc.gov.in", "https://competition.careers360.com/articles/ssc-chsl-exam-pattern", "https://prepp.in/ssc-chsl-exam/exam-pattern"],
+  "samples": [
+    { "q": "Select the odd one out: 121, 144, 169, 196, 225", "o": ["121", "144", "196", "All are squares of consecutive numbers"], "a": 3, "x": "All are perfect squares of 11, 12, 13, 14, 15 — none is odd. (Trap question style: check before answering.)", "s": "General Intelligence & Reasoning", "t": "Analogy, classification, series", "d": 2 },
+    { "q": "A sum of ₹4,000 becomes ₹4,840 in 2 years at simple interest. The rate is:", "o": ["8%", "10.5%", "11%", "12%"], "a": 1, "x": "SI = 840 over 2 years → 420/year. Rate = 420/4000 × 100 = 10.5%.", "s": "Quantitative Aptitude", "t": "Percentages, profit & loss, SI/CI", "d": 2 },
+    { "q": "Identify the part with an error: 'Each of the students (A)/ have submitted (B)/ their assignments (C)/ No error (D)'", "o": ["A", "B", "C", "D"], "a": 1, "x": "'Each of the students' is singular → 'has submitted'.", "s": "English", "t": "Error spotting & fillers", "d": 1 },
+    { "q": "Who founded the Brahmo Samaj?", "o": ["Swami Vivekananda", "Raja Ram Mohan Roy", "Dayanand Saraswati", "Ishwar Chandra Vidyasagar"], "a": 1, "x": "Raja Ram Mohan Roy founded the Brahmo Samaj in 1828.", "s": "General Awareness", "t": "Static GK", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 12, "hoursPerDay": 3,
+    "phases": [
+      { "name": "Basics", "weeks": 4, "focus": "Quant formulas + reasoning types + daily vocab", "tasks": ["Quant formula sheet + daily 40 questions", "Reasoning chapter-wise", "GA static revision"] },
+      { "name": "Speed practice", "weeks": 4, "focus": "Sectional timed sets", "tasks": ["2 sectional sets/day", "Typing practice 15 min/day", "Weekly mock"] },
+      { "name": "Mocks & revision", "weeks": 4, "focus": "Full mocks + error log", "tasks": ["3 mocks/week", "Error-log revision", "Computer module practice"] }
+    ]
+  }
+}

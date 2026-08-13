@@ -1,0 +1,89 @@
+{
+  "id": "ctet",
+  "name": "CTET",
+  "fullName": "Central Teacher Eligibility Test",
+  "org": "CBSE",
+  "icon": "📚",
+  "color": "#f87171",
+  "tagline": "150 questions, no negative marking — pedagogy is the heart.",
+  "overview": "Paper 1 (classes 1–5) and Paper 2 (classes 6–8): 150Q/150m each, 2.5 hours, NO negative marking. Structure: CDP 30, Language I 30, Language II 30, Maths 30 + EVS 30 (Paper 1) or Maths/Science 60 or Social Studies 60 (Paper 2).",
+  "eligibility": ["Paper 1: 12th + D.El.Ed (2yr)", "Paper 2: Graduate + B.Ed"],
+  "age": "No limit",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "Paper 1", "mode": "objective", "note": "Primary stage (1–5)" },
+    { "name": "Paper 2", "mode": "objective", "note": "Elementary stage (6–8)" }
+  ],
+  "patterns": [
+    {
+      "stage": "Paper 1",
+      "durationMin": 150, "questions": 150, "marks": 150, "negative": "none", "negFraction": 0,
+      "sections": [
+        { "name": "Child Development & Pedagogy", "questions": 30, "marks": 30 },
+        { "name": "Language I", "questions": 30, "marks": 30 },
+        { "name": "Language II", "questions": 30, "marks": 30 },
+        { "name": "Mathematics", "questions": 30, "marks": 30 },
+        { "name": "Environmental Studies", "questions": 30, "marks": 30 }
+      ],
+      "notes": ["1 mark each, no negative marking", "Pass: 60% (90/150)"]
+    },
+    {
+      "stage": "Paper 2",
+      "durationMin": 150, "questions": 150, "marks": 150, "negative": "none", "negFraction": 0,
+      "sections": [
+        { "name": "Child Development & Pedagogy", "questions": 30, "marks": 30 },
+        { "name": "Language I", "questions": 30, "marks": 30 },
+        { "name": "Language II", "questions": 30, "marks": 30 },
+        { "name": "Mathematics & Science (or Social Studies)", "questions": 60, "marks": 60 }
+      ],
+      "notes": ["Choose Maths/Science OR Social Studies", "1 mark each, no negative marking"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Child Development & Pedagogy", "weight": 0.2,
+      "topics": [
+        { "name": "Development & learning theories", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Piaget", "Vygotsky", "Kohlberg"] },
+        { "name": "Intelligence & individual differences", "weight": 0.2, "pyq": 4, "difficulty": 2, "sub": ["Theories", "Special needs"] },
+        { "name": "Assessment & inclusive education", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["CCE", "RTE 2009", "Inclusion"] }
+      ]
+    },
+    {
+      "subject": "Language I & II", "weight": 0.4,
+      "topics": [
+        { "name": "Language pedagogy & acquisition", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["Methods", "Skills", "Challenges"] },
+        { "name": "Comprehension", "weight": 0.3, "pyq": 5, "difficulty": 1, "sub": ["Passages", "Poems"] },
+        { "name": "Grammar & pedagogy of language development", "weight": 0.3, "pyq": 4, "difficulty": 2, "sub": ["Grammar basics", "Remedial teaching"] }
+      ]
+    },
+    {
+      "subject": "Mathematics & EVS / Science / SST", "weight": 0.4,
+      "topics": [
+        { "name": "Maths content (Paper 1: numbers, shapes)", "weight": 0.35, "pyq": 5, "difficulty": 1, "sub": ["Number system", "Geometry", "Measurement"] },
+        { "name": "Maths pedagogy & misconceptions", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["NCF 2005", "Diagnostic teaching", "Remediation"] },
+        { "name": "EVS / Science / Social Studies content", "weight": 0.45, "pyq": 5, "difficulty": 1, "sub": ["Environment", "Human body", "History/Geo basics"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Pedagogy questions are concept + classroom-scenario based",
+    "RTE 2009, NCF 2005, NEP 2020 references frequent",
+    "No negative marking — attempt every question",
+    "Language pedagogy (not just grammar) carries heavy weight"
+  ],
+  "sources": ["https://ctet.nic.in"],
+  "samples": [
+    { "q": "According to Piaget, a child in the 'concrete operational stage' can typically:", "o": ["Think abstractly and hypothetically", "Perform logical operations on concrete objects", "Only respond to sensory stimuli", "Use hypothetico-deductive reasoning"], "a": 1, "x": "Concrete operational stage (7–11 years): logical thinking about concrete objects, not yet abstract/hypothetical.", "s": "Child Development & Pedagogy", "t": "Development & learning theories", "d": 2 },
+    { "q": "Under RTE 2009, free and compulsory education applies to children aged:", "o": ["4–14", "6–14", "6–18", "5–16"], "a": 1, "x": "Right to Education Act 2009 covers ages 6–14 (classes 1–8).", "s": "Child Development & Pedagogy", "t": "Assessment & inclusive education", "d": 1 },
+    { "q": "A teacher finds a student repeatedly making mistakes in subtraction with borrowing. The best first step is:", "o": ["Give more drill worksheets", "Diagnose the underlying misconception about place value", "Send the student for remedial class after school", "Ask parents to teach at home"], "a": 1, "x": "Diagnostic teaching first identifies the specific misconception (often place value), then remediates.", "s": "Mathematics & EVS / Science / SST", "t": "Maths pedagogy & misconceptions", "d": 2 },
+    { "q": "Which is a 'renewable' source of energy?", "o": ["Coal", "Petroleum", "Solar energy", "Natural gas"], "a": 2, "x": "Solar energy is renewable; fossil fuels are exhaustible.", "s": "Mathematics & EVS / Science / SST", "t": "EVS / Science / Social Studies content", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 10, "hoursPerDay": 3,
+    "phases": [
+      { "name": "Pedagogy + language", "weeks": 4, "focus": "CDP theories + language pedagogy", "tasks": ["CDP chapter-wise with PYQs", "Language pedagogy notes", "Daily 30 MCQs"] },
+      { "name": "Content areas", "weeks": 4, "focus": "Maths/EVS or Science/SST content", "tasks": ["Content chapter-wise", "Pedagogy of each subject", "Weekly mock"] },
+      { "name": "Peak", "weeks": 2, "focus": "Full mocks", "tasks": ["Full paper every 2 days", "Rapid revision"] }
+    ]
+  }
+}

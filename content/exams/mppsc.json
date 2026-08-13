@@ -1,0 +1,86 @@
+{
+  "id": "mppsc",
+  "name": "MPPSC SSE",
+  "fullName": "Madhya Pradesh State Service Examination",
+  "org": "Madhya Pradesh Public Service Commission",
+  "icon": "🏛️",
+  "color": "#fbbf24",
+  "tagline": "MP's own civil services — Deputy Collector, DSP, Naib Tehsildar.",
+  "overview": "Prelims: GS 100Q×2m (2h) + CSAT 100Q×2m (2h, qualifying 33%). Mains: 6 descriptive papers (GS I–IV, Hindi, Hindi Essay) + Interview 175. Note: 2026 exam analysis reports 1/3 negative marking introduced (historically none) — verify with official notification.",
+  "eligibility": ["Graduate in any discipline", "Age 21–33 (relaxations apply)"],
+  "age": "21–33",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "Prelims", "mode": "objective", "note": "GS merit + CSAT qualifying" },
+    { "name": "Mains", "mode": "descriptive", "note": "6 papers" },
+    { "name": "Interview", "mode": "interview", "note": "175 marks" }
+  ],
+  "patterns": [
+    {
+      "stage": "Prelims GS",
+      "durationMin": 120, "questions": 100, "marks": 200, "negative": "1/3 (2026 cycle)", "negFraction": 0.333,
+      "sections": [{ "name": "General Studies", "questions": 100, "marks": 200, "durationMin": 120 }],
+      "notes": ["+2 correct", "Sources conflict: 2026 analysis reports 1/3 negative; earlier cycles had none — treat as change-prone"]
+    },
+    {
+      "stage": "Prelims CSAT",
+      "durationMin": 120, "questions": 100, "marks": 200, "negative": "1/3 (2026 cycle)", "negFraction": 0.333,
+      "sections": [{ "name": "General Aptitude Test", "questions": 100, "marks": 200, "durationMin": 120 }],
+      "notes": ["QUALIFYING: 33% (66.67/200)", "Not in merit"]
+    },
+    {
+      "stage": "Mains",
+      "durationMin": 180, "questions": 0, "marks": 1400, "negative": "none", "negFraction": 0,
+      "sections": [
+        { "name": "GS Paper I (History, Geography, Disaster Mgmt)", "questions": 0, "marks": 300 },
+        { "name": "GS Paper II (Polity, Governance, Economy)", "questions": 0, "marks": 300 },
+        { "name": "GS Paper III (S&T, Reasoning, Data)", "questions": 0, "marks": 300 },
+        { "name": "GS Paper IV (Ethics, Philosophy, Psychology)", "questions": 0, "marks": 300 },
+        { "name": "Hindi", "questions": 0, "marks": 200 }
+      ],
+      "notes": ["Descriptive; MP-specific questions common", "Hindi paper includes translation"]
+    },
+    { "stage": "Interview", "durationMin": 30, "questions": 0, "marks": 175, "negative": "none", "negFraction": 0, "sections": [], "notes": ["Personality test"] }
+  ],
+  "syllabus": [
+    {
+      "subject": "General Studies (Prelims)", "weight": 0.7,
+      "topics": [
+        { "name": "History of India & MP", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["Freedom movement in MP", "MP dynasties", "Tribal revolts"] },
+        { "name": "Geography of India & MP", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["MP rivers & plateaus", "Soils", "Minerals", "Climate"] },
+        { "name": "Polity & governance (incl. MP schemes)", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["Constitution", "Panchayati Raj", "MP govt schemes"] },
+        { "name": "Economy of India & MP", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["MP budget", "Agriculture", "Industry"] },
+        { "name": "Science & environment", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Basic science", "MP wildlife", "National parks"] },
+        { "name": "Current affairs (MP + national)", "weight": 0.1, "pyq": 4, "difficulty": 1, "sub": ["MP news", "Awards", "Schemes"] }
+      ]
+    },
+    {
+      "subject": "CSAT (General Aptitude)", "weight": 0.3,
+      "topics": [
+        { "name": "Comprehension & Hindi/English language", "weight": 0.4, "pyq": 4, "difficulty": 2, "sub": ["Passages", "Grammar"] },
+        { "name": "Quantitative & logical reasoning", "weight": 0.6, "pyq": 4, "difficulty": 2, "sub": ["Number series", "Syllogism", "Percentages", "DI"] }
+      ]
+    }
+  ],
+  "trends": [
+    "MP-specific questions (schemes, geography, tribal culture) are the cutoff decider",
+    "Bilingual paper (Hindi + English)",
+    "Mains asks applied questions on MP administration",
+    "Negative marking status changed in 2026 cycle — keep verifying notifications"
+  ],
+  "sources": ["https://mppsc.mp.gov.in", "https://www.drishtiias.com/state-pcs/madhya-pradesh-public-service-commission-mppcs-faqs-state-pcs-english", "https://www.careerpower.in/blog/mppsc-prelims-question-paper-2026"],
+  "samples": [
+    { "q": "The 'Bhoj Wetland' (Ramsar site) is located in which city of Madhya Pradesh?", "o": ["Indore", "Bhopal", "Jabalpur", "Gwalior"], "a": 1, "x": "Bhoj Wetland — comprising Upper Lake (Bada Talab) and Lower Lake — is in Bhopal.", "s": "General Studies (Prelims)", "t": "Geography of India & MP", "d": 2 },
+    { "q": "Which dynasty built the Khajuraho temples?", "o": ["Chandelas", "Paramaras", "Kalachuris", "Tomars"], "a": 0, "x": "The Chandela dynasty built the Khajuraho group of temples between the 9th–12th centuries.", "s": "General Studies (Prelims)", "t": "History of India & MP", "d": 2 },
+    { "q": "Madhya Pradesh's state animal is:", "o": ["Tiger", "Barasingha (Swamp Deer)", "Gaur", "Leopard"], "a": 1, "x": "Barasingha (Rucervus duvaucelii), the state animal, is conserved at Kanha.", "s": "General Studies (Prelims)", "t": "Science & environment", "d": 1 },
+    { "q": "In a class of 60 students, 36 passed in Hindi and 42 passed in English. If 12 failed in both, how many passed in both?", "o": ["24", "28", "30", "32"], "a": 2, "x": "Passed in at least one = 60 − 12 = 48. Both = 36 + 42 − 48 = 30.", "s": "CSAT (General Aptitude)", "t": "Quantitative & logical reasoning", "d": 2 }
+  ],
+  "plan": {
+    "weeks": 24, "hoursPerDay": 4,
+    "phases": [
+      { "name": "Foundation", "weeks": 10, "focus": "MP-specific history/geography + polity/economy", "tasks": ["MP GK chapter-wise (Lucent MP + state books)", "NCERT revision", "Daily MP current affairs"] },
+      { "name": "Practice", "weeks": 8, "focus": "PYQs + mains answer writing", "tasks": ["10 years MPPSC PYQs", "Weekly mains answers (MP angle)", "CSAT practice weekly"] },
+      { "name": "Peak", "weeks": 6, "focus": "Mocks + revision", "tasks": ["2 mocks/week", "MP schemes one-liners", "Hindi paper practice"] }
+    ]
+  }
+}

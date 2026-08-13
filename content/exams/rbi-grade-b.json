@@ -1,0 +1,118 @@
+{
+  "id": "rbi-grade-b",
+  "name": "RBI Grade B",
+  "fullName": "Reserve Bank of India Officers (Grade B) — General",
+  "org": "Reserve Bank of India",
+  "icon": "🏦",
+  "color": "#f472b6",
+  "tagline": "The central bank calls — finance, economics and writing skills.",
+  "overview": "Phase 1: 200Q/200m in 120 min with sectional timers (GK 80, Reasoning 60, English 30, Quant 30), −0.25. Phase 2: ESI (30 objective + 6 descriptive, attempt 4), English (3 descriptive), FM (30 objective + 6 descriptive, attempt 4). Interview 75. 2026: 60 vacancies, no pattern change.",
+  "eligibility": ["Graduate (60%+) or PG (55%+)", "Age 21–30"],
+  "age": "21–30",
+  "attempts": "General 6, OBC 9, SC/ST unlimited",
+  "stages": [
+    { "name": "Phase 1", "mode": "objective", "note": "Screening" },
+    { "name": "Phase 2", "mode": "objective", "note": "ESI + English + FM (objective + descriptive mix)" },
+    { "name": "Interview", "mode": "interview", "note": "75 marks" }
+  ],
+  "patterns": [
+    {
+      "stage": "Phase 1",
+      "durationMin": 120, "questions": 200, "marks": 200, "negative": "0.25 mark", "negFraction": 0.25,
+      "sections": [
+        { "name": "General Awareness", "questions": 80, "marks": 80, "durationMin": 25 },
+        { "name": "Reasoning Ability", "questions": 60, "marks": 60, "durationMin": 45 },
+        { "name": "English Language", "questions": 30, "marks": 30, "durationMin": 25 },
+        { "name": "Quantitative Aptitude", "questions": 30, "marks": 30, "durationMin": 25 }
+      ],
+      "notes": ["GA is the heaviest section (80Q) — banking + economy focus", "Sectional timers auto-lock"]
+    },
+    {
+      "stage": "Phase 2 Paper 1 — ESI",
+      "durationMin": 90, "questions": 36, "marks": 100, "negative": "objective only", "negFraction": 0.25,
+      "sections": [
+        { "name": "ESI Objective", "questions": 30, "marks": 50 },
+        { "name": "ESI Descriptive (attempt 4 of 6)", "questions": 6, "marks": 50 }
+      ],
+      "notes": ["Economic & Social Issues", "Descriptive answers evaluated on structure + data"]
+    },
+    {
+      "stage": "Phase 2 Paper 2 — English",
+      "durationMin": 90, "questions": 3, "marks": 100, "negative": "none", "negFraction": 0,
+      "sections": [{ "name": "Descriptive (Essay, Précis, Comprehension)", "questions": 3, "marks": 100 }],
+      "notes": ["Writing skills paper"]
+    },
+    {
+      "stage": "Phase 2 Paper 3 — Finance & Management",
+      "durationMin": 90, "questions": 36, "marks": 100, "negative": "objective only", "negFraction": 0.25,
+      "sections": [
+        { "name": "FM Objective", "questions": 30, "marks": 50 },
+        { "name": "FM Descriptive (attempt 4 of 6)", "questions": 6, "marks": 50 }
+      ],
+      "notes": ["Finance + Management mix"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "General Awareness (Phase 1)", "weight": 0.4,
+      "topics": [
+        { "name": "Banking & financial awareness", "weight": 0.4, "pyq": 5, "difficulty": 2, "sub": ["RBI functions", "Monetary policy", "Banking terms", "Financial markets"] },
+        { "name": "Economic awareness", "weight": 0.3, "pyq": 5, "difficulty": 3, "sub": ["Budget", "Economic survey", "Inflation", "GDP"] },
+        { "name": "Current affairs", "weight": 0.3, "pyq": 5, "difficulty": 2, "sub": ["Govt schemes", "Reports", "Appointments"] }
+      ]
+    },
+    {
+      "subject": "Economic & Social Issues (ESI)", "weight": 0.25,
+      "topics": [
+        { "name": "Growth & development", "weight": 0.25, "pyq": 5, "difficulty": 3, "sub": ["GDP measures", "HDI", "Sustainable development"] },
+        { "name": "Poverty, unemployment & inequality", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["Poverty lines", "Employment schemes"] },
+        { "name": "Inflation & monetary/fiscal policy", "weight": 0.25, "pyq": 5, "difficulty": 3, "sub": ["CPI", "Repo", "FRBM"] },
+        { "name": "Social structure & schemes", "weight": 0.3, "pyq": 4, "difficulty": 2, "sub": ["Education", "Health", "Urbanisation", "Demographics"] }
+      ]
+    },
+    {
+      "subject": "Finance & Management", "weight": 0.2,
+      "topics": [
+        { "name": "Financial system & markets", "weight": 0.35, "pyq": 5, "difficulty": 3, "sub": ["Money market", "Capital market", "SEBI", "Instruments"] },
+        { "name": "Risk, regulation & basics of accounting", "weight": 0.25, "pyq": 4, "difficulty": 3, "sub": ["Basel", "NPAs", "Balance sheet basics"] },
+        { "name": "Management fundamentals", "weight": 0.2, "pyq": 3, "difficulty": 2, "sub": ["Leadership", "Motivation", "Communication"] },
+        { "name": "Corporate governance & ethics", "weight": 0.2, "pyq": 3, "difficulty": 2, "sub": ["Ethics in banking", "Governance norms"] }
+      ]
+    },
+    {
+      "subject": "English & Writing Skills", "weight": 0.1,
+      "topics": [
+        { "name": "Essay writing", "weight": 0.4, "pyq": 5, "difficulty": 3, "sub": ["Economy topics", "Argument structure"] },
+        { "name": "Précis writing", "weight": 0.3, "pyq": 5, "difficulty": 3, "sub": ["Compression", "One-third rule"] },
+        { "name": "Reading comprehension", "weight": 0.3, "pyq": 4, "difficulty": 2, "sub": ["Passages", "Inference"] }
+      ]
+    },
+    {
+      "subject": "Reasoning & Quant (Phase 1)", "weight": 0.05,
+      "topics": [
+        { "name": "Puzzles, syllogism, DI", "weight": 1, "pyq": 4, "difficulty": 2, "sub": ["Seating", "Syllogism", "Charts"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Phase 1 GA (80Q) is dominated by banking + economic current affairs",
+    "ESI/FM descriptive answers must quote data & committee names",
+    "English paper tests précis quality heavily",
+    "2026: 60 vacancies — competition intensity very high"
+  ],
+  "sources": ["https://rbi.org.in", "https://www.adda247.com/jobs/rbi-grade-b-notification-2026-out/", "https://edutap.in/rbi-grade-b/pattern/"],
+  "samples": [
+    { "q": "The 'Ways and Means Advances' (WMA) facility is provided by:", "o": ["SEBI to brokers", "RBI to the government", "NABARD to farmers", "SIDBI to MSMEs"], "a": 1, "x": "WMA is a temporary liquidity facility RBI provides to the central and state governments to bridge mismatches in receipts and payments.", "s": "General Awareness (Phase 1)", "t": "Banking & financial awareness", "d": 2 },
+    { "q": "Which committee's recommendations led to the introduction of the Monetary Policy Committee (MPC) in India?", "o": ["Narasimham Committee", "Urjit Patel Committee", "Rangarajan Committee", "Nachiket Mor Committee"], "a": 1, "x": "The Urjit Patel Committee (2014) recommended an MPC and inflation targeting; MPC became statutory in 2016.", "s": "Economic & Social Issues (ESI)", "t": "Inflation & monetary/fiscal policy", "d": 3 },
+    { "q": "CPI-based inflation in India is released by which agency?", "o": ["CSO (NSO)", "RBI", "NITI Aayog", "Ministry of Finance"], "a": 0, "x": "The National Statistical Office (NSO) compiles CPI; RBI uses it as the policy anchor.", "s": "Economic & Social Issues (ESI)", "t": "Inflation & monetary/fiscal policy", "d": 2 },
+    { "q": "Basel III norms primarily target:", "o": ["Agricultural credit", "Bank capital adequacy and liquidity", "Export finance", "MSME lending"], "a": 1, "x": "Basel III strengthens capital, leverage and liquidity requirements of banks.", "s": "Finance & Management", "t": "Risk, regulation & basics of accounting", "d": 2 }
+  ],
+  "plan": {
+    "weeks": 20, "hoursPerDay": 4,
+    "phases": [
+      { "name": "Foundation", "weeks": 8, "focus": "ESI + FM theory from standard books; daily finance CA", "tasks": ["ESI chapter-wise notes", "FM concepts + current developments", "Daily RBI/economic news notes"] },
+      { "name": "Practice", "weeks": 8, "focus": "Phase 1 mocks + descriptive answer writing", "tasks": ["Weekly Phase-1 mocks", "4 descriptive answers/week with data points", "Précis practice weekly"] },
+      { "name": "Peak", "weeks": 4, "focus": "Full Phase-2 simulation + revision", "tasks": ["Phase-2 papers in exam conditions", "Schemes/committees rapid revision", "Interview current affairs"] }
+    ]
+  }
+}

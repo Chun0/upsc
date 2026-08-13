@@ -1,0 +1,107 @@
+{
+  "id": "ibps-po",
+  "name": "IBPS PO",
+  "fullName": "Probationary Officer / Management Trainee (CRP)",
+  "org": "Institute of Banking Personnel Selection",
+  "icon": "🏦",
+  "color": "#f59e0b",
+  "tagline": "The classic bank-PO grind — speed, accuracy, sectional cutoffs.",
+  "overview": "Prelims (100Q/60min, sectional 20-min timers, −0.25) → Mains (revised 2026: 170Q objective 200m + 25m descriptive, 3.5h) → Interview. Sectional cutoffs apply at both stages.",
+  "eligibility": ["Graduate in any discipline", "Age 20–30"],
+  "age": "20–30",
+  "attempts": "No limit",
+  "stages": [
+    { "name": "Prelims", "mode": "objective", "note": "Qualifying; sectional + overall cutoff" },
+    { "name": "Mains", "mode": "objective", "note": "Objective + descriptive" },
+    { "name": "Interview", "mode": "interview", "note": "100 marks; final = Mains 80% + Interview 20%" }
+  ],
+  "patterns": [
+    {
+      "stage": "Prelims",
+      "durationMin": 60, "questions": 100, "marks": 100, "negative": "0.25 mark", "negFraction": 0.25,
+      "sections": [
+        { "name": "English Language", "questions": 30, "marks": 30, "durationMin": 20 },
+        { "name": "Quantitative Aptitude", "questions": 35, "marks": 35, "durationMin": 20 },
+        { "name": "Reasoning Ability", "questions": 35, "marks": 35, "durationMin": 20 }
+      ],
+      "notes": ["Each question 1 mark; −0.25 wrong", "Sectional timing: 20 min each, auto-lock", "Must clear sectional AND overall cutoffs"]
+    },
+    {
+      "stage": "Mains (revised 2026)",
+      "durationMin": 180, "questions": 170, "marks": 200, "negative": "0.25 mark", "negFraction": 0.25,
+      "sections": [
+        { "name": "Reasoning & Computer Aptitude", "questions": 45, "marks": 60, "durationMin": 60 },
+        { "name": "Data Analysis & Interpretation", "questions": 35, "marks": 60, "durationMin": 45 },
+        { "name": "English Language", "questions": 35, "marks": 40, "durationMin": 40 },
+        { "name": "General / Economy / Banking Awareness", "questions": 40, "marks": 40, "durationMin": 35 },
+        { "name": "Descriptive (Letter + Essay)", "questions": 2, "marks": 25, "durationMin": 30 }
+      ],
+      "notes": ["Objective 170Q/200m + descriptive 25m (30 min)", "Section split indicative — verify with official notification", "Descriptive evaluated separately"]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "Reasoning Ability", "weight": 0.3,
+      "topics": [
+        { "name": "Puzzles & seating arrangement", "weight": 0.35, "pyq": 5, "difficulty": 3, "sub": ["Circular/linear", "Floor & box", "Scheduling"] },
+        { "name": "Inequalities & syllogism", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["Coded inequalities", "Possibility cases"] },
+        { "name": "Blood relations & direction", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Coded relations", "Distance-direction"] },
+        { "name": "Input-output & coding-decoding", "weight": 0.15, "pyq": 4, "difficulty": 3, "sub": ["Machine input", "New pattern coding"] },
+        { "name": "Misc: order/ranking, data sufficiency", "weight": 0.15, "pyq": 4, "difficulty": 2, "sub": ["Ranking", "DS"] }
+      ]
+    },
+    {
+      "subject": "Quantitative Aptitude", "weight": 0.3,
+      "topics": [
+        { "name": "DI: table, bar, line, pie, caselet", "weight": 0.35, "pyq": 5, "difficulty": 3, "sub": ["Missing DI", "Caselets"] },
+        { "name": "Simplification & number series", "weight": 0.2, "pyq": 5, "difficulty": 2, "sub": ["Approximation", "Wrong number series"] },
+        { "name": "Arithmetic word problems", "weight": 0.3, "pyq": 5, "difficulty": 3, "sub": ["Ages", "Partnership", "Mixture", "Boats"] },
+        { "name": "Probability & misc", "weight": 0.15, "pyq": 3, "difficulty": 3, "sub": ["Probability", "Mensuration"] }
+      ]
+    },
+    {
+      "subject": "English Language", "weight": 0.2,
+      "topics": [
+        { "name": "Reading comprehension", "weight": 0.35, "pyq": 5, "difficulty": 3, "sub": ["Passages", "Inference", "Vocab in context"] },
+        { "name": "Error detection & phrase replacement", "weight": 0.25, "pyq": 4, "difficulty": 2, "sub": ["Grammar", "Sentence improvement"] },
+        { "name": "Cloze test & para jumbles", "weight": 0.2, "pyq": 4, "difficulty": 3, "sub": ["Fillers", "Sequence"] },
+        { "name": "Vocabulary & match the column", "weight": 0.2, "pyq": 3, "difficulty": 2, "sub": ["Synonyms", "Column matching"] }
+      ]
+    },
+    {
+      "subject": "General / Banking Awareness", "weight": 0.15,
+      "topics": [
+        { "name": "Banking & financial awareness", "weight": 0.5, "pyq": 5, "difficulty": 2, "sub": ["RBI & monetary policy", "Banking terms", "Regulatory updates", "Financial institutions"] },
+        { "name": "Economy & current affairs", "weight": 0.5, "pyq": 5, "difficulty": 2, "sub": ["Budget", "Economic survey", "Schemes", "Appointments", "Awards"] }
+      ]
+    },
+    {
+      "subject": "Computer Aptitude", "weight": 0.05,
+      "topics": [
+        { "name": "Computer fundamentals & networking", "weight": 0.6, "pyq": 3, "difficulty": 1, "sub": ["Hardware", "OS", "LAN/WAN", "Protocols"] },
+        { "name": "Security & MS Office", "weight": 0.4, "pyq": 3, "difficulty": 1, "sub": ["Malware", "Shortcuts", "DBMS basics"] }
+      ]
+    }
+  ],
+  "trends": [
+    "Puzzles dominate Reasoning — 15–20 questions in Prelims",
+    "DI is the Mains decider; caselet DI frequency rising",
+    "Banking awareness asks current RBI/SEBI/NABARD updates",
+    "Descriptive (letter + essay) is easy marks — practice formats"
+  ],
+  "sources": ["https://www.ibps.in", "https://www.oliveboard.in/ibps-po-exam-pattern/", "https://www.careerpower.in/ibps-po-syllabus-exam-pattern.html"],
+  "samples": [
+    { "q": "Eight people sit around a circular table facing the centre. A sits third to the right of B. C sits second to the left of A... If D sits exactly between A and C, who sits opposite B? (Data sufficient to solve in full paper; here identify the approach.)", "o": ["Start with A–B relation and place C", "Start with D between A and C", "Cannot be determined from given data", "Place B first"], "a": 2, "x": "With only these clues the position opposite B cannot be uniquely determined — always count how many distinct arrangements satisfy all clues before marking.", "s": "Reasoning Ability", "t": "Puzzles & seating arrangement", "d": 3 },
+    { "q": "A shopkeeper sells an item at 20% discount on marked price and still gains 12%. If cost price is ₹500, the marked price is:", "o": ["₹640", "₹700", "₹720", "₹750"], "a": 1, "x": "SP = 500 × 1.12 = 560. MP = 560 / 0.8 = 700.", "s": "Quantitative Aptitude", "t": "Arithmetic word problems", "d": 2 },
+    { "q": "Which institution publishes the 'Financial Stability Report' in India?", "o": ["SEBI", "RBI", "Ministry of Finance", "NITI Aayog"], "a": 1, "x": "The RBI publishes the half-yearly Financial Stability Report (FSR).", "s": "General / Banking Awareness", "t": "Banking & financial awareness", "d": 2 },
+    { "q": "Choose the word most similar in meaning to 'CANDID':", "o": ["Secretive", "Frank", "Biased", "Cunning"], "a": 1, "x": "Candid = frank, honest, straightforward.", "s": "English Language", "t": "Vocabulary & match the column", "d": 1 }
+  ],
+  "plan": {
+    "weeks": 16, "hoursPerDay": 4,
+    "phases": [
+      { "name": "Foundation", "weeks": 6, "focus": "Reasoning basics + quant arithmetic + daily CA", "tasks": ["Puzzle solving: 10/day", "Arithmetic chapter-wise", "Daily banking awareness 30 min"] },
+      { "name": "Speed & sectional", "weeks": 6, "focus": "Sectional timed sets (20-min discipline)", "tasks": ["Daily sectional sets × 2", "Weekly full Prelims mock", "Descriptive writing practice"] },
+      { "name": "Mains & mocks", "weeks": 4, "focus": "Mains-level DI/puzzles + mocks", "tasks": ["Mains mocks weekly", "Caselet DI practice", "Interview prep basics"] }
+    ]
+  }
+}
