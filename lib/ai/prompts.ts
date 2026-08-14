@@ -20,9 +20,11 @@ export function ctxQuiz(exam: ExamDef, opts: {
   if (opts.kind === "mock") parts.push(`MOCK MODE: mimic the real exam's phrasing, trap patterns and difficulty curve for the given section.`);
   else parts.push(`PRACTICE MODE: teach through the explanation — each explanation must state WHY the right answer is right AND why each trap option is wrong (1-2 crisp lines).`);
   if (opts.weakTopics?.length) parts.push(`The student is currently WEAK in: ${opts.weakTopics.join(", ")}. Include at least ${Math.min(3, opts.count)} questions that build these specific topics up from fundamentals.`);
+  const optCount = exam.options ?? 4;
+  const lastIdx = optCount - 1;
   parts.push(`HARD RULES:
 - Exactly ${opts.count} questions.
-- Every question has exactly 4 options labelled as array entries (options[0] = A, options[1] = B, ...).
+- Every question has exactly ${optCount} options labelled as array entries (options[0] = A, options[1] = B, ...).
 - Exactly ONE correct option per question; answerIndex is the 0-based index of the correct option.
 - Options must be plausible traps (common misconceptions, near-miss facts), never absurd.
 - question, options and explanation are in plain text (no markdown, no HTML).
@@ -38,7 +40,7 @@ export function ctxQuiz(exam: ExamDef, opts: {
     );
   }
   parts.push(JSON_RULE);
-  parts.push(`Schema: { "questions": [ { "question": string, "options": string[4], "answerIndex": 0..3, "explanation": string, "subject": string, "topic": string, "difficulty": 1..5 } ] }`);
+  parts.push(`Schema: { "questions": [ { "question": string, "options": string[${optCount}], "answerIndex": 0..${lastIdx}, "explanation": string, "subject": string, "topic": string, "difficulty": 1..5 } ] }`);
   return parts.join("\n\n");
 }
 

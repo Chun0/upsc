@@ -5,7 +5,7 @@ and the prompt/AI path, plus the 2025-26 corrections made in this audit.*
 
 ## 1. One source of truth: `content/exams/*.json`
 
-Every exam's intelligence lives in one JSON file (14 exams today). Nothing else
+Every exam's intelligence lives in one JSON file (15 exams today). Nothing else
 hardcodes exam facts. Each file carries:
 
 | Field | What it drives |

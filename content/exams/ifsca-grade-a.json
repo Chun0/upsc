@@ -1,0 +1,811 @@
+{
+  "id": "ifsca-grade-a",
+  "name": "IFSCA Grade A",
+  "fullName": "Officer Grade A (Assistant Manager)",
+  "org": "International Financial Services Centres Authority",
+  "icon": "🌐",
+  "color": "#0e7490",
+  "options": 5,
+  "tagline": "Regulate India's global financial hub — GIFT IFSC, Gandhinagar.",
+  "overview": "Three stages: Phase I (online screening — Paper 1 common for all streams + Paper 2 stream-specific), Phase II (descriptive English + stream objective paper) and Interview. Grade A = Assistant Manager. 2025 cycle: 20 vacancies (General 12, Legal 4, IT 4). Negative marking 1/4 in every objective paper; every MCQ has 5 options (A–E).",
+  "eligibility": [
+    "General stream: Master's in Finance/Economics/Commerce/Econometrics OR Bachelor's in Commerce/IT/CS/LLB (60%)",
+    "Age 21–30 (SC/ST +5, OBC +3, PwBD +10, Ex-servicemen +5)"
+  ],
+  "age": "21–30",
+  "attempts": "General 6; SC/ST/OBC unlimited",
+  "stages": [
+    {
+      "name": "Phase I",
+      "mode": "objective",
+      "note": "Online screening — Paper 1 common + Paper 2 stream"
+    },
+    {
+      "name": "Phase II",
+      "mode": "mixed",
+      "note": "Descriptive English (1/3) + stream objective paper (2/3)"
+    },
+    {
+      "name": "Interview",
+      "mode": "interview",
+      "note": "15% weightage in final selection"
+    }
+  ],
+  "patterns": [
+    {
+      "stage": "Phase I Paper 1 (Common)",
+      "mode": "objective",
+      "durationMin": 60,
+      "questions": 100,
+      "marks": 100,
+      "negative": "1/4 of marks",
+      "negFraction": 0.25,
+      "sections": [
+        {
+          "name": "General Awareness (Financial Sector)",
+          "questions": 25,
+          "marks": 25
+        },
+        {
+          "name": "English Language",
+          "questions": 25,
+          "marks": 25
+        },
+        {
+          "name": "Quantitative Aptitude",
+          "questions": 25,
+          "marks": 25
+        },
+        {
+          "name": "Test of Reasoning",
+          "questions": 25,
+          "marks": 25
+        }
+      ],
+      "notes": [
+        "1 mark each; 5 options (A–E); −0.25 per wrong",
+        "Cut-off 30% (no sectional cut-off)",
+        "Bilingual (Hindi/English) except the English section",
+        "Screening only — marks not in final merit"
+      ]
+    },
+    {
+      "stage": "Phase I Paper 2 (General stream)",
+      "mode": "objective",
+      "durationMin": 60,
+      "questions": 50,
+      "marks": 100,
+      "negative": "1/4 of marks",
+      "negFraction": 0.25,
+      "sections": [
+        {
+          "name": "General stream (GK, Economy, Commerce, Accountancy, Management, Finance & Costing)",
+          "questions": 50,
+          "marks": 100
+        }
+      ],
+      "notes": [
+        "2 marks each; 5 options (A–E); −0.50 per wrong",
+        "Cut-off 40%",
+        "Aggregate Phase-I cut-off 40%"
+      ]
+    },
+    {
+      "stage": "Phase II Paper 1 (Descriptive English)",
+      "mode": "descriptive",
+      "durationMin": 60,
+      "questions": 0,
+      "marks": 100,
+      "negative": "none",
+      "negFraction": 0,
+      "sections": [
+        {
+          "name": "Essay Writing",
+          "questions": 0,
+          "marks": 30,
+          "mode": "descriptive"
+        },
+        {
+          "name": "Précis Writing",
+          "questions": 0,
+          "marks": 35,
+          "mode": "descriptive"
+        },
+        {
+          "name": "Reading Comprehension",
+          "questions": 0,
+          "marks": 35,
+          "mode": "descriptive"
+        }
+      ],
+      "notes": [
+        "Weightage 1/3 in Phase II",
+        "Evaluated only if Paper 2 is cleared",
+        "Cut-off 30%"
+      ]
+    },
+    {
+      "stage": "Phase II Paper 2 (General stream)",
+      "mode": "objective",
+      "durationMin": 60,
+      "questions": 50,
+      "marks": 100,
+      "negative": "1/4 of marks",
+      "negFraction": 0.25,
+      "sections": [
+        {
+          "name": "IFSCA Act, Union Budget, Economic Survey, Banking, Capital Market, Insurance, Pension, Bullion, GIFT IFSC",
+          "questions": 50,
+          "marks": 100
+        }
+      ],
+      "notes": [
+        "2 marks each; 5 options (A–E); −0.50 per wrong",
+        "Cut-off 40%",
+        "Weightage 2/3 in Phase II"
+      ]
+    },
+    {
+      "stage": "Interview",
+      "mode": "interview",
+      "durationMin": 30,
+      "questions": 0,
+      "marks": 0,
+      "negative": "none",
+      "negFraction": 0,
+      "sections": [],
+      "notes": [
+        "Weightage 15% in final selection (Phase II 85%)"
+      ]
+    }
+  ],
+  "syllabus": [
+    {
+      "subject": "IFSCA & GIFT IFSC",
+      "weight": 0.22,
+      "topics": [
+        {
+          "name": "IFSCA Act & establishment",
+          "weight": 0.4,
+          "pyq": 5,
+          "difficulty": 2,
+          "sub": [
+            "IFSCA Act 2019",
+            "Powers transfer 1 Oct 2020",
+            "Register-Approve-Supervise model"
+          ]
+        },
+        {
+          "name": "GIFT IFSC & global financial centres",
+          "weight": 0.35,
+          "pyq": 5,
+          "difficulty": 2,
+          "sub": [
+            "Gandhinagar (sole IFSC)",
+            "GFCI rankings",
+            "Entity types & growth"
+          ]
+        },
+        {
+          "name": "IFSCA regulations (listing, banking, funds)",
+          "weight": 0.25,
+          "pyq": 4,
+          "difficulty": 3,
+          "sub": [
+            "IBU capital",
+            "IPO minimum size",
+            "AIFs & fund management"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "General Awareness (Financial Sector)",
+      "weight": 0.18,
+      "topics": [
+        {
+          "name": "RBI, SEBI, IRDAI & PFRDA",
+          "weight": 0.5,
+          "pyq": 5,
+          "difficulty": 2,
+          "sub": [
+            "Roles & Acts administered",
+            "Forex reserves",
+            "Commercial paper"
+          ]
+        },
+        {
+          "name": "Government schemes (financial sector)",
+          "weight": 0.3,
+          "pyq": 4,
+          "difficulty": 1,
+          "sub": [
+            "PM-SYM",
+            "PM-KISAN",
+            "UIDF"
+          ]
+        },
+        {
+          "name": "Current events, budget & Economic Survey",
+          "weight": 0.2,
+          "pyq": 4,
+          "difficulty": 2,
+          "sub": [
+            "Union Budget",
+            "Economic Survey",
+            "Financial-sector news"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Banking, Capital Markets & Insurance",
+      "weight": 0.18,
+      "topics": [
+        {
+          "name": "Banking & financial institutions",
+          "weight": 0.4,
+          "pyq": 4,
+          "difficulty": 2,
+          "sub": [
+            "NABARD",
+            "SIDBI",
+            "EXIM",
+            "NHB",
+            "NaBFID"
+          ]
+        },
+        {
+          "name": "Capital markets & securities",
+          "weight": 0.3,
+          "pyq": 4,
+          "difficulty": 2,
+          "sub": [
+            "SEBI framework",
+            "Bonds & derivatives",
+            "Mutual funds"
+          ]
+        },
+        {
+          "name": "Insurance & pension",
+          "weight": 0.3,
+          "pyq": 4,
+          "difficulty": 2,
+          "sub": [
+            "APY",
+            "NPS & CRAs",
+            "PM-SYM",
+            "IRDAI"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Commerce, Accountancy & Finance",
+      "weight": 0.1,
+      "topics": [
+        {
+          "name": "Accounting & financial statements",
+          "weight": 0.5,
+          "pyq": 3,
+          "difficulty": 2,
+          "sub": [
+            "Balance sheet",
+            "Ratio analysis",
+            "Accounting standards"
+          ]
+        },
+        {
+          "name": "Financial & cost management",
+          "weight": 0.5,
+          "pyq": 3,
+          "difficulty": 2,
+          "sub": [
+            "Wealth maximisation",
+            "Notional vs opportunity cost",
+            "Costing methods"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "English Language",
+      "weight": 0.1,
+      "topics": [
+        {
+          "name": "Vocabulary & comprehension",
+          "weight": 0.5,
+          "pyq": 4,
+          "difficulty": 2,
+          "sub": [
+            "Synonyms/antonyms",
+            "Reading comprehension",
+            "Tone & inference"
+          ]
+        },
+        {
+          "name": "Grammar, error spotting & para jumbles",
+          "weight": 0.5,
+          "pyq": 4,
+          "difficulty": 2,
+          "sub": [
+            "Error spotting",
+            "Fillers",
+            "Sentence rearrangement"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Quantitative Aptitude",
+      "weight": 0.12,
+      "topics": [
+        {
+          "name": "Arithmetic & data interpretation",
+          "weight": 0.6,
+          "pyq": 5,
+          "difficulty": 2,
+          "sub": [
+            "Percentages",
+            "Profit/loss",
+            "Time & work",
+            "DI sets"
+          ]
+        },
+        {
+          "name": "Number series & simplification",
+          "weight": 0.4,
+          "pyq": 5,
+          "difficulty": 2,
+          "sub": [
+            "Series",
+            "Simplification",
+            "Quadratic/inequalities"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Reasoning Ability",
+      "weight": 0.1,
+      "topics": [
+        {
+          "name": "Puzzles & seating arrangement",
+          "weight": 0.5,
+          "pyq": 5,
+          "difficulty": 2,
+          "sub": [
+            "Seating",
+            "Puzzles",
+            "Blood relations",
+            "Order/ranking"
+          ]
+        },
+        {
+          "name": "Coding-decoding, syllogism & verbal",
+          "weight": 0.5,
+          "pyq": 4,
+          "difficulty": 2,
+          "sub": [
+            "Coding-decoding",
+            "Syllogism",
+            "Inequalities",
+            "Direction"
+          ]
+        }
+      ]
+    }
+  ],
+  "trends": [
+    "Phase 2 Paper 2 is IFSCA-specific — Act 2019, IBU norms, listing rules, the 10-year tax holiday and GIFT IFSC statistics",
+    "General Awareness is financial-sector heavy (RBI/SEBI/IRDAI/PFRDA, Union Budget, Economic Survey)",
+    "Five options (A–E) with 1/4 negative marking — accuracy beats blind guessing",
+    "Paper 1 cut-off is 30% (no sectional cut-off); Paper 2 cut-off is 40%",
+    "Emerging topics: TAS (Talented Applicant Schedule 2025), ESG/transition finance, the commodity trading hub"
+  ],
+  "sources": [
+    "https://ifsca.gov.in",
+    "https://www.oliveboard.in/ifsca-grade-a-exam-pattern/",
+    "https://www.ixambee.com/exams/ifsca-assistant-manager-exam-syllabus",
+    "https://www.practicemock.com/blog/ifsca-grade-a-notification-2025/",
+    "https://github.com/hrkartiktomar-netizen/Exam_preparation (790 previous-year questions, 2022–2024)"
+  ],
+  "samples": [
+    {
+      "q": "In which year was the International Financial Services Centres Authority (IFSCA) Act enacted?",
+      "o": [
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "a": 2,
+      "x": "The IFSCA Act was passed in 2019 and the Authority became operational on 27 April 2020.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "IFSCA Act & establishment",
+      "d": 1
+    },
+    {
+      "q": "From which date did the IFSCA assume the powers of the RBI, SEBI, IRDAI and PFRDA in relation to IFSCs?",
+      "o": [
+        "1 July 2020",
+        "1 August 2020",
+        "1 September 2020",
+        "1 October 2020",
+        "1 November 2020"
+      ],
+      "a": 3,
+      "x": "With effect from 1 October 2020, IFSCA assumed the powers of the four financial regulators inside IFSCs.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "IFSCA Act & establishment",
+      "d": 2
+    },
+    {
+      "q": "Which of the following is NOT a 'financial product' as per the IFSCA Act, 2019?",
+      "o": [
+        "Equity shares",
+        "Bonds",
+        "Derivatives",
+        "Insurance products",
+        "Foreign Exchange Spot contract"
+      ],
+      "a": 4,
+      "x": "Securities, deposits, insurance contracts and other instruments are financial products under the Act; a spot foreign-exchange contract is not.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "IFSCA Act & establishment",
+      "d": 3
+    },
+    {
+      "q": "Which regulator is NOT mentioned in Section 13 of the IFSCA Act (whose powers in IFSCs are transferred to IFSCA)?",
+      "o": [
+        "RBI",
+        "SEBI",
+        "IRDAI",
+        "PFRDA",
+        "NFRA"
+      ],
+      "a": 4,
+      "x": "Section 13 transfers the powers of RBI, SEBI, IRDAI and PFRDA to IFSCA; the NFRA is not among them.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "IFSCA Act & establishment",
+      "d": 3
+    },
+    {
+      "q": "What is the minimum capital requirement for an IFSC Banking Unit (IBU)?",
+      "o": [
+        "USD 15 Million",
+        "USD 20 Million",
+        "USD 25 Million",
+        "USD 30 Million",
+        "USD 35 Million"
+      ],
+      "a": 1,
+      "x": "An IFSC Banking Unit must maintain a minimum capital of USD 20 million.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "IFSCA regulations (listing, banking, funds)",
+      "d": 2
+    },
+    {
+      "q": "As per the IFSCA (Issuance and Listing of Securities) Regulations, 2021, what is the minimum issue size for an IPO in an IFSC?",
+      "o": [
+        "USD 10 Million",
+        "USD 12 Million",
+        "USD 15 Million",
+        "USD 20 Million",
+        "USD 25 Million"
+      ],
+      "a": 2,
+      "x": "The minimum IPO size under the 2021 Listing Regulations is USD 15 million.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "IFSCA regulations (listing, banking, funds)",
+      "d": 3
+    },
+    {
+      "q": "Units in an IFSC enjoy what income-tax holiday?",
+      "o": [
+        "80% for 10 years",
+        "90% for 10 years",
+        "100% for 10 years",
+        "100% for 12 years",
+        "100% for 15 years"
+      ],
+      "a": 2,
+      "x": "IFSC units get a 100% income-tax holiday for any 10 consecutive years out of their first 15.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "GIFT IFSC & global financial centres",
+      "d": 2
+    },
+    {
+      "q": "Which was the first international university to establish a campus in GIFT IFSC?",
+      "o": [
+        "University of Oxford",
+        "Deakin University",
+        "Harvard University",
+        "Stanford University",
+        "University of Cambridge"
+      ],
+      "a": 1,
+      "x": "Deakin University (Australia) was the first foreign university to set up a campus in GIFT IFSC.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "GIFT IFSC & global financial centres",
+      "d": 1
+    },
+    {
+      "q": "The single International Financial Services Centre (GIFT IFSC) in India is located in:",
+      "o": [
+        "Mumbai",
+        "Gandhinagar, Gujarat",
+        "Hyderabad",
+        "New Delhi",
+        "Bengaluru"
+      ],
+      "a": 1,
+      "x": "GIFT IFSC — India's only IFSC — is located in Gandhinagar, Gujarat.",
+      "s": "IFSCA & GIFT IFSC",
+      "t": "GIFT IFSC & global financial centres",
+      "d": 1
+    },
+    {
+      "q": "Which institution is primarily responsible for safeguarding and managing India's foreign exchange reserves?",
+      "o": [
+        "IFSCA",
+        "Ministry of Finance",
+        "State Bank of India",
+        "Reserve Bank of India (RBI)",
+        "SEBI"
+      ],
+      "a": 3,
+      "x": "The RBI is responsible for safeguarding and managing the country's foreign exchange reserves.",
+      "s": "General Awareness (Financial Sector)",
+      "t": "RBI, SEBI, IRDAI & PFRDA",
+      "d": 1
+    },
+    {
+      "q": "Which regulator governs the issuance and trading of commercial paper in India?",
+      "o": [
+        "Ministry of Finance",
+        "Reserve Bank of India (RBI)",
+        "SEBI",
+        "IRDAI",
+        "FIMMDA"
+      ],
+      "a": 1,
+      "x": "The RBI regulates the issuance and trading of commercial paper in India.",
+      "s": "General Awareness (Financial Sector)",
+      "t": "RBI, SEBI, IRDAI & PFRDA",
+      "d": 2
+    },
+    {
+      "q": "Under the Pradhan Mantri Shram Yogi Maan-dhan (PM-SYM), each subscriber receives a minimum assured pension of ₹3,000 per month after attaining the age of:",
+      "o": [
+        "45 years",
+        "50 years",
+        "55 years",
+        "60 years",
+        "65 years"
+      ],
+      "a": 3,
+      "x": "PM-SYM assures a ₹3,000 monthly pension after the subscriber turns 60.",
+      "s": "General Awareness (Financial Sector)",
+      "t": "Government schemes (financial sector)",
+      "d": 1
+    },
+    {
+      "q": "As per the Atal Pension Yojana guidelines, what is the maximum investment in equity allowed?",
+      "o": [
+        "5%",
+        "10%",
+        "15%",
+        "20%",
+        "25%"
+      ],
+      "a": 2,
+      "x": "Atal Pension Yojana caps the equity exposure at 15%.",
+      "s": "Banking, Capital Markets & Insurance",
+      "t": "Insurance & pension",
+      "d": 2
+    },
+    {
+      "q": "NABARD extends refinance assistance primarily to:",
+      "o": [
+        "State co-operative banks",
+        "Regional rural banks",
+        "Scheduled commercial banks",
+        "A & B both",
+        "All of the above"
+      ],
+      "a": 4,
+      "x": "NABARD refinances state co-operative banks, RRBs and scheduled commercial banks for agriculture and rural development.",
+      "s": "Banking, Capital Markets & Insurance",
+      "t": "Banking & financial institutions",
+      "d": 2
+    },
+    {
+      "q": "Which financial statement shows the financial position of an organisation at a specific point in time?",
+      "o": [
+        "Income statement",
+        "Balance sheet",
+        "Cash flow statement",
+        "Statement of changes in equity",
+        "All of the above"
+      ],
+      "a": 1,
+      "x": "The balance sheet presents assets, liabilities and equity at a given point in time.",
+      "s": "Commerce, Accountancy & Finance",
+      "t": "Accounting & financial statements",
+      "d": 1
+    },
+    {
+      "q": "What is the main objective of financial management?",
+      "o": [
+        "Maximizing employee benefits",
+        "Minimizing production costs",
+        "Maximizing customer satisfaction",
+        "Maximizing social responsibility",
+        "Maximizing shareholder wealth"
+      ],
+      "a": 4,
+      "x": "Shareholder wealth maximisation is the primary objective of financial management.",
+      "s": "Commerce, Accountancy & Finance",
+      "t": "Financial & cost management",
+      "d": 1
+    },
+    {
+      "q": "Simple interest received at the rate of 12% p.a. for 10 years on a principal of Rs. 3,600 is twice the simple interest received at 10% p.a. for 6 years on another principal. Find that other principal.",
+      "o": [
+        "Rs. 3,000",
+        "Rs. 3,100",
+        "Rs. 3,500",
+        "Rs. 3,600",
+        "None of these"
+      ],
+      "a": 3,
+      "x": "SI1 = 3600 × 12 × 10 ÷ 100 = 4320 = 2 × (X × 10 × 6 ÷ 100) = 1.2X, so X = 3600.",
+      "s": "Quantitative Aptitude",
+      "t": "Arithmetic & data interpretation",
+      "d": 2
+    },
+    {
+      "q": "The ratio of the speeds of 'A' and 'B' is 4:9. In a 270-metre race, 'B' gives 'A' a head start of 'm' metres and they finish at the same time. Find 'm'.",
+      "o": [
+        "100 metres",
+        "120 metres",
+        "150 metres",
+        "130 metres",
+        "None of these"
+      ],
+      "a": 2,
+      "x": "In the same time, A covers (270 − m) at 4k and B covers 270 at 9k: (270 − m)/4 = 270/9 = 30, so 270 − m = 120 → m = 150.",
+      "s": "Quantitative Aptitude",
+      "t": "Arithmetic & data interpretation",
+      "d": 3
+    },
+    {
+      "q": "The present ages of P and Q are in the ratio 3:7. If Q's age 10 years hence will be 5 times P's age 6 years ago, find Q's present age.",
+      "o": [
+        "20 years",
+        "26 years",
+        "35 years",
+        "33 years",
+        "None of these"
+      ],
+      "a": 2,
+      "x": "Let P = 3x, Q = 7x. 7x + 10 = 5(3x − 6) = 15x − 30 → x = 5 → Q = 35.",
+      "s": "Quantitative Aptitude",
+      "t": "Arithmetic & data interpretation",
+      "d": 2
+    },
+    {
+      "q": "Statements: All Plot are Land. Some Land are Wall. No Land is a Capital. Conclusions: I. Some Plot are Wall. II. No Plot is a Capital. III. Some Wall are not Capital.",
+      "o": [
+        "Only conclusion III follows",
+        "Only conclusion I follows",
+        "Only conclusion II follows",
+        "Only conclusions II and III follow",
+        "None of the conclusions follow"
+      ],
+      "a": 3,
+      "x": "Plot ⊆ Land and Land ∩ Capital = ∅ gives II; walls that are Land cannot be Capital gives III; I does not follow.",
+      "s": "Reasoning Ability",
+      "t": "Coding-decoding, syllogism & verbal",
+      "d": 3
+    },
+    {
+      "q": "Statements: Few Kites are Clouds. Some Sticks are Kites. All Kites are Pastes. Conclusions: I. Some Sticks are Pastes. II. No Cloud is a Paste. III. All Clouds can be Sticks.",
+      "o": [
+        "Only conclusions I and III follow",
+        "Only conclusion II follows",
+        "Only conclusions II and III follow",
+        "Only conclusions I and II follow",
+        "All the conclusions follow"
+      ],
+      "a": 0,
+      "x": "Sticks that are Kites lie inside Pastes (I); III is a possibility; II is not implied.",
+      "s": "Reasoning Ability",
+      "t": "Coding-decoding, syllogism & verbal",
+      "d": 3
+    },
+    {
+      "q": "Which of the following words is NOT similar in meaning to 'resilient'?",
+      "o": [
+        "Tough",
+        "Strong",
+        "Fragile",
+        "Flexible",
+        "Robust"
+      ],
+      "a": 2,
+      "x": "'Fragile' is the opposite of resilient; the others are near-synonyms.",
+      "s": "English Language",
+      "t": "Vocabulary & comprehension",
+      "d": 1
+    },
+    {
+      "q": "Choose the word that means the OPPOSITE of 'contaminated':",
+      "o": [
+        "Purged",
+        "Corrupted",
+        "Defiled",
+        "Stained",
+        "Infected"
+      ],
+      "a": 0,
+      "x": "'Purged' means cleansed — the opposite of contaminated.",
+      "s": "English Language",
+      "t": "Vocabulary & comprehension",
+      "d": 1
+    },
+    {
+      "q": "Rearrange the following to form a coherent sentence: A. arrived the man had died. B. ambulance, which reached C. Police called up another D. but by the time it E. the spot after 45 minutes.",
+      "o": [
+        "DCEAB",
+        "EDCBA",
+        "BDECA",
+        "DBAEC",
+        "CBEDA"
+      ],
+      "a": 4,
+      "x": "Police called up another ambulance, which reached the spot after 45 minutes, but by the time it arrived the man had died → CBEDA.",
+      "s": "English Language",
+      "t": "Grammar, error spotting & para jumbles",
+      "d": 2
+    }
+  ],
+  "plan": {
+    "weeks": 12,
+    "hoursPerDay": 4,
+    "phases": [
+      {
+        "name": "Foundation — IFSCA & regulators",
+        "weeks": 4,
+        "focus": "IFSCA Act 2019, GIFT IFSC framework, RBI/SEBI/IRDAI/PFRDA basics",
+        "tasks": [
+          "IFSCA Act & regulations chapter-wise",
+          "Financial regulator functions (RBI/SEBI/IRDAI/PFRDA)",
+          "Daily financial-sector current affairs"
+        ]
+      },
+      {
+        "name": "Phase-1 drilling",
+        "weeks": 4,
+        "focus": "Quant, reasoning, English + Paper-2 finance subjects",
+        "tasks": [
+          "25 quant + 25 reasoning questions daily",
+          "Banking/capital market/insurance notes",
+          "Weekly Phase-1 style sectional tests"
+        ]
+      },
+      {
+        "name": "Peak — mocks & Phase-2",
+        "weeks": 4,
+        "focus": "Full mocks + descriptive English + Phase-2 IFSCA papers",
+        "tasks": [
+          "3 full mocks/week with analysis",
+          "Essay, précis and RC practice",
+          "PYQ sets (2022–2024) + rapid revision"
+        ]
+      }
+    ]
+  }
+}

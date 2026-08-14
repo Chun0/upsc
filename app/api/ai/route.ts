@@ -94,14 +94,16 @@ export async function POST(req: NextRequest) {
             }
           }
         }
-        // programmatic hygiene pass (deterministic)
+        // programmatic hygiene pass (deterministic) — option count follows the exam's real format
+        const optCount = exam.options ?? 4;
+        const lastIdx = optCount - 1;
         questions = questions
           .filter((q) => q && typeof q.question === "string" && q.question.length > 3)
           .slice(0, opts.count)
           .map((q) => ({
             ...q,
-            options: (q.options || []).slice(0, 4),
-            answerIndex: typeof q.answerIndex === "number" ? Math.max(0, Math.min(3, q.answerIndex)) : 0,
+            options: (q.options || []).slice(0, optCount),
+            answerIndex: typeof q.answerIndex === "number" ? Math.max(0, Math.min(lastIdx, q.answerIndex)) : 0,
             explanation: q.explanation || "",
           }))
           .filter((q, i, arr) => i === arr.findIndex((x) => x.question === q.question));

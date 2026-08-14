@@ -59,6 +59,8 @@ export interface ExamDef {
   org: string;
   icon: string;
   color: string;
+  /** Options per MCQ (default 4; IFSCA Grade A uses 5). */
+  options?: number;
   tagline: string;
   overview: string;
   eligibility: string[];

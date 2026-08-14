@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef } from "react";
-import { RokkyMascot } from "./Mascot";
 
 /**
  * The signature set piece: an OMR answer sheet laid out in real perspective.
  * Scroll pans the camera UP off the sheet (rotateX + translateY + content lift);
- * bubbles fill in a rising "flight path" on load; Rokky climbs the sheet.
+ * bubbles fill in a rising "flight path" on load.
  * Pure CSS 3D transforms — no WebGL, no new dependencies (REVAMP_PLAN Phase 3).
  */
 
@@ -107,16 +106,9 @@ export default function Hero3D({ cta }: { cta?: { label: string; href: string }[
         </div>
       </div>
 
-      {/* Rokky climbing off the sheet */}
-      <div className="hero-plane" aria-hidden="true">
-        <RokkyMascot size={96} />
-      </div>
-
       <div className="hero-content">
         <div className="hero-kicker">One copilot · every government exam</div>
-        <h1 className="hero-title">
-          UDAAN<span className="deva">उड़ान</span>
-        </h1>
+        <h1 className="hero-title">UDAAN</h1>
         <div className="hero-rule" />
         <div className="hero-sub">
           Pattern-faithful papers, honest scores, and a plan that lifts you —

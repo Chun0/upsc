@@ -84,6 +84,8 @@ export async function POST(req: NextRequest) {
         timeoutMs: 180000,
       });
       const perQ = sec.marks / Math.max(1, sec.questions);
+      const optCount = exam.options ?? 4;
+      const lastIdx = optCount - 1;
       for (const item of (out.questions || []).slice(0, sec.questions)) {
         if (!item?.question) continue;
         all.push({
@@ -95,8 +97,8 @@ export async function POST(req: NextRequest) {
           marks: Math.round(perQ * 100) / 100,
           negMarks: Math.round(perQ * sec.negFraction * 100) / 100,
           text: item.question,
-          options: (item.options || []).slice(0, 4),
-          answerIndex: Math.max(0, Math.min(3, Number(item.answerIndex) || 0)),
+          options: (item.options || []).slice(0, optCount),
+          answerIndex: Math.max(0, Math.min(lastIdx, Number(item.answerIndex) || 0)),
           explanation: item.explanation || "",
           section: sec.name,
           source: "ai",

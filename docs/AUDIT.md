@@ -124,6 +124,48 @@ a field (no behaviour regressions — 99 unit tests).*
 - `git check-ignore` re-verified for `data/`, `node_modules/`, `.next`, `.env*`.
 - Backend diff = 0 except `app/api/mocks/route.ts` (1-line pattern filter).
 
+## Round 5 (this round — hero polish + IFSCA Grade A exam)
+
+*Hero visibility fixes + a new exam (IFSCA Grade A) researched from the user's
+126-PDF repository and live 2025 pattern sources. 3-step verification below.*
+
+### Step 1 — Logic re-review ✅
+- **Hero**: removed the cartoon rocket/plane mascot (`.hero-plane` + RokkyMascot +
+  the `bob` keyframe); removed the duplicated "उड़ान" Devanagari word that sat on
+  "UDAAN" (the "same text on same text" + matra-clipping bug from `line-height:
+  0.95` → now `1.02`); added a paper-glow `::before` behind `.hero-content` so the
+  title/sub always sit on clean paper over the OMR sheet; darkened `.scroll-hint`
+  (ink-3 → ink-2) with a legibility pill; softened bubble rings (0.22 → 0.16).
+- **IFSCA Grade A** encoded from the reference repo (790 real PYQs 2022–2024) +
+  live pattern sources (oliveboard, ixambee, practicemock, freejobalert,
+  testbook): Phase I (Paper 1 common 100 Q/100 m; Paper 2 stream 50 Q×2) →
+  Phase II (descriptive English + stream objective) → Interview (15%). Negative
+  1/4 everywhere; cut-offs 30%/40%; 21–30 age; 2025 cycle 20 vacancies.
+- **5-option support**: IFSCA MCQs have 5 options (A–E). Added `ExamDef.options`
+  (default 4); made `ctxQuiz`, the `/api/ai` hygiene pass, and `/api/mocks`
+  option-count-aware. 24 samples (16 IFSCA/finance + 8 Quant/Reasoning/English)
+  all verified against the source answer keys (SI, race head-start, ages, two
+  syllogisms, vocab, para jumble re-solved independently).
+
+### Step 2 — Dynamic testing ✅
+- `tsc --noEmit` strict — clean.
+- **100/100 unit tests** (content-integrity now covers 15 exams + IFSCA's
+  5-option format and descriptive-tagging).
+- Production build clean (34 routes).
+- HTTP smoke: `/`, `/exams`, `/exams/ifsca-grade-a`, `/practice`, `/mocks` 200.
+- Hero HTML: 0 occurrences of `hero-plane`/`RokkyMascot`; single "UDAAN" title;
+  `hero-content::before` glow present in served CSS.
+- Offline IFSCA quiz → 6 Q, all 5 options, valid indices; IFSCA mini-mock → 4
+  sections, 18 Q, all 5-option; Phase-2 descriptive paper excluded from mocks.
+- **Live model**: `gemini-flash-lite-latest` generated 3 IFSCA MCQs, all with
+  exactly 5 options and in-range answer indices (temp test, removed after).
+
+### Step 3 — Patch audit ✅
+- Secret scan clean (test key used as env var only; never on disk).
+- Diff reviewed file-by-file: 12 modified + 1 new file, 86+/48−. No dependency
+  changes. Backend diff = 2 lines (`/api/ai` + `/api/mocks` hygiene option-count).
+- `git check-ignore` re-verified for `data/`, `node_modules/`, `.next`, `.env*`.
+
 ## Sign-off
 
 Ship it. 🚀 — Rokky, on behalf of the verification team.

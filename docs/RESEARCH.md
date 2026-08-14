@@ -65,3 +65,27 @@ practicemock, edutap, prepp, ncaacademy) found and fixed these errors:
 Also: 105 new PYQ-style sample questions added across all 14 exams (offline bank +
 AI style anchors); `PatternDef.mode` now distinguishes objective/mixed/descriptive/
 interview stages so descriptive papers are never offered as MCQ mocks.
+
+
+## 6. IFSCA Grade A added (2026-08-14, second audit)
+
+A new exam — **IFSCA Grade A (Assistant Manager)** — was added from the user's
+126-PDF research repository (hrkartiktomar-netizen/Exam_preparation: 790 unique
+PYQs from 2022/2023/2024 papers) and cross-checked against live pattern sources
+(oliveboard, ixambee, practicemock, freejobalert, testbook):
+
+- **Structure**: Phase I (Paper 1 common: GA-financial 25 + English 25 + Quant 25 +
+  Reasoning 25 = 100 Q/100 m/60 min; Paper 2 General stream: 50 Q×2 = 100 m/60 min)
+  → Phase II (Paper 1 descriptive English 100 m; Paper 2 stream objective 50 Q×2)
+  → Interview (15% weightage).
+- **Negative marking**: 1/4 of marks in every objective paper; cut-offs 30% (Paper 1)
+  and 40% (Paper 2), no sectional cut-off in Paper 1.
+- **5 options per MCQ (A–E)** — this exam is the first in the knowledge base with
+  `"options": 5`; the quiz engine, AI prompt, hygiene pass and tests were made
+  option-count-aware (`exam.options ?? 4`).
+- **Eligibility (General)**: Master's in Finance/Economics/Commerce/Econometrics or
+  Bachelor's in Commerce/IT/CS/LLB (60%); age 21–30 (2025 cycle: 20 vacancies —
+  General 12, Legal 4, IT 4).
+- 16 real PYQ-style samples encoded (IFSCA Act, powers transfer 1 Oct 2020, IBU
+  capital USD 20 M, IPO minimum USD 15 M, 100% tax holiday for 10/15 years, Deakin
+  University, APY 15% equity cap, PM-SYM ₹3,000 at 60, NABARD refinance, etc.).
