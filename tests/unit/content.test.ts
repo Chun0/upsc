@@ -9,8 +9,8 @@ import { listExams } from "../../lib/content/exams";
 describe("exam knowledge base integrity", () => {
   const exams = listExams();
 
-  it("has all 14 exams registered", () => {
-    expect(exams.length).toBe(14);
+  it("has all 15 exams registered", () => {
+    expect(exams.length).toBe(15);
   });
 
   it("every pattern declares a mode", () => {
@@ -55,18 +55,34 @@ describe("exam knowledge base integrity", () => {
     }
   });
 
-  it("every sample is well-formed: 4 options, in-range answer, explanation, known subject", () => {
+  it("every sample is well-formed: correct option count, in-range answer, explanation, known subject", () => {
     for (const e of exams) {
       const subjects = e.syllabus.map((s) => s.subject);
+      const n = e.options ?? 4;
       expect(e.samples.length, `${e.id} sample bank`).toBeGreaterThanOrEqual(10);
       for (const s of e.samples) {
-        expect(s.o?.length, `${e.id} sample "${s.q.slice(0, 40)}"`).toBe(4);
+        expect(s.o?.length, `${e.id} sample "${s.q.slice(0, 40)}"`).toBe(n);
         expect(s.a, `${e.id} sample "${s.q.slice(0, 40)}"`).toBeGreaterThanOrEqual(0);
-        expect(s.a, `${e.id} sample "${s.q.slice(0, 40)}"`).toBeLessThan(4);
+        expect(s.a, `${e.id} sample "${s.q.slice(0, 40)}"`).toBeLessThan(n);
         expect(s.x?.length, `${e.id} sample "${s.q.slice(0, 40)}" explanation`).toBeGreaterThan(0);
         expect(subjects).toContain(s.s);
       }
     }
+  });
+
+  it("IFSCA Grade A is registered with its 5-option format and full structure", () => {
+    const ifsca = exams.find((e) => e.id === "ifsca-grade-a")!;
+    expect(ifsca).toBeDefined();
+    expect(ifsca.options).toBe(5);
+    expect(ifsca.samples.every((s) => s.o?.length === 5)).toBe(true);
+    // three stages, negative marking on objective papers
+    expect(ifsca.stages.map((s) => s.name)).toEqual(["Phase I", "Phase II", "Interview"]);
+    const phase1 = ifsca.patterns.find((p) => p.stage === "Phase I Paper 1 (Common)")!;
+    expect(phase1.negFraction).toBeCloseTo(0.25, 3);
+    expect(phase1.sections.reduce((a, s) => a + s.questions, 0)).toBe(100);
+    // descriptive Phase-2 Paper 1 must be tagged descriptive (not offered as MCQ mock)
+    const p2 = ifsca.patterns.find((p) => p.stage === "Phase II Paper 1 (Descriptive English)")!;
+    expect(p2.mode).toBe("descriptive");
   });
 
   it("syllabus subject weights sum to ~1 and topic weights sum to ~1", () => {

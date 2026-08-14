@@ -507,7 +507,7 @@ input[type="range"] { padding: 0; border: none; box-shadow: none; accent-color: 
   place-items: center;
 }
 .hero-sheet .omr-cell svg { width: 76%; height: 76%; overflow: visible; }
-.hero-sheet .omr-cell .ring { fill: none; stroke: rgba(32, 29, 22, 0.22); stroke-width: 1.4; }
+.hero-sheet .omr-cell .ring { fill: none; stroke: rgba(32, 29, 22, 0.16); stroke-width: 1.3; }
 .hero-sheet .omr-cell .dot {
   fill: var(--ball);
   opacity: 0;
@@ -532,16 +532,6 @@ input[type="range"] { padding: 0; border: none; box-shadow: none; accent-color: 
   background: rgba(179, 38, 30, 0.5);
   transform: translateZ(40px);
 }
-.hero-plane {
-  position: absolute;
-  left: 50%;
-  bottom: 30%;
-  z-index: 5;
-  transform: translateX(-50%) translateY(calc(var(--pan, 0) * -30vh));
-  will-change: transform;
-  filter: drop-shadow(0 10px 18px rgba(32, 29, 22, 0.25));
-}
-.hero-plane svg { width: clamp(56px, 8vw, 96px); animation: bob 3.6s ease-in-out infinite; }
 
 .hero-content {
   position: relative;
@@ -552,12 +542,22 @@ input[type="range"] { padding: 0; border: none; box-shadow: none; accent-color: 
   opacity: calc(1 - var(--pan, 0) * 1.5);
   pointer-events: none;
 }
+/* soft paper glow behind the copy so text always sits on clean paper,
+   independent of the OMR bubbles behind it */
+.hero-content::before {
+  content: "";
+  position: absolute;
+  inset: -30px -40px;
+  z-index: -1;
+  background: radial-gradient(ellipse 58% 62% at 50% 50%, rgba(244, 243, 238, 0.96) 0%, rgba(244, 243, 238, 0.82) 55%, rgba(244, 243, 238, 0) 78%);
+  pointer-events: none;
+}
 .hero-kicker {
   font-family: var(--ff-mono);
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--ball);
+  color: var(--ball-deep);
   margin-bottom: 14px;
 }
 .hero-title {
@@ -565,21 +565,15 @@ input[type="range"] { padding: 0; border: none; box-shadow: none; accent-color: 
   font-size: clamp(3rem, 9vw, 6rem);
   font-weight: 700;
   letter-spacing: 0.02em;
-  line-height: 0.95;
+  line-height: 1.02;
   color: var(--ink);
   margin: 0;
-}
-.hero-title .deva {
-  display: inline-block;
-  color: var(--red);
-  font-weight: 600;
-  margin-left: 0.12em;
 }
 .hero-rule {
   width: 64px; height: 3px;
   background: var(--red);
   border-radius: 2px;
-  margin: 16px auto;
+  margin: 18px auto;
 }
 .hero-sub { font-size: clamp(1rem, 2.2vw, 1.22rem); color: var(--ink-2); margin: 0 auto 6px; max-width: 620px; }
 .hero-cta-row { display: flex; gap: 12px; justify-content: center; margin-top: 26px; flex-wrap: wrap; pointer-events: auto; }
@@ -589,7 +583,11 @@ input[type="range"] { padding: 0; border: none; box-shadow: none; accent-color: 
   left: 50%;
   transform: translateX(-50%);
   z-index: 6;
-  color: var(--ink-3);
+  color: var(--ink-2);
+  background: rgba(244, 243, 238, 0.82);
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  padding: 5px 14px;
   font-family: var(--ff-mono);
   font-size: 11px;
   letter-spacing: 0.22em;
@@ -597,7 +595,6 @@ input[type="range"] { padding: 0; border: none; box-shadow: none; accent-color: 
   animation: bounceDown 1.7s ease-in-out infinite;
 }
 @keyframes bounceDown { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 7px); } }
-@keyframes bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-9px) rotate(2deg); } }
 
 /* tilt cards */
 .tilt { transform-style: preserve-3d; will-change: transform; }

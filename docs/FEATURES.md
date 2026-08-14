@@ -6,7 +6,7 @@
 
 **AI / agentic**: master+slave model routing, per-lane serial queues, multi-key pool (round-robin/failover), per-(key×model) RPM buckets, 429/backoff/quota handling, model fallback chains with warm-up probes, thinking-level control, Google Search grounding (digest), structured JSON schemas for all outputs, streaming summaries.
 
-**Exams**: 14 exams with verified 2025–26 patterns, syllabus weights, PYQ tags, trends, samples, plan templates, countdown urgency.
+**Exams**: 15 exams with verified 2025–26 patterns, syllabus weights, PYQ tags, trends, samples, plan templates, countdown urgency — incl. IFSCA Grade A (GIFT IFSC, 5-option format, 16 real PYQ samples from 2022–2024).
 
 **Engine**: negative-marking scoring, sectional timers, mark-for-review, guess audit, EWMA+decay+confidence mastery, weighted recommendations, SM-2-lite flashcards, activity streaks + 60-day heatmap.
 

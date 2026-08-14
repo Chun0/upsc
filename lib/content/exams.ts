@@ -15,10 +15,11 @@ import rrbGroupD from "../../content/exams/rrb-group-d.json";
 import mppsc from "../../content/exams/mppsc.json";
 import ugcNet from "../../content/exams/ugc-net.json";
 import ctet from "../../content/exams/ctet.json";
+import ifscaGradeA from "../../content/exams/ifsca-grade-a.json";
 
 const ALL: ExamDef[] = [
   upscCse, sscCgl, sscChsl, ibpsPo, sbiPo, rbiGradeB, nda, cds, afcat,
-  rrbNtpc, rrbGroupD, mppsc, ugcNet, ctet,
+  rrbNtpc, rrbGroupD, mppsc, ugcNet, ctet, ifscaGradeA,
 ].map((e) => e as unknown as ExamDef);
 
 let cache: ExamDef[] | null = null;
